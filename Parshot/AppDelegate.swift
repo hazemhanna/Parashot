@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let layout = UICollectionViewFlowLayout()
         let featuredAppsController = FirstAddProductController (collectionViewLayout:layout )
         window?.rootViewController = UINavigationController(rootViewController: featuredAppsController)
-       print ("hazem")
+       print ("hazemm")
         return true
     
     }
