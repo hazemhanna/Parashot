@@ -80,7 +80,7 @@ class FirstAddProductController : UICollectionViewController , UICollectionViewD
             
         }else if indexPath.item == 1  {
             
-            return CGSize(width:collectionView.frame.width - 20  ,height:(collectionView.frame.height  * 0.6))
+            return CGSize(width:collectionView.frame.width - 20  ,height:(collectionView.frame.height  * 0.7))
             
         }
         else if indexPath.item == 2 {

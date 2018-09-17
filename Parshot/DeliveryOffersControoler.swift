@@ -1,4 +1,13 @@
 //
+//  DeliveryOffersControoler.swift
+//  Parshot
+//
+//  Created by hazem on 9/17/18.
+//  Copyright © 2018 hazem. All rights reserved.
+//
+
+import Foundation
+//
 //  MainSubjectController.swift
 //  Boshra
 //
@@ -10,11 +19,14 @@
 import UIKit
 
 
-class FirstMyOrder : UICollectionViewController , UICollectionViewDelegateFlowLayout {
+class DeliveryOffersControoler : UICollectionViewController , UICollectionViewDelegateFlowLayout {
     
     var footer = "footer"
     var cell = "cell"
     var Headers = "Headers"
+    
+    
+    
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -28,7 +40,7 @@ class FirstMyOrder : UICollectionViewController , UICollectionViewDelegateFlowLa
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cell, for: indexPath) as! FirstMyOrderController
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cell, for: indexPath) as! DeliveryOffers
         return cell
         
     }
@@ -41,8 +53,8 @@ class FirstMyOrder : UICollectionViewController , UICollectionViewDelegateFlowLa
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionElementKindSectionHeader:
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: self.Headers, for: indexPath as IndexPath) as! HeadrWithoutCart
-            header.marketName.text = " طلباتي"
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: self.Headers, for: indexPath as IndexPath) as! DeliveryOffersHeader
+            header.marketName.text = " عروض المناديب"
             
             return header
         case UICollectionElementKindSectionFooter:
@@ -75,10 +87,9 @@ class FirstMyOrder : UICollectionViewController , UICollectionViewDelegateFlowLa
         
         collectionView?.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
         collectionView?.backgroundColor = UIColor.rgb(252, green: 244, blue: 246)
-        collectionView?.register(FirstMyOrderController.self, forCellWithReuseIdentifier: cell)
-        
+        collectionView?.register(DeliveryOffers.self, forCellWithReuseIdentifier: cell)
         collectionView?.register(thirdMainFooter.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: footer)
-        collectionView?.register(HeadrWithoutCart.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: Headers)
+        collectionView?.register(DeliveryOffersHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: Headers)
         
         // setup navBar.....
         navigationController?.navigationBar.barTintColor = UIColor.rgb(252, green: 244, blue: 246)

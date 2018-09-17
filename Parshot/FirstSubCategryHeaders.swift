@@ -47,21 +47,22 @@ class FirstSubCategryHeaders: BaseCell {
         marketName.rightAnchor.constraint(equalTo: rightArrwImage.leftAnchor,constant : -20 ).isActive = true
         
 
+        ////////
+       
         
         addSubview(blackImage2)
-        blackImage2.bottomAnchor.constraint(equalTo: mainView.topAnchor,constant : -10 ).isActive = true
+        blackImage2.topAnchor.constraint(equalTo: leftArrowImage.bottomAnchor,constant : 15 ).isActive = true
         blackImage2.centerXAnchor.constraint(equalTo: centerXAnchor ).isActive = true
         blackImage2.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.9).isActive = true
         blackImage2.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.03).isActive = true
         
         
-        
-        ////////  
         addSubview(mainView)
         mainView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         mainView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         mainView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.95).isActive = true
         mainView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
         
         mainView.addSubview(cartImage)
         cartImage.topAnchor.constraint(equalTo: mainView.topAnchor,constant : 5).isActive = true

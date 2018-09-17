@@ -17,6 +17,8 @@
 
 
 import UIKit
+import RichEditorView
+
 
 class ProductOprionsView: BaseCell,FloatRatingViewDelegate {
     
@@ -143,10 +145,8 @@ class ProductOprionsView: BaseCell,FloatRatingViewDelegate {
         discountText.widthAnchor.constraint(equalTo: discountView.widthAnchor,multiplier : 0.9).isActive = true
         discountText.heightAnchor.constraint(equalToConstant : 30).isActive = true
         
+        
         ////////////
-        
-        
-        
         mainView.addSubview(discountperiodView)
         discountperiodView.topAnchor.constraint(equalTo: costView.bottomAnchor,constant : 5).isActive = true
         discountperiodView.leftAnchor.constraint(equalTo: costView.leftAnchor ).isActive = true
@@ -166,6 +166,36 @@ class ProductOprionsView: BaseCell,FloatRatingViewDelegate {
         discountperiodText.heightAnchor.constraint(equalToConstant : 30).isActive = true
         
         
+        mainView.addSubview(toolbar)
+        toolbar.topAnchor.constraint(equalTo: discountperiodView.bottomAnchor,constant :40).isActive = true
+        toolbar.centerXAnchor.constraint(equalTo: mainView.centerXAnchor ).isActive = true
+        toolbar.widthAnchor.constraint(equalTo: mainView.widthAnchor,multiplier : 0.9).isActive = true
+        toolbar.heightAnchor.constraint(equalTo : mainView.heightAnchor,multiplier : 0.1).isActive = true
+        toolbar.options = RichEditorDefaultOption.all
+        toolbar.editor = productDescription
+        
+        
+        
+        
+        
+        mainView.addSubview(textiew)
+        textiew.topAnchor.constraint(equalTo: toolbar.bottomAnchor).isActive = true
+        textiew.centerXAnchor.constraint(equalTo: mainView.centerXAnchor ).isActive = true
+        textiew.widthAnchor.constraint(equalTo: mainView.widthAnchor,multiplier : 0.9).isActive = true
+        textiew.heightAnchor.constraint(equalTo : mainView.heightAnchor,multiplier : 0.27).isActive = true
+        ///////// product description text view
+        textiew.addSubview(productDescription)
+        productDescription.centerYAnchor.constraint(equalTo: textiew.centerYAnchor).isActive = true
+        productDescription.centerXAnchor.constraint(equalTo: textiew.centerXAnchor ).isActive = true
+        productDescription.widthAnchor.constraint(equalTo: textiew.widthAnchor).isActive = true
+        productDescription.heightAnchor.constraint(equalTo : textiew.heightAnchor).isActive = true
+        productDescription.bold()
+        productDescription.italic()
+        /////// talla bar
+        mainView.addSubview(DescribePruductlabel)
+        DescribePruductlabel.bottomAnchor.constraint(equalTo: toolbar.topAnchor,constant : -5).isActive = true
+        DescribePruductlabel.rightAnchor.constraint(equalTo: toolbar.rightAnchor ).isActive = true
+
         mainView.addSubview(addColorBtn)
         addColorBtn.bottomAnchor.constraint(equalTo: mainView.bottomAnchor,constant : -10 ).isActive = true
         addColorBtn.rightAnchor.constraint(equalTo: mainView.rightAnchor,constant : -60 ).isActive = true
@@ -244,6 +274,8 @@ class ProductOprionsView: BaseCell,FloatRatingViewDelegate {
         return tf
     }()
     
+    
+
     
     
     let  pruductNameImage :UIImageView = {
@@ -426,6 +458,58 @@ class ProductOprionsView: BaseCell,FloatRatingViewDelegate {
         return ci
         
     }()
+    
+
+    
+    
+    let DescribePruductlabel :UILabel = {
+        let NL = UILabel()
+        NL.textColor = UIColor.black
+        var font = UIFont(name: "JFFlat-Regular", size: 12)
+        NL.font = font
+        NL.translatesAutoresizingMaskIntoConstraints = false
+        NL.text = NSLocalizedString("وصف المنتج ", comment: "this is name")
+        return NL
+        
+    }()
+    
+    
+    let  textiew :UIView = {
+        let uv = UIView()
+        uv.backgroundColor = .white
+        uv.translatesAutoresizingMaskIntoConstraints = false
+        uv.layer.borderColor = UIColor.rgb(230, green: 234, blue: 237).cgColor
+        uv.layer.borderWidth = 1
+        uv.layer.cornerRadius = 3
+        return uv
+    }()
+    
+    
+    //////////////  product Description
+    let productDescription : RichEditorView = {
+        let tf = RichEditorView()
+        tf.tintColor = UIColor.rgb(48, green: 39, blue: 133)
+        var font = UIFont(name: "JFFlat-Regular", size: 14)
+        tf.translatesAutoresizingMaskIntoConstraints = false
+//        tf.layer.borderColor = UIColor.rgb(230, green: 234, blue: 237).cgColor
+//        tf.layer.borderWidth = 1
+//        tf.layer.cornerRadius = 3
+        return tf
+    }()
+    
+    
+    
+    
+    
+    
+    
+    let toolbar : RichEditorToolbar = {
+    let tb = RichEditorToolbar()
+    tb.translatesAutoresizingMaskIntoConstraints = false
+    return tb
+
+    }()
+    
     
     
     

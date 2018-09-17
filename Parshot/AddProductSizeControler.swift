@@ -117,7 +117,7 @@ class AddProductSizeControler : BaseCell  , UICollectionViewDataSource, UICollec
         var font = UIFont(name: "JFFlat-Regular", size: 12)
         NL.font = font
         NL.translatesAutoresizingMaskIntoConstraints = false
-        NL.text = NSLocalizedString("  الوان المنتج  ", comment: "this is name")
+        NL.text = NSLocalizedString("  احجام المنتج  ", comment: "this is name")
         return NL
         
     }()
@@ -154,6 +154,11 @@ class AddProductSizeControler : BaseCell  , UICollectionViewDataSource, UICollec
         return cv
     }()
 
+    
+    
+    
+    
+    
     
 }
 
