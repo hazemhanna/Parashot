@@ -16,9 +16,14 @@
 
 
 import UIKit
+import DKImagePickerController
 
 
 class FirstAddProductController : UICollectionViewController , UICollectionViewDelegateFlowLayout {
+    
+    var pickerController: DKImagePickerController!
+    var assets: [DKAsset]?
+    var UserImage = [UIImage]()
     
     var footer  = "footer"
     var Headers = "Headers"
@@ -36,14 +41,19 @@ class FirstAddProductController : UICollectionViewController , UICollectionViewD
         
         if indexPath.item == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cellid0, for: indexPath) as! FirstAddProductImagesController
+             cell.controller = self
+              cell.image = UserImage
             return cell
-        }   else if indexPath.item == 1  {
+        
+        
+        }else if indexPath.item == 1  {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cellid1, for: indexPath) as!ProductOprionsView
             return cell
         
         }
         else if indexPath.item == 2 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cellid2, for: indexPath) as!AddProductColorController
+            cell.controller = self
             return cell
             
         }else  {
@@ -154,6 +164,40 @@ class FirstAddProductController : UICollectionViewController , UICollectionViewD
         navigationItem.leftBarButtonItem = chatButton
         
     }
+    
+    func SwitchToImagePicker( ) {
+        
+        let pickerController = DKImagePickerController()
+        pickerController.allowMultipleTypes = true
+        pickerController.didSelectAssets = { (assets: [DKAsset]) in
+            print("didSelectAssets")
+            self.assets = assets
+            
+            for data in assets{
+                data.fetchImageWithSize(CGSize(width:500,height:500), completeBlock: { image, info in
+                    
+                    
+                    self.UserImage.append(image!)
+                    DispatchQueue.main.async(execute: {
+                        self.collectionView?.reloadData()
+                    })
+                })
+                
+            }
+            
+        }
+        
+        self.present(pickerController, animated: true) {}
+    }
+    
+    
+    func PresentColorPicker(){
+       
+      
+    print ("hazem")
+    
+    }
+    
     
     ///////////
     func chat()  {  }

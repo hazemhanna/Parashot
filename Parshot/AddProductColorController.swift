@@ -9,10 +9,17 @@
 
 
 import UIKit
+import ChromaColorPicker
 
-
-class AddProductColorController : BaseCell  , UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class AddProductColorController : BaseCell  , UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
     
+
+    
+    var controller : FirstAddProductController?{
+        didSet{
+            collectionView.reloadData()
+        }
+    }
     var cell = "cell"
     
     
@@ -96,22 +103,39 @@ class AddProductColorController : BaseCell  , UICollectionViewDataSource, UIColl
             flowLayout.scrollDirection = .horizontal
             
         }
- 
         
         
+        
+        
+        
+        
+        
+        
+        addColorImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(switchToImagePickerController)))
+        addColorImage.isUserInteractionEnabled = true
+    }
+    
+    //// make
+    func switchToImagePickerController (tapGestureRecognizer: UITapGestureRecognizer)
+        
+    {
+        
+    
     }
     
     
-    let  mainView :UIView = {
+        let  mainView :UIView = {
         let uv = UIView()
         uv.backgroundColor = .white
         uv.translatesAutoresizingMaskIntoConstraints = false
         uv.layer.borderColor = UIColor.rgb(230, green: 234, blue: 237).cgColor
         uv.layer.borderWidth = 1
         return uv
-    }()
+            
+       }()
     
-    let ProductColorLabel :UILabel = {
+    
+        let ProductColorLabel :UILabel = {
         let NL = UILabel()
         NL.textColor = UIColor.black
         var font = UIFont(name: "JFFlat-Regular", size: 12)
@@ -119,8 +143,7 @@ class AddProductColorController : BaseCell  , UICollectionViewDataSource, UIColl
         NL.translatesAutoresizingMaskIntoConstraints = false
         NL.text = NSLocalizedString("  الوان المنتج  ", comment: "this is name")
         return NL
-        
-    }()
+      }()
     
     
     let  horizantalLine  :UIView = {

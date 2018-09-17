@@ -24,11 +24,6 @@ class AddProductColorView: BaseCell {
     override func setupViews() {
         
         backgroundColor = UIColor.white
-        
-        
-    
-        ///// 
-        
         addSubview(itemImage)
         itemImage.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         itemImage.centerXAnchor.constraint(equalTo:centerXAnchor ).isActive = true

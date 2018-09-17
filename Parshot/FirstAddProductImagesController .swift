@@ -9,22 +9,32 @@
 
 
 import UIKit
+import DKImagePickerController
 
 
 class FirstAddProductImagesController  : BaseCell  , UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    
+    var controller : FirstAddProductController?{
+        didSet{
+            collectionView.reloadData()
+        }
+    }
+    
+    var image = [UIImage]()
     var cell = "cell"
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 2
+        return image.count
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cell, for: indexPath) as! FirstAddProductImagesView
+        cell.itemImage.image  = image[indexPath.item]
         
         return cell
         
@@ -41,7 +51,10 @@ class FirstAddProductImagesController  : BaseCell  , UICollectionViewDataSource,
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width:(collectionView.frame.width ) ,height:frame.height)
+        return CGSize(width:(collectionView.frame.width / 3 ) - 10 ,height:frame.height)
+
+    
+    
     }
     
     
@@ -78,7 +91,8 @@ class FirstAddProductImagesController  : BaseCell  , UICollectionViewDataSource,
         circleView.widthAnchor.constraint(equalTo: mainView.widthAnchor,multiplier:0.15).isActive = true
         circleView.bottomAnchor.constraint(equalTo: collectionView.topAnchor,constant : -10 ).isActive = true
         circleView.heightAnchor.constraint(equalTo: circleView.widthAnchor).isActive = true
-        
+        circleView.isUserInteractionEnabled = true
+
         
         mainView.addSubview(horizantalLine)
         horizantalLine.bottomAnchor.constraint(equalTo: circleView.topAnchor ,constant : -5).isActive = true
@@ -91,22 +105,32 @@ class FirstAddProductImagesController  : BaseCell  , UICollectionViewDataSource,
         ProductImagesLabel.bottomAnchor.constraint(equalTo: horizantalLine.topAnchor).isActive = true
         ProductImagesLabel.rightAnchor.constraint(equalTo: mainView.rightAnchor,constant : -10).isActive = true
 
-      
-       
-
-      
+     
         
         circleView.addSubview(pruductImage)
         pruductImage.centerXAnchor.constraint(equalTo: circleView.centerXAnchor).isActive = true
-        pruductImage.widthAnchor.constraint(equalTo: circleView.widthAnchor,multiplier : 0.7 ).isActive = true
+        pruductImage.widthAnchor.constraint(equalTo: circleView.widthAnchor,multiplier : 0.8).isActive = true
         pruductImage.centerYAnchor.constraint(equalTo:circleView.centerYAnchor).isActive = true
         pruductImage.heightAnchor.constraint(equalTo: pruductImage.widthAnchor).isActive = true
         self.pruductImage.layer.cornerRadius = self.pruductImage.frame.width/5
         self.pruductImage.clipsToBounds = true
+        pruductImage.isUserInteractionEnabled = true
+
         
-      
+        
+        pruductImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(switchToImagePickerController)))
+        pruductImage.isUserInteractionEnabled = true
+        
     }
     
+    
+    
+    //// make
+    func switchToImagePickerController (tapGestureRecognizer: UITapGestureRecognizer)
+        
+    {
+     controller?.SwitchToImagePicker()
+     }
     
     let  mainView :UIView = {
         let uv = UIView()
@@ -170,5 +194,5 @@ class FirstAddProductImagesController  : BaseCell  , UICollectionViewDataSource,
         return cv
     }()
     
-    
+ 
 }

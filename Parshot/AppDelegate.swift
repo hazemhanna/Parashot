@@ -15,15 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+       
         // Override point for customization after application launch.
-       print("zoommmmmmm")
-        
         let layout = UICollectionViewFlowLayout()
         let featuredAppsController = FirstAddProductController (collectionViewLayout:layout )
         window?.rootViewController = UINavigationController(rootViewController: featuredAppsController)
-       print ("hazemm")
-        print ("hazemmm")
-
         return true
     
     }

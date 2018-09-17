@@ -29,8 +29,6 @@ class ProductOprionsView: BaseCell,FloatRatingViewDelegate {
         mainView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
         mainView.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
         /////
-   
-        
         
         mainView.addSubview(ProductDescriptionLabel)
         ProductDescriptionLabel.topAnchor.constraint(equalTo: topAnchor,constant : 10).isActive = true
