@@ -119,7 +119,7 @@ class AddProductColorController : BaseCell  , UICollectionViewDataSource, UIColl
     func switchToImagePickerController (tapGestureRecognizer: UITapGestureRecognizer)
         
     {
-        
+        controller?.PresentColorPicker()
     
     }
     

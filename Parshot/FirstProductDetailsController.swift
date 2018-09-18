@@ -35,10 +35,6 @@ class FirstProductDetailsController : UICollectionViewController , UICollectionV
         return true
     }
     
-    
-   
-    
-    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if indexPath.item == 0 {

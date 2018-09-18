@@ -15,6 +15,16 @@
 		A1056E82214835B300E28473 /* FinishOrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1056E81214835B300E28473 /* FinishOrderController.swift */; };
 		A1056E84214835C500E28473 /* FinishOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1056E83214835C500E28473 /* FinishOrderView.swift */; };
 		A1056E86214836CE00E28473 /* HeadrWithoutCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1056E85214836CE00E28473 /* HeadrWithoutCart.swift */; };
+		A10D30752150FA0300A765AA /* ProductRateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10D30742150FA0300A765AA /* ProductRateController.swift */; };
+		A10D30772150FA1A00A765AA /* ProductRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10D30762150FA1A00A765AA /* ProductRateView.swift */; };
+		A10D30792150FDE400A765AA /* productRateFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10D30782150FDE400A765AA /* productRateFooter.swift */; };
+		A10D307E215115AF00A765AA /* NewOrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10D307D215115AF00A765AA /* NewOrderController.swift */; };
+		A10D3080215115C500A765AA /* OrderDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10D307F215115C500A765AA /* OrderDetailsView.swift */; };
+		A10D308221511C9000A765AA /* MapControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10D308121511C9000A765AA /* MapControler.swift */; };
+		A10D308421511D5E00A765AA /* OrderDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10D308321511D5E00A765AA /* OrderDetailsController.swift */; };
+		A10D308621511EC400A765AA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10D308521511EC400A765AA /* MapView.swift */; };
+		A10D30882151331800A765AA /* NewOrderFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10D30872151331800A765AA /* NewOrderFooter.swift */; };
+		A10D309C21515DAF00A765AA /* ColorPickerControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10D309B21515DAF00A765AA /* ColorPickerControler.swift */; };
 		A1162530214FD72F0004B4DD /* DellerAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A116252F214FD72F0004B4DD /* DellerAccountController.swift */; };
 		A1162532214FD74E0004B4DD /* DellerAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1162531214FD74E0004B4DD /* DellerAccountView.swift */; };
 		A1162537214FDEA20004B4DD /* DellerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1162536214FDEA20004B4DD /* DellerHeader.swift */; };
@@ -121,6 +131,20 @@
 		A1056E81214835B300E28473 /* FinishOrderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishOrderController.swift; sourceTree = "<group>"; };
 		A1056E83214835C500E28473 /* FinishOrderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishOrderView.swift; sourceTree = "<group>"; };
 		A1056E85214836CE00E28473 /* HeadrWithoutCart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadrWithoutCart.swift; sourceTree = "<group>"; };
+		A10D30742150FA0300A765AA /* ProductRateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductRateController.swift; sourceTree = "<group>"; };
+		A10D30762150FA1A00A765AA /* ProductRateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductRateView.swift; sourceTree = "<group>"; };
+		A10D30782150FDE400A765AA /* productRateFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = productRateFooter.swift; sourceTree = "<group>"; };
+		A10D307D215115AF00A765AA /* NewOrderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewOrderController.swift; sourceTree = "<group>"; };
+		A10D307F215115C500A765AA /* OrderDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailsView.swift; sourceTree = "<group>"; };
+		A10D308121511C9000A765AA /* MapControler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapControler.swift; sourceTree = "<group>"; };
+		A10D308321511D5E00A765AA /* OrderDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailsController.swift; sourceTree = "<group>"; };
+		A10D308521511EC400A765AA /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		A10D30872151331800A765AA /* NewOrderFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewOrderFooter.swift; sourceTree = "<group>"; };
+		A10D308C21513D1700A765AA /* GoogleMaps */ = {isa = PBXFileReference; lastKnownFileType = folder; name = GoogleMaps; path = Pods/GoogleMaps; sourceTree = "<group>"; };
+		A10D308E21513D3A00A765AA /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Pods/GoogleMaps/Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
+		A10D309021513DEC00A765AA /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Pods/GoogleMaps/Maps/Frameworks/GoogleMapsCore.framework; sourceTree = "<group>"; };
+		A10D309221513E1700A765AA /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Pods/GoogleMaps/Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
+		A10D309B21515DAF00A765AA /* ColorPickerControler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerControler.swift; sourceTree = "<group>"; };
 		A116252F214FD72F0004B4DD /* DellerAccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DellerAccountController.swift; sourceTree = "<group>"; };
 		A1162531214FD74E0004B4DD /* DellerAccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DellerAccountView.swift; sourceTree = "<group>"; };
 		A1162536214FDEA20004B4DD /* DellerHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DellerHeader.swift; sourceTree = "<group>"; };
@@ -238,6 +262,10 @@
 		0C9EFE3723207D28553AB63B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A10D309221513E1700A765AA /* GoogleMapsBase.framework */,
+				A10D309021513DEC00A765AA /* GoogleMapsCore.framework */,
+				A10D308E21513D3A00A765AA /* GoogleMaps.framework */,
+				A10D308C21513D1700A765AA /* GoogleMaps */,
 				CFAE7453167D27A4D5DC71B6 /* Pods_Parshot.framework */,
 			);
 			name = Frameworks;
@@ -294,6 +322,61 @@
 				A1056E81214835B300E28473 /* FinishOrderController.swift */,
 			);
 			name = FinishOrderController;
+			sourceTree = "<group>";
+		};
+		A10D30712150F83A00A765AA /* ProductRate */ = {
+			isa = PBXGroup;
+			children = (
+				A10D30732150F8DE00A765AA /* ProductRate Controller */,
+				A10D30722150F8D700A765AA /* ProductRate View */,
+			);
+			name = ProductRate;
+			sourceTree = "<group>";
+		};
+		A10D30722150F8D700A765AA /* ProductRate View */ = {
+			isa = PBXGroup;
+			children = (
+				A10D30762150FA1A00A765AA /* ProductRateView.swift */,
+				A10D30782150FDE400A765AA /* productRateFooter.swift */,
+			);
+			name = "ProductRate View";
+			sourceTree = "<group>";
+		};
+		A10D30732150F8DE00A765AA /* ProductRate Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A10D30742150FA0300A765AA /* ProductRateController.swift */,
+			);
+			name = "ProductRate Controller";
+			sourceTree = "<group>";
+		};
+		A10D307A2151154100A765AA /* NewOrder */ = {
+			isa = PBXGroup;
+			children = (
+				A10D307C2151155900A765AA /* NewOrderController */,
+				A10D307B2151155300A765AA /* New ORderView */,
+			);
+			name = NewOrder;
+			sourceTree = "<group>";
+		};
+		A10D307B2151155300A765AA /* New ORderView */ = {
+			isa = PBXGroup;
+			children = (
+				A10D307F215115C500A765AA /* OrderDetailsView.swift */,
+				A10D308521511EC400A765AA /* MapView.swift */,
+				A10D30872151331800A765AA /* NewOrderFooter.swift */,
+			);
+			name = "New ORderView";
+			sourceTree = "<group>";
+		};
+		A10D307C2151155900A765AA /* NewOrderController */ = {
+			isa = PBXGroup;
+			children = (
+				A10D307D215115AF00A765AA /* NewOrderController.swift */,
+				A10D308121511C9000A765AA /* MapControler.swift */,
+				A10D308321511D5E00A765AA /* OrderDetailsController.swift */,
+			);
+			name = NewOrderController;
 			sourceTree = "<group>";
 		};
 		A1162533214FD7520004B4DD /* DellerAccount */ = {
@@ -503,6 +586,7 @@
 		A152B52F2147C13900A02469 /* Orders */ = {
 			isa = PBXGroup;
 			children = (
+				A10D307A2151154100A765AA /* NewOrder */,
 				A1056E7E21482F6C00E28473 /* FinishOrder */,
 				A152B5302147C14B00A02469 /* MakeOrder */,
 				A152B52C2147C0CA00A02469 /* ConfirmOrder */,
@@ -687,6 +771,7 @@
 		A1BB22D6214D3A2900EF2CB3 /* AddProduct */ = {
 			isa = PBXGroup;
 			children = (
+				A10D309B21515DAF00A765AA /* ColorPickerControler.swift */,
 				A1BB22D8214D3A3F00EF2CB3 /* FirstAddProductController */,
 				A1BB22D7214D3A3A00EF2CB3 /* FirstAddProductView */,
 			);
@@ -742,6 +827,7 @@
 				A15CD583213E81BA00F03E8D /* Helper */,
 				A1C4A478213D466400C87D27 /* ِExtention */,
 				A1C4A461213D428900C87D27 /* AppDelegate.swift */,
+				A10D30712150F83A00A765AA /* ProductRate */,
 				A1162538214FF0700004B4DD /* DeliveryOffers */,
 				A1162533214FD7520004B4DD /* DellerAccount */,
 				A1EF05B0214FA57C009A9D86 /* MyAcount */,
@@ -993,6 +1079,7 @@
 				A1EF05BE214FB466009A9D86 /* MyAcountView2.swift in Sources */,
 				A129F22F2143DFAA003E88E1 /* FirstSubCategryController.swift in Sources */,
 				A1162540214FF2B40004B4DD /* DeliveryOffersView.swift in Sources */,
+				A10D308621511EC400A765AA /* MapView.swift in Sources */,
 				A1D1E0582147F75500476D12 /* MakeOrderView.swift in Sources */,
 				A129F23C21442C9D003E88E1 /* SecondSubCategryView.swift in Sources */,
 				A1056E792148156200E28473 /* FristProductCartCtroller.swift in Sources */,
@@ -1002,8 +1089,10 @@
 				A1BB22E4214D44EA00EF2CB3 /* AddProductSizeControler.swift in Sources */,
 				A171394F2140400B00063F5C /* FourthBestRatesView.swift in Sources */,
 				A17798A3214D8DBD00B867A4 /* FirstAddProductFooter.swift in Sources */,
+				A10D308421511D5E00A765AA /* OrderDetailsController.swift in Sources */,
 				A15CD597213E8D7400F03E8D /* TypeView.swift in Sources */,
 				A162E93B21469BF400139EB8 /* ProductDetails.swift in Sources */,
+				A10D30772150FA1A00A765AA /* ProductRateView.swift in Sources */,
 				A129F23321441855003E88E1 /* RateView.swift in Sources */,
 				A15CD58F213E8BEB00F03E8D /* TypeController.swift in Sources */,
 				A1056E772148151B00E28473 /* FristProductCart.swift in Sources */,
@@ -1024,9 +1113,11 @@
 				A1C4A462213D428900C87D27 /* AppDelegate.swift in Sources */,
 				A1EF05BA214FA911009A9D86 /* MyAcountFooter.swift in Sources */,
 				A171394D21403FCE00063F5C /* FourthDepartmentView.swift in Sources */,
+				A10D309C21515DAF00A765AA /* ColorPickerControler.swift in Sources */,
 				A1C4A47C213D46D200C87D27 /* Image.swift in Sources */,
 				A1056E84214835C500E28473 /* FinishOrderView.swift in Sources */,
 				A1BB22E6214D468B00EF2CB3 /* AddProductColorView.swift in Sources */,
+				A10D308221511C9000A765AA /* MapControler.swift in Sources */,
 				A1C4A488213D75A400C87D27 /* SliderView.swift in Sources */,
 				A162E93521469A0700139EB8 /* ProductNameView.swift in Sources */,
 				A1713939213FE6C700063F5C /* ThirdDepartmentView.swift in Sources */,
@@ -1034,6 +1125,7 @@
 				A1C4A477213D437200C87D27 /* FirstMainPageController.swift in Sources */,
 				A15CD58B213E8B2C00F03E8D /* SecondDepartmentController.swift in Sources */,
 				A1291C8F21451D2C00BD1524 /* thirdSubCateryController.swift in Sources */,
+				A10D30792150FDE400A765AA /* productRateFooter.swift in Sources */,
 				A152B5322147C17100A02469 /* ConfirmOrderController.swift in Sources */,
 				A171394521403DF600063F5C /* FourthDepartmentController.swift in Sources */,
 				A171394B21403FC100063F5C /* FourthSliderView.swift in Sources */,
@@ -1070,13 +1162,16 @@
 				A1162530214FD72F0004B4DD /* DellerAccountController.swift in Sources */,
 				A116253E214FF1A30004B4DD /* DeliveryOffers.swift in Sources */,
 				A1056E86214836CE00E28473 /* HeadrWithoutCart.swift in Sources */,
+				A10D30882151331800A765AA /* NewOrderFooter.swift in Sources */,
 				A17139512140402600063F5C /* OffeerView.swift in Sources */,
 				A15CD593213E8D3200F03E8D /* SecondDepartmentView.swift in Sources */,
 				A162E92921466D7C00139EB8 /* FirstProductDetailsController.swift in Sources */,
 				A1291C9121451DB200BD1524 /* thirdSubCateryControllerCell.swift in Sources */,
+				A10D30752150FA0300A765AA /* ProductRateController.swift in Sources */,
 				A1BB22CF214D218F00EF2CB3 /* FirstMyOrder.swift in Sources */,
 				A1BB22DA214D3A7800EF2CB3 /* FirstAddProductController.swift in Sources */,
 				A15CD587213E89BA00F03E8D /* SecondMainPageController.swift in Sources */,
+				A10D307E215115AF00A765AA /* NewOrderController.swift in Sources */,
 				A1D1E0562147F73900476D12 /* MakeOrderController.swift in Sources */,
 				A171393B2140021900063F5C /* thirdMainFooter.swift in Sources */,
 				A15CD595213E8D5D00F03E8D /* BestRateView.swift in Sources */,
@@ -1086,6 +1181,7 @@
 				A162E9332146992300139EB8 /* ProductColorView.swift in Sources */,
 				A1C4A480213D715800C87D27 /* MainFooter.swift in Sources */,
 				A1EF05B4214FA61F009A9D86 /* MyAcountController.swift in Sources */,
+				A10D3080215115C500A765AA /* OrderDetailsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1204,6 +1300,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CYL3JT27CL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/GoogleMaps/Maps/Frameworks",
+					"$(PROJECT_DIR)/Pods/GoogleMaps/Base/Frameworks",
+				);
 				INFOPLIST_FILE = Parshot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hazem.Parshot;
@@ -1218,6 +1319,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CYL3JT27CL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/GoogleMaps/Maps/Frameworks",
+					"$(PROJECT_DIR)/Pods/GoogleMaps/Base/Frameworks",
+				);
 				INFOPLIST_FILE = Parshot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hazem.Parshot;

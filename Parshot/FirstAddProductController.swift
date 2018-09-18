@@ -191,10 +191,12 @@ class FirstAddProductController : UICollectionViewController , UICollectionViewD
     }
     
     
+    
     func PresentColorPicker(){
        
-      
-    print ("hazem")
+        let hospitalControll =  ColoePickerController()
+        self.navigationController?.pushViewController(hospitalControll, animated: true)
+        print ("hazem")
     
     }
     
