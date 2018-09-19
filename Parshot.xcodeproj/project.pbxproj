@@ -45,6 +45,12 @@
 		A129F23821442A2C003E88E1 /* SecondSubCategry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129F23721442A2C003E88E1 /* SecondSubCategry.swift */; };
 		A129F23A21442A47003E88E1 /* SecondSubCategryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129F23921442A47003E88E1 /* SecondSubCategryController.swift */; };
 		A129F23C21442C9D003E88E1 /* SecondSubCategryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129F23B21442C9D003E88E1 /* SecondSubCategryView.swift */; };
+		A15039E1215255840014FE85 /* StoreSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15039E0215255840014FE85 /* StoreSettingController.swift */; };
+		A15039E3215257710014FE85 /* StoreSettingHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15039E2215257710014FE85 /* StoreSettingHeader.swift */; };
+		A15039E5215258750014FE85 /* StoreSettingFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15039E4215258750014FE85 /* StoreSettingFooter.swift */; };
+		A15039E72152591F0014FE85 /* StorePlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15039E62152591F0014FE85 /* StorePlaceView.swift */; };
+		A15039E92152593F0014FE85 /* StoreOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15039E82152593F0014FE85 /* StoreOptionsView.swift */; };
+		A15039EB215259680014FE85 /* StoreDepartmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15039EA215259680014FE85 /* StoreDepartmentView.swift */; };
 		A152B5322147C17100A02469 /* ConfirmOrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A152B5312147C17100A02469 /* ConfirmOrderController.swift */; };
 		A152B5342147C33800A02469 /* ConformOrderFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A152B5332147C33800A02469 /* ConformOrderFooter.swift */; };
 		A152B5362147C5BF00A02469 /* ConfirmOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A152B5352147C5BF00A02469 /* ConfirmOrderView.swift */; };
@@ -165,6 +171,12 @@
 		A129F23721442A2C003E88E1 /* SecondSubCategry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondSubCategry.swift; sourceTree = "<group>"; };
 		A129F23921442A47003E88E1 /* SecondSubCategryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondSubCategryController.swift; sourceTree = "<group>"; };
 		A129F23B21442C9D003E88E1 /* SecondSubCategryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondSubCategryView.swift; sourceTree = "<group>"; };
+		A15039E0215255840014FE85 /* StoreSettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreSettingController.swift; sourceTree = "<group>"; };
+		A15039E2215257710014FE85 /* StoreSettingHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreSettingHeader.swift; sourceTree = "<group>"; };
+		A15039E4215258750014FE85 /* StoreSettingFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreSettingFooter.swift; sourceTree = "<group>"; };
+		A15039E62152591F0014FE85 /* StorePlaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorePlaceView.swift; sourceTree = "<group>"; };
+		A15039E82152593F0014FE85 /* StoreOptionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreOptionsView.swift; sourceTree = "<group>"; };
+		A15039EA215259680014FE85 /* StoreDepartmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreDepartmentView.swift; sourceTree = "<group>"; };
 		A152AE6D21501A6A00B5CACC /* RichEditorView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RichEditorView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A152B5312147C17100A02469 /* ConfirmOrderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmOrderController.swift; sourceTree = "<group>"; };
 		A152B5332147C33800A02469 /* ConformOrderFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConformOrderFooter.swift; sourceTree = "<group>"; };
@@ -557,6 +569,35 @@
 			name = SecondSubCategryController;
 			sourceTree = "<group>";
 		};
+		A15039DD2152509C0014FE85 /* StoreSetting */ = {
+			isa = PBXGroup;
+			children = (
+				A15039DF2152533E0014FE85 /* StoreSettingController */,
+				A15039DE2152533A0014FE85 /* StoreSettingView */,
+			);
+			name = StoreSetting;
+			sourceTree = "<group>";
+		};
+		A15039DE2152533A0014FE85 /* StoreSettingView */ = {
+			isa = PBXGroup;
+			children = (
+				A15039E62152591F0014FE85 /* StorePlaceView.swift */,
+				A15039E82152593F0014FE85 /* StoreOptionsView.swift */,
+				A15039EA215259680014FE85 /* StoreDepartmentView.swift */,
+				A15039E2215257710014FE85 /* StoreSettingHeader.swift */,
+				A15039E4215258750014FE85 /* StoreSettingFooter.swift */,
+			);
+			name = StoreSettingView;
+			sourceTree = "<group>";
+		};
+		A15039DF2152533E0014FE85 /* StoreSettingController */ = {
+			isa = PBXGroup;
+			children = (
+				A15039E0215255840014FE85 /* StoreSettingController.swift */,
+			);
+			name = StoreSettingController;
+			sourceTree = "<group>";
+		};
 		A152B52C2147C0CA00A02469 /* ConfirmOrder */ = {
 			isa = PBXGroup;
 			children = (
@@ -827,6 +868,7 @@
 				A15CD583213E81BA00F03E8D /* Helper */,
 				A1C4A478213D466400C87D27 /* ِExtention */,
 				A1C4A461213D428900C87D27 /* AppDelegate.swift */,
+				A15039DD2152509C0014FE85 /* StoreSetting */,
 				A10D30712150F83A00A765AA /* ProductRate */,
 				A1162538214FF0700004B4DD /* DeliveryOffers */,
 				A1162533214FD7520004B4DD /* DellerAccount */,
@@ -1082,6 +1124,7 @@
 				A10D308621511EC400A765AA /* MapView.swift in Sources */,
 				A1D1E0582147F75500476D12 /* MakeOrderView.swift in Sources */,
 				A129F23C21442C9D003E88E1 /* SecondSubCategryView.swift in Sources */,
+				A15039E3215257710014FE85 /* StoreSettingHeader.swift in Sources */,
 				A1056E792148156200E28473 /* FristProductCartCtroller.swift in Sources */,
 				A162E93D21469C0E00139EB8 /* ProductCompanyView.swift in Sources */,
 				A1162537214FDEA20004B4DD /* DellerHeader.swift in Sources */,
@@ -1116,6 +1159,7 @@
 				A10D309C21515DAF00A765AA /* ColorPickerControler.swift in Sources */,
 				A1C4A47C213D46D200C87D27 /* Image.swift in Sources */,
 				A1056E84214835C500E28473 /* FinishOrderView.swift in Sources */,
+				A15039E92152593F0014FE85 /* StoreOptionsView.swift in Sources */,
 				A1BB22E6214D468B00EF2CB3 /* AddProductColorView.swift in Sources */,
 				A10D308221511C9000A765AA /* MapControler.swift in Sources */,
 				A1C4A488213D75A400C87D27 /* SliderView.swift in Sources */,
@@ -1133,10 +1177,13 @@
 				A1713937213FE6B400063F5C /* ThirdSliderView.swift in Sources */,
 				A129F22D2143D3B5003E88E1 /* FirstSubCategryView.swift in Sources */,
 				A1C4A47A213D46BD00C87D27 /* Color.swift in Sources */,
+				A15039E5215258750014FE85 /* StoreSettingFooter.swift in Sources */,
+				A15039EB215259680014FE85 /* StoreDepartmentView.swift in Sources */,
 				A1BB22E2214D44C800EF2CB3 /* AddProductColorController.swift in Sources */,
 				A15CD589213E8AD800F03E8D /* SecondSliderController.swift in Sources */,
 				A1162542214FF2F50004B4DD /* DeliveryOffersHeader.swift in Sources */,
 				A1162532214FD74E0004B4DD /* DellerAccountView.swift in Sources */,
+				A15039E1215255840014FE85 /* StoreSettingController.swift in Sources */,
 				A1C4A48A213D75B300C87D27 /* DepartmentView.swift in Sources */,
 				A162E92F2146886C00139EB8 /* ProductImagesController.swift in Sources */,
 				A1BB22DE214D41AA00EF2CB3 /* FirstAddProductImagesView.swift in Sources */,
@@ -1175,6 +1222,7 @@
 				A1D1E0562147F73900476D12 /* MakeOrderController.swift in Sources */,
 				A171393B2140021900063F5C /* thirdMainFooter.swift in Sources */,
 				A15CD595213E8D5D00F03E8D /* BestRateView.swift in Sources */,
+				A15039E72152591F0014FE85 /* StorePlaceView.swift in Sources */,
 				A119DA7A214554FC00D5200B /* RestuarantView.swift in Sources */,
 				A1BB22D3214D229F00EF2CB3 /* FirstMyOrderView.swift in Sources */,
 				A171394321403DBC00063F5C /* FourthSliderController.swift in Sources */,

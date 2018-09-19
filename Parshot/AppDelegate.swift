@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         
         let layout = UICollectionViewFlowLayout()
-        let featuredAppsController = FirstAddProductController (collectionViewLayout:layout )
+        let featuredAppsController = StoreSettingController (collectionViewLayout:layout )
         window?.rootViewController = UINavigationController(rootViewController: featuredAppsController)
 
         return true

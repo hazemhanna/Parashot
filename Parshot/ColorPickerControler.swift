@@ -19,13 +19,6 @@ class ColoePickerController : UIViewController  {
     override func viewDidLoad() {
         
       view.backgroundColor = UIColor.rgb(88, green: 119, blue: 136)
-  
-        
-        
-        
-       
-
-        
         
         let neatColorPicker = ChromaColorPicker(frame: CGRect(x:view.frame.width/8, y: view.frame.height/3, width: 300, height: 300))
         neatColorPicker.padding = 5

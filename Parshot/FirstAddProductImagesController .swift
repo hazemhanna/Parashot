@@ -112,7 +112,7 @@ class FirstAddProductImagesController  : BaseCell  , UICollectionViewDataSource,
         pruductImage.widthAnchor.constraint(equalTo: circleView.widthAnchor,multiplier : 0.8).isActive = true
         pruductImage.centerYAnchor.constraint(equalTo:circleView.centerYAnchor).isActive = true
         pruductImage.heightAnchor.constraint(equalTo: pruductImage.widthAnchor).isActive = true
-        self.pruductImage.layer.cornerRadius = self.pruductImage.frame.width/5
+        self.pruductImage.layer.cornerRadius = self.pruductImage.frame.width/15
         self.pruductImage.clipsToBounds = true
         pruductImage.isUserInteractionEnabled = true
 
