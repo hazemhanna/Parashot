@@ -50,15 +50,12 @@ class StorePlaceView : BaseCell {
         self.IconImage.layer.cornerRadius = self.IconImage.frame.width/15
         self.IconImage.clipsToBounds = true
         IconImage.isUserInteractionEnabled = true
-
-        
-        
-        
+        /////
         mainView.addSubview(StoreView)
         StoreView.centerXAnchor.constraint(equalTo: mainView.centerXAnchor).isActive = true
         StoreView.widthAnchor.constraint(equalTo: mainView.widthAnchor,multiplier : 0.9).isActive = true
         StoreView.topAnchor.constraint(equalTo:circleView.bottomAnchor,constant : 10).isActive = true
-        StoreView.heightAnchor.constraint(equalToConstant : 20).isActive = true
+        StoreView.heightAnchor.constraint(equalToConstant : 30).isActive = true
     
         StoreView.addSubview(StoreImage)
         StoreImage.rightAnchor.constraint(equalTo: StoreView.rightAnchor,constant : -10).isActive = true
@@ -70,7 +67,7 @@ class StorePlaceView : BaseCell {
         StorNametTF.rightAnchor.constraint(equalTo: StoreImage.leftAnchor,constant : -10).isActive = true
         StorNametTF.widthAnchor.constraint(equalTo: StoreView.widthAnchor,multiplier : 0.7).isActive = true
         StorNametTF.centerYAnchor.constraint(equalTo:StoreView.centerYAnchor).isActive = true
-        StorNametTF.heightAnchor.constraint(equalToConstant : 20).isActive = true
+        StorNametTF.heightAnchor.constraint(equalToConstant : 30).isActive = true
         StorNametTF.textAlignment = .right
     
         mainView.addSubview(toolbar)

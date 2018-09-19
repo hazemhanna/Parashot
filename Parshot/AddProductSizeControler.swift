@@ -14,7 +14,7 @@ import UIKit
 class AddProductSizeControler : BaseCell  , UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     var cell = "cell"
-    
+    var data = []
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -44,6 +44,12 @@ class AddProductSizeControler : BaseCell  , UICollectionViewDataSource, UICollec
         return CGSize(width:(collectionView.frame.width / 2 ) ,height:frame.height)
     }
     
+    
+    func InsertNewSize(Size : String){
+        data.append(Size)
+        collectionView.reloadData()
+        
+    }
     
     
     
