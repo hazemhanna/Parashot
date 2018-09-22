@@ -14,18 +14,18 @@ import UIKit
 class AddProductSizeControler : BaseCell  , UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     var cell = "cell"
-    var data = []
+    var data = [String]()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 6
+        return data.count
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cell, for: indexPath) as! AddProductSizeView
-        
+        cell.itemcapacity.text  = "\(data[indexPath.item])"
         return cell
         
     }
@@ -97,15 +97,17 @@ class AddProductSizeControler : BaseCell  , UICollectionViewDataSource, UICollec
             
         }
   
+    
+        addSizeImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(AddNEwSize)))
+        addSizeImage.isUserInteractionEnabled = true
+        
+        
     }
     
-    
-    
-    
-    
-    
-    
-    
+    func AddNEwSize(){
+       InsertNewSize(Size: "ASd12")
+        
+    }
     
     
     let  mainView :UIView = {
@@ -146,6 +148,7 @@ class AddProductSizeControler : BaseCell  , UICollectionViewDataSource, UICollec
         return ci
         
     }()
+    
     
     
     lazy var collectionView: UICollectionView = {

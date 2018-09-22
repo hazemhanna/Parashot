@@ -39,10 +39,6 @@ class AddProductSizeView : BaseCell,FloatRatingViewDelegate {
         fView.addSubview(itemcapacity)
         itemcapacity.centerYAnchor.constraint(equalTo: fView.centerYAnchor).isActive = true
         itemcapacity.centerXAnchor.constraint(equalTo: fView.centerXAnchor).isActive = true
-        ////// price word
-        fView.addSubview(itemcapacityValue)
-        itemcapacityValue.centerYAnchor.constraint(equalTo: fView.centerYAnchor).isActive = true
-        itemcapacityValue.leftAnchor.constraint(equalTo: itemcapacity.rightAnchor ,constant : 3).isActive = true
         
         
         
@@ -67,23 +63,12 @@ class AddProductSizeView : BaseCell,FloatRatingViewDelegate {
         var font = UIFont(name: "JFFlat-Regular", size: 12)
         NL.font = font
         NL.translatesAutoresizingMaskIntoConstraints = false
-        NL.text = NSLocalizedString("جيجابايت", comment: "this is name")
+        NL.text = NSLocalizedString("جيجابايت 19", comment: "this is name")
         return NL
         
     }()
     
-    
-    let itemcapacityValue :UILabel = {
-        let NL = UILabel()
-        NL.textColor = UIColor.black
-        var font = UIFont(name: "JFFlat-Regular", size: 12)
-        NL.font = font
-        NL.translatesAutoresizingMaskIntoConstraints = false
-        NL.text = NSLocalizedString("16", comment: "this is name")
-        return NL
-        
-    }()
-    
+
     
     
 }
