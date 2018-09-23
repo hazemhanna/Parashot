@@ -7,7 +7,8 @@ use_frameworks!
 
 # Pods for Boshra
 
+
 pod 'DKImagePickerController', '3.4.0'
-pod 'RichEditorView'
 pod 'ChromaColorPicker'
+pod "RichEditorView",'4.0.0'
 end
