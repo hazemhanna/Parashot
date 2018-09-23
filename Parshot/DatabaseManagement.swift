@@ -6,7 +6,7 @@
 //  Copyright © 2018 hazem. All rights reserved.
 //
 import Foundation
-
+import SQLite
 class DatabaseManagement {
 //    static let shared:DatabaseManagement = DatabaseManagement()
 //    private let db: Connection?

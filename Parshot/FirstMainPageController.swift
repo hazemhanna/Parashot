@@ -19,6 +19,10 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
     var Cellid3="Cellid3"
     var Cellid4="Cellid4"
     
+    ////// models variables
+    
+    var sliderViewModel = [SliderViewModel]()
+////////// end models variables
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -72,6 +76,8 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
 
     
     override func viewDidLoad() {
+        
+        FetchDataForSlider()
         collectionView?.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
         collectionView?.backgroundColor = UIColor.rgb(230, green: 234, blue: 237)
         collectionView?.register(SliderController.self, forCellWithReuseIdentifier: Cellid0)
@@ -108,5 +114,35 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
     func star ()  {
         
     }
+    //////////// Api service Functions
     
+    func FetchDataForSlider(){
+        ApiService.SharedInstance.fetchFeedForUrl(URL: "products"){ (data:Data) in
+
+            do {
+                print(data)
+                let Sliders = try JSONDecoder().decode(MainData.self, from: data)
+                self.sliderViewModel = Sliders.data.map({return SliderViewModel(slider: $0)}) ?? []
+                DispatchQueue.main.async {
+                    self.collectionView?.reloadData()
+                }
+            } catch let jsonErr {
+              print(jsonErr)
+            }
+
+            }
+            }
+        
+    
+        
+        
+        
+   
+    
+    
+    
+    
+    
+    
+    //////////// End Api Service Function
 }
