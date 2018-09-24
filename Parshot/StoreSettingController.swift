@@ -57,7 +57,7 @@ class StoreSettingController : UICollectionViewController , UICollectionViewDele
         
         if indexPath.item == 0 {
             
-            return CGSize(width:collectionView.frame.width - 10 ,height:(collectionView.frame.height  * 0.5))
+            return CGSize(width:collectionView.frame.width - 10 ,height:(collectionView.frame.height  * 0.56))
             
         } else if indexPath.item == 1 {
             

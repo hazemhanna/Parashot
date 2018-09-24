@@ -111,37 +111,34 @@ class SecondMainPageController:  UICollectionViewController, UICollectionViewDel
         collectionView?.register(MainFooter.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: footer)
         collectionView?.isScrollEnabled = true
         
-        // setup navBar.....
-        navigationController?.navigationBar.barTintColor = UIColor.rgb(99, green: 27, blue: 103)
-        navigationItem.title = NSLocalizedString("parashot", comment: "this is name")
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+     
         // casting is required because UICollectionViewLayout doesn't offer header pin. Its feature of UICollectionViewFlowLayout
         let layout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
         layout?.sectionFootersPinToVisibleBounds = true
         layout?.sectionHeadersPinToVisibleBounds = true
         
         
-        let StarButton = UIBarButtonItem(image: UIImage(named: "nav_more_icon")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(star))
+        // setup navBar.....
+        navigationController?.navigationBar.barTintColor = UIColor.rgb(99, green: 27, blue: 103)
+        let logo = UIImage(named: "parashotImage")
+        let imageView = UIImageView(image:logo)
+        self.navigationItem.titleView = imageView
+        
+        let StarButton = UIBarButtonItem(image: UIImage(named: "Starimage")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(star))
         navigationItem.rightBarButtonItem = StarButton
         
         
         
-        let chatButton = UIBarButtonItem(image: UIImage(named: "nav_more_icon")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(chat))
+        let chatButton = UIBarButtonItem(image: UIImage(named: "chatingimage")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(chat))
         navigationItem.leftBarButtonItem = chatButton
         
-    }
-    
-    
-    
-    
-    
-    func chat()  {
         
     }
     
-    func star ()  {
-        
-    }
+    ///////////
+    func chat()  {  }
+    /////
+    func star ()  {  }
     
 }
 

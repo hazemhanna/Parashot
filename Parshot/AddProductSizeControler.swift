@@ -56,6 +56,7 @@ class AddProductSizeControler : BaseCell  , UICollectionViewDataSource, UICollec
     //////////
     override func setupViews() {
         
+        isHidden = true
         addSubview(mainView)
         mainView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         mainView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
@@ -102,12 +103,32 @@ class AddProductSizeControler : BaseCell  , UICollectionViewDataSource, UICollec
         addSizeImage.isUserInteractionEnabled = true
         
         
+   
+        
+        
+
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.showSize(_:)), name: NSNotification.Name(rawValue: "showSize"), object: nil)
+    
     }
     
     func AddNEwSize(){
        InsertNewSize(Size: "ASd12")
         
     }
+    
+    
+    
+    func showSize(_ notification: NSNotification) {
+        isHidden = false
+
+    }
+    
+    
+    
+    
+    
+    
     
     
     let  mainView :UIView = {
@@ -163,8 +184,7 @@ class AddProductSizeControler : BaseCell  , UICollectionViewDataSource, UICollec
         return cv
     }()
 
-    
-    
+
     
     
     

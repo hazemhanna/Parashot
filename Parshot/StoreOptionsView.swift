@@ -23,7 +23,7 @@ class StoreOptionsView : BaseCell {
         mainView.addSubview(StoreOPtionLabel)
         StoreOPtionLabel.topAnchor.constraint(equalTo: mainView.topAnchor,constant : 10).isActive = true
         StoreOPtionLabel.rightAnchor.constraint(equalTo: mainView.rightAnchor,constant : -20).isActive = true
-        
+        StoreOPtionLabel.heightAnchor.constraint(equalTo:mainView.heightAnchor,multiplier : 0.06 ).isActive = true
         
         
         mainView.addSubview(horizantalLine)
@@ -35,7 +35,8 @@ class StoreOptionsView : BaseCell {
         mainView.addSubview(receveOrdersnLabel)
         receveOrdersnLabel.topAnchor.constraint(equalTo: horizantalLine.bottomAnchor,constant : 10).isActive = true
         receveOrdersnLabel.rightAnchor.constraint(equalTo: mainView.rightAnchor,constant : -10).isActive = true
-     
+        receveOrdersnLabel.heightAnchor.constraint(equalTo:mainView.heightAnchor,multiplier : 0.06 ).isActive = true
+
         
         mainView.addSubview(switchDemo2)
         switchDemo2.leftAnchor.constraint(equalTo: mainView.leftAnchor, constant: 20).isActive = true
@@ -47,11 +48,13 @@ class StoreOptionsView : BaseCell {
         horizantalLine2.centerXAnchor.constraint(equalTo: mainView.centerXAnchor ).isActive = true
         horizantalLine2.widthAnchor.constraint(equalTo: mainView.widthAnchor ).isActive = true
         horizantalLine2.heightAnchor.constraint(equalToConstant : 1).isActive = true
+        
         ////////////////
         mainView.addSubview(descoundLabel)
         descoundLabel.topAnchor.constraint(equalTo: horizantalLine2.bottomAnchor,constant : 10).isActive = true
         descoundLabel.rightAnchor.constraint(equalTo: mainView.rightAnchor,constant : -10).isActive = true
-        
+        descoundLabel.heightAnchor.constraint(equalTo:mainView.heightAnchor,multiplier : 0.06 ).isActive = true
+
         mainView.addSubview(switchDemo3)
         switchDemo3.leftAnchor.constraint(equalTo: mainView.leftAnchor, constant: 20).isActive = true
         switchDemo3.centerYAnchor.constraint(equalTo: descoundLabel.centerYAnchor).isActive = true
@@ -68,7 +71,8 @@ class StoreOptionsView : BaseCell {
         mainView.addSubview(discoundCoponLabel)
         discoundCoponLabel.topAnchor.constraint(equalTo: horizantalLine3.bottomAnchor,constant : 10).isActive = true
         discoundCoponLabel.rightAnchor.constraint(equalTo: mainView.rightAnchor,constant : -10).isActive = true
-        
+        discoundCoponLabel.heightAnchor.constraint(equalTo:mainView.heightAnchor,multiplier : 0.06 ).isActive = true
+
         
         mainView.addSubview(switchDemo4)
         switchDemo4.leftAnchor.constraint(equalTo: mainView.leftAnchor, constant: 20).isActive = true
@@ -86,7 +90,8 @@ class StoreOptionsView : BaseCell {
         mainView.addSubview(deliveryLabel)
         deliveryLabel.topAnchor.constraint(equalTo: horizantalLine4.bottomAnchor,constant : 10).isActive = true
         deliveryLabel.rightAnchor.constraint(equalTo: mainView.rightAnchor,constant : -10).isActive = true
-        
+        deliveryLabel.heightAnchor.constraint(equalTo:mainView.heightAnchor,multiplier : 0.06 ).isActive = true
+
         mainView.addSubview(switchDemo5)
         switchDemo5.leftAnchor.constraint(equalTo: mainView.leftAnchor, constant: 20).isActive = true
         switchDemo5.centerYAnchor.constraint(equalTo: deliveryLabel.centerYAnchor).isActive = true
@@ -103,13 +108,14 @@ class StoreOptionsView : BaseCell {
         mainView.addSubview(minumumOrderLabel)
         minumumOrderLabel.topAnchor.constraint(equalTo: horizantalLine5.bottomAnchor,constant : 10).isActive = true
         minumumOrderLabel.rightAnchor.constraint(equalTo: mainView.rightAnchor,constant : -10).isActive = true
-        
+        minumumOrderLabel.heightAnchor.constraint(equalTo:mainView.heightAnchor,multiplier : 0.06 ).isActive = true
+
         
         mainView.addSubview(minumumOrderTF)
         minumumOrderTF.leftAnchor.constraint(equalTo: mainView.leftAnchor,constant : 5).isActive = true
         minumumOrderTF.centerYAnchor.constraint(equalTo: minumumOrderLabel.centerYAnchor).isActive = true
         minumumOrderTF.widthAnchor.constraint(equalTo: mainView.widthAnchor,multiplier : 0.2 ).isActive = true
-        minumumOrderTF.heightAnchor.constraint(equalToConstant : 20).isActive = true
+        minumumOrderTF.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.1).isActive = true
         
         mainView.addSubview(horizantalLine6)
         horizantalLine6.topAnchor.constraint(equalTo: minumumOrderLabel.bottomAnchor ,constant : 10).isActive = true
@@ -121,6 +127,7 @@ class StoreOptionsView : BaseCell {
         mainView.addSubview(TaxesLabel)
         TaxesLabel.topAnchor.constraint(equalTo: horizantalLine6.bottomAnchor,constant : 10).isActive = true
         TaxesLabel.rightAnchor.constraint(equalTo: mainView.rightAnchor,constant : -10).isActive = true
+        TaxesLabel.heightAnchor.constraint(equalTo:mainView.heightAnchor,multiplier : 0.06 ).isActive = true
 
         
         
@@ -128,7 +135,7 @@ class StoreOptionsView : BaseCell {
         TaxesTf.leftAnchor.constraint(equalTo: mainView.leftAnchor,constant : 5).isActive = true
         TaxesTf.centerYAnchor.constraint(equalTo: TaxesLabel.centerYAnchor).isActive = true
         TaxesTf.widthAnchor.constraint(equalTo: mainView.widthAnchor,multiplier : 0.2 ).isActive = true
-        TaxesTf.heightAnchor.constraint(equalToConstant : 20).isActive = true
+        TaxesTf.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.1).isActive = true
         
         
         

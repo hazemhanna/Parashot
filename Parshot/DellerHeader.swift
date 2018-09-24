@@ -26,7 +26,7 @@ class DellerHeader : FirstSubCategryHeaders {
         backView.bottomAnchor.constraint(equalTo: bottomAnchor,constant : -20 ).isActive = true
         backView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         backView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.9).isActive = true
-        backView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        backView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3).isActive = true
         
         
         backView.addSubview(codelLabe)

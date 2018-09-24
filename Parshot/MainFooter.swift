@@ -13,10 +13,45 @@ class MainFooter: BaseCell {
        // layer.cornerRadius = 25
         
         ////////////// image
+        addSubview(fView)
+        fView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        fView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        fView.widthAnchor.constraint(equalTo: widthAnchor,multiplier :1/5).isActive = true
+        fView.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
+        
+        
+        
+        addSubview(SecondView)
+        SecondView.rightAnchor.constraint(equalTo: fView.leftAnchor).isActive = true
+        SecondView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        SecondView.widthAnchor.constraint(equalTo: widthAnchor,multiplier :1/5).isActive = true
+        SecondView.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
+        
+        addSubview(thirdView)
+        thirdView.rightAnchor.constraint(equalTo: SecondView.leftAnchor).isActive = true
+        thirdView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        thirdView.widthAnchor.constraint(equalTo: widthAnchor,multiplier :1/5).isActive = true
+        thirdView.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
+        
+        
+        addSubview(FourthView)
+        FourthView.rightAnchor.constraint(equalTo: thirdView.leftAnchor).isActive = true
+        FourthView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        FourthView.widthAnchor.constraint(equalTo: widthAnchor,multiplier :1/5).isActive = true
+        FourthView.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
+        
+        addSubview(fifthView)
+        fifthView.rightAnchor.constraint(equalTo: FourthView.leftAnchor).isActive = true
+        fifthView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        fifthView.widthAnchor.constraint(equalTo: widthAnchor,multiplier :1/5).isActive = true
+        fifthView.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
+        
+     
+        
         addSubview(mainImage)
-        mainImage.rightAnchor.constraint(equalTo: rightAnchor,constant : -20).isActive = true
-        mainImage.topAnchor.constraint(equalTo: topAnchor,constant:5).isActive = true
-        mainImage.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        mainImage.centerXAnchor.constraint(equalTo: fView.centerXAnchor).isActive = true
+        mainImage.topAnchor.constraint(equalTo: fView.topAnchor,constant:5).isActive = true
+        mainImage.widthAnchor.constraint(equalTo: fView.widthAnchor,multiplier : 0.4).isActive = true
         mainImage.heightAnchor.constraint(equalTo: mainImage.widthAnchor).isActive = true
         mainImage.isUserInteractionEnabled = true
         
@@ -25,12 +60,25 @@ class MainFooter: BaseCell {
         mainlabel.centerXAnchor.constraint(equalTo: mainImage.centerXAnchor).isActive = true
         mainlabel.topAnchor.constraint(equalTo: mainImage.bottomAnchor).isActive = true
         
+        ///////////   image
+        addSubview(offerImage)
+        offerImage.centerXAnchor.constraint(equalTo: thirdView.centerXAnchor).isActive = true
+        offerImage.topAnchor.constraint(equalTo: thirdView.topAnchor,constant : 5).isActive = true
+        offerImage.widthAnchor.constraint(equalTo: thirdView.widthAnchor,multiplier : 0.4).isActive = true
+        offerImage.heightAnchor.constraint(equalTo: offerImage.widthAnchor).isActive = true
+        
+        ////////   label
+        addSubview(ofeerlabel)
+        ofeerlabel.centerXAnchor.constraint(equalTo: offerImage.centerXAnchor ).isActive = true
+        ofeerlabel.topAnchor.constraint(equalTo: offerImage.bottomAnchor).isActive=true
+        
+
         
         ////////  image
         addSubview(OrderImage)
-        OrderImage.rightAnchor.constraint(equalTo: mainImage.leftAnchor,constant:-50).isActive = true
-        OrderImage.topAnchor.constraint(equalTo: topAnchor,constant:5).isActive = true
-        OrderImage.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        OrderImage.centerXAnchor.constraint(equalTo: SecondView.centerXAnchor).isActive = true
+        OrderImage.topAnchor.constraint(equalTo: SecondView.topAnchor,constant:5).isActive = true
+        OrderImage.widthAnchor.constraint(equalTo: SecondView.widthAnchor,multiplier:0.4).isActive = true
         OrderImage.heightAnchor.constraint(equalTo: OrderImage.widthAnchor).isActive = true
         
         
@@ -41,43 +89,39 @@ class MainFooter: BaseCell {
         
         
         
-        ///////// more image
-        addSubview(moreImage)
-        moreImage.leftAnchor.constraint(equalTo: leftAnchor,constant:20).isActive = true
-        moreImage.topAnchor.constraint(equalTo: topAnchor,constant:5).isActive = true
-        moreImage.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        moreImage.heightAnchor.constraint(equalTo: moreImage.widthAnchor).isActive = true
         
-        ///////// more label
-        addSubview(morelabel)
-        morelabel.centerXAnchor.constraint(equalTo: moreImage.centerXAnchor ).isActive = true
-        morelabel.topAnchor.constraint(equalTo: moreImage.bottomAnchor).isActive=true
+        
+
         
         /////////////  image
         addSubview(notificationImage)
-        notificationImage.leftAnchor.constraint(equalTo: moreImage.rightAnchor,constant:50).isActive = true
-        notificationImage.topAnchor.constraint(equalTo: topAnchor,constant:5).isActive = true
-        notificationImage.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        notificationImage.centerXAnchor.constraint(equalTo: FourthView.centerXAnchor).isActive = true
+        notificationImage.topAnchor.constraint(equalTo: FourthView.topAnchor,constant:5).isActive = true
+        notificationImage.widthAnchor.constraint(equalTo: FourthView.widthAnchor,multiplier:0.4).isActive = true
         notificationImage.heightAnchor.constraint(equalTo: notificationImage.widthAnchor).isActive = true
         
         //////// label
         addSubview(notificationlabel)
         notificationlabel.centerXAnchor.constraint(equalTo: notificationImage.centerXAnchor ).isActive = true
         notificationlabel.topAnchor.constraint(equalTo: notificationImage.bottomAnchor).isActive=true
+
         
         
-        ///////////   image
-        addSubview(offerImage)
-        offerImage.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        offerImage.topAnchor.constraint(equalTo: topAnchor,constant : 5).isActive = true
-        offerImage.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        offerImage.heightAnchor.constraint(equalTo: offerImage.widthAnchor).isActive = true
         
-        ////////   label
-        addSubview(ofeerlabel)
-        ofeerlabel.centerXAnchor.constraint(equalTo: offerImage.centerXAnchor ).isActive = true
-        ofeerlabel.topAnchor.constraint(equalTo: offerImage.bottomAnchor).isActive=true
+        ///////// more image
+        addSubview(moreImage)
+        moreImage.centerXAnchor.constraint(equalTo: fifthView.centerXAnchor ).isActive = true
+        moreImage.topAnchor.constraint(equalTo: fifthView.topAnchor,constant:5).isActive = true
+        moreImage.widthAnchor.constraint(equalTo: fifthView.widthAnchor,multiplier : 0.4).isActive = true
+        moreImage.heightAnchor.constraint(equalTo: moreImage.widthAnchor).isActive = true
         
+        
+        ///////// more label
+        addSubview(morelabel)
+        morelabel.centerXAnchor.constraint(equalTo: moreImage.centerXAnchor ).isActive = true
+        morelabel.topAnchor.constraint(equalTo: moreImage.bottomAnchor).isActive=true
+        
+
         moreImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(addToMenuePage)))
         moreImage.isUserInteractionEnabled = true
         
@@ -87,9 +131,6 @@ class MainFooter: BaseCell {
         
         notificationImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToGalleyImage)))
         notificationImage.isUserInteractionEnabled = true
-        
-        
-        
         
         offerImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(SwithcToVideopage)))
         offerImage.isUserInteractionEnabled = true
@@ -140,6 +181,48 @@ class MainFooter: BaseCell {
 
     
     ///////  image
+    let fView:UIView = {
+        let ci = UIView()
+        ci.translatesAutoresizingMaskIntoConstraints = false
+        ci.backgroundColor = UIColor.clear
+        return ci
+        
+    }()
+    
+    let SecondView:UIView = {
+        let ci = UIView()
+        ci.translatesAutoresizingMaskIntoConstraints = false
+        ci.backgroundColor = UIColor.clear
+
+        return ci
+        
+    }()
+    let thirdView:UIView = {
+        let ci = UIView()
+        ci.translatesAutoresizingMaskIntoConstraints = false
+        ci.backgroundColor = UIColor.clear
+
+        return ci
+        
+    }()
+    let FourthView:UIView = {
+        let ci = UIView()
+        ci.translatesAutoresizingMaskIntoConstraints = false
+        ci.backgroundColor = UIColor.clear
+
+        return ci
+        
+    }()
+    let fifthView:UIView = {
+        let ci = UIView()
+        ci.translatesAutoresizingMaskIntoConstraints = false
+        ci.backgroundColor = UIColor.clear
+
+        return ci
+        
+    }()
+    
+    
     
     let mainImage:UIImageView = {
         let ci = UIImageView(image:#imageLiteral(resourceName: "shelter"))

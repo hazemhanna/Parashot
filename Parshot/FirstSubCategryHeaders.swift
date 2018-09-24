@@ -44,7 +44,7 @@ class FirstSubCategryHeaders: BaseCell {
     
         addSubview(marketName)
         marketName.centerYAnchor.constraint(equalTo: rightArrwImage.centerYAnchor).isActive = true
-        marketName.rightAnchor.constraint(equalTo: rightArrwImage.leftAnchor,constant : -20 ).isActive = true
+        marketName.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         
 
         ////////

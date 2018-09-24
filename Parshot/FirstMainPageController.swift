@@ -21,7 +21,7 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
     
     ////// models variables
     
-    var sliderViewModel = [SliderViewModel]()
+   // var sliderViewModel = [SliderViewModel]()
 ////////// end models variables
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -77,7 +77,7 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
     
     override func viewDidLoad() {
         
-        FetchDataForSlider()
+       // FetchDataForSlider()
         collectionView?.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
         collectionView?.backgroundColor = UIColor.rgb(230, green: 234, blue: 237)
         collectionView?.register(SliderController.self, forCellWithReuseIdentifier: Cellid0)
@@ -86,52 +86,53 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
         collectionView?.register(MainFooter.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: footer)
         collectionView?.isScrollEnabled = false
         
-        // setup navBar.....
-        navigationController?.navigationBar.barTintColor = UIColor.rgb(99, green: 27, blue: 103)
-        navigationItem.title = NSLocalizedString("parashot", comment: "this is name")
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        
         // casting is required because UICollectionViewLayout doesn't offer header pin. Its feature of UICollectionViewFlowLayout
         let layout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
         layout?.sectionFootersPinToVisibleBounds = true
         
      
+        // setup navBar.....
+        navigationController?.navigationBar.barTintColor = UIColor.rgb(99, green: 27, blue: 103)
+        let logo = UIImage(named: "parashotImage")
+        let imageView = UIImageView(image:logo)
+        self.navigationItem.titleView = imageView
         
-        let StarButton = UIBarButtonItem(image: UIImage(named: "nav_more_icon")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(star))
+        let StarButton = UIBarButtonItem(image: UIImage(named: "Starimage")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(star))
         navigationItem.rightBarButtonItem = StarButton
         
         
         
-        let chatButton = UIBarButtonItem(image: UIImage(named: "nav_more_icon")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(chat))
+        let chatButton = UIBarButtonItem(image: UIImage(named: "chatingimage")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(chat))
         navigationItem.leftBarButtonItem = chatButton
         
-    }
-    
-    
-    func chat()  {
         
     }
     
-    func star ()  {
-        
-    }
+    ///////////
+    func chat()  {  }
+    /////
+    func star ()  {  }
+    
+
     //////////// Api service Functions
     
-    func FetchDataForSlider(){
-        ApiService.SharedInstance.fetchFeedForUrl(URL: "products"){ (data:Data) in
-
-            do {
-                print(data)
-                let Sliders = try JSONDecoder().decode(MainData.self, from: data)
-                self.sliderViewModel = Sliders.data.map({return SliderViewModel(slider: $0)}) ?? []
-                DispatchQueue.main.async {
-                    self.collectionView?.reloadData()
-                }
-            } catch let jsonErr {
-              print(jsonErr)
-            }
-
-            }
-            }
+//    func FetchDataForSlider(){
+//        ApiService.SharedInstance.fetchFeedForUrl(URL: "products"){ (data:Data) in
+//
+//            do {
+//                print(data)
+//                let Sliders = try JSONDecoder().decode(MainData.self, from: data)
+//                self.sliderViewModel = Sliders.data.map({return SliderViewModel(slider: $0)}) ?? []
+//                DispatchQueue.main.async {
+//                    self.collectionView?.reloadData()
+//                }
+//            } catch let jsonErr {
+//              print(jsonErr)
+//            }
+//
+//            }
+//            }
         
     
         

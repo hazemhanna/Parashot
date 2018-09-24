@@ -12,21 +12,15 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
     
-    
-    
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
        
         let layout = UICollectionViewFlowLayout()
-        let featuredAppsController = FirstMainPageController (collectionViewLayout:layout )
+        let featuredAppsController = FirstAddProductController(collectionViewLayout:layout )
         window?.rootViewController = UINavigationController(rootViewController: featuredAppsController)
 
         return true
     }
 
-    
-    
 }
 

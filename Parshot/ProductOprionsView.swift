@@ -22,6 +22,8 @@ import RichEditorView
 
 class ProductOprionsView: BaseCell,FloatRatingViewDelegate {
     
+    var controller : AddProductSizeControler?
+    
     
     override func setupViews() {
         
@@ -53,7 +55,7 @@ class ProductOprionsView: BaseCell,FloatRatingViewDelegate {
         fView.addSubview(pruductNameImage)
         pruductNameImage.centerYAnchor.constraint(equalTo: fView.centerYAnchor).isActive = true
         pruductNameImage.rightAnchor.constraint(equalTo: fView.rightAnchor,constant : -5 ).isActive = true
-        pruductNameImage.widthAnchor.constraint(equalTo: fView.widthAnchor,multiplier : 0.05).isActive = true
+        pruductNameImage.widthAnchor.constraint(equalTo: fView.widthAnchor,multiplier : 0.04).isActive = true
         pruductNameImage.heightAnchor.constraint(equalTo :  pruductNameImage.widthAnchor).isActive = true
          //////
         fView.addSubview(productNameText)
@@ -72,10 +74,10 @@ class ProductOprionsView: BaseCell,FloatRatingViewDelegate {
         sView.widthAnchor.constraint(equalTo: mainView.widthAnchor,multiplier : 0.9).isActive = true
         sView.heightAnchor.constraint(equalToConstant : 30).isActive = true
         
-        fView.addSubview(pruductamountImage)
+        sView.addSubview(pruductamountImage)
         pruductamountImage.centerYAnchor.constraint(equalTo: sView.centerYAnchor).isActive = true
         pruductamountImage.rightAnchor.constraint(equalTo: sView.rightAnchor,constant : -5 ).isActive = true
-        pruductamountImage.widthAnchor.constraint(equalTo: sView.widthAnchor,multiplier : 0.05).isActive = true
+        pruductamountImage.widthAnchor.constraint(equalTo: sView.widthAnchor,multiplier : 0.04).isActive = true
         pruductamountImage.heightAnchor.constraint(equalTo :  pruductamountImage.widthAnchor).isActive = true
         //////
         sView.addSubview(productAmountText)
@@ -95,7 +97,7 @@ class ProductOprionsView: BaseCell,FloatRatingViewDelegate {
         priceView.addSubview(pruductPriceImage)
         pruductPriceImage.centerYAnchor.constraint(equalTo: priceView.centerYAnchor).isActive = true
         pruductPriceImage.rightAnchor.constraint(equalTo: priceView.rightAnchor,constant : -5 ).isActive = true
-        pruductPriceImage.widthAnchor.constraint(equalTo: priceView.widthAnchor,multiplier : 0.05).isActive = true
+        pruductPriceImage.widthAnchor.constraint(equalTo: priceView.widthAnchor,multiplier : 0.04).isActive = true
         pruductPriceImage.heightAnchor.constraint(equalTo :  pruductPriceImage.widthAnchor).isActive = true
         //////
         priceView.addSubview(productPriceText)
@@ -114,9 +116,9 @@ class ProductOprionsView: BaseCell,FloatRatingViewDelegate {
         costView.heightAnchor.constraint(equalToConstant : 30).isActive = true
         
         costView.addSubview(pruductCostImage)
-        pruductCostImage.centerYAnchor.constraint(equalTo: priceView.centerYAnchor).isActive = true
+        pruductCostImage.centerYAnchor.constraint(equalTo: costView.centerYAnchor).isActive = true
         pruductCostImage.rightAnchor.constraint(equalTo: costView.rightAnchor,constant : -5 ).isActive = true
-        pruductCostImage.widthAnchor.constraint(equalTo: costView.widthAnchor,multiplier : 0.05).isActive = true
+        pruductCostImage.widthAnchor.constraint(equalTo: costView.widthAnchor,multiplier : 0.04).isActive = true
         pruductCostImage.heightAnchor.constraint(equalTo :  pruductCostImage.widthAnchor).isActive = true
         //////
         costView.addSubview(productCostText)
@@ -156,7 +158,7 @@ class ProductOprionsView: BaseCell,FloatRatingViewDelegate {
         discountperiodView.addSubview(discountperiodImage)
         discountperiodImage.centerYAnchor.constraint(equalTo: discountperiodView.centerYAnchor).isActive = true
         discountperiodImage.rightAnchor.constraint(equalTo: discountperiodView.rightAnchor,constant : -5 ).isActive = true
-        discountperiodImage.widthAnchor.constraint(equalTo: discountperiodView.widthAnchor,multiplier : 0.1).isActive = true
+        discountperiodImage.widthAnchor.constraint(equalTo: discountperiodView.widthAnchor,multiplier : 0.09).isActive = true
         discountperiodImage.heightAnchor.constraint(equalTo :  discountperiodImage.widthAnchor).isActive = true
         //////
         discountperiodView.addSubview(discountperiodText)
@@ -170,7 +172,7 @@ class ProductOprionsView: BaseCell,FloatRatingViewDelegate {
         toolbar.topAnchor.constraint(equalTo: discountperiodView.bottomAnchor,constant :40).isActive = true
         toolbar.centerXAnchor.constraint(equalTo: mainView.centerXAnchor ).isActive = true
         toolbar.widthAnchor.constraint(equalTo: mainView.widthAnchor,multiplier : 0.9).isActive = true
-        toolbar.heightAnchor.constraint(equalTo : mainView.heightAnchor,multiplier : 0.1).isActive = true
+        toolbar.heightAnchor.constraint(equalTo : mainView.heightAnchor,multiplier : 0.09).isActive = true
         toolbar.options = RichEditorDefaultOption.all
         toolbar.editor = productDescription
         
@@ -196,21 +198,24 @@ class ProductOprionsView: BaseCell,FloatRatingViewDelegate {
         DescribePruductlabel.bottomAnchor.constraint(equalTo: toolbar.topAnchor,constant : -5).isActive = true
         DescribePruductlabel.rightAnchor.constraint(equalTo: toolbar.rightAnchor ).isActive = true
 
-        mainView.addSubview(addColorBtn)
+        addSubview(addColorBtn)
         addColorBtn.bottomAnchor.constraint(equalTo: mainView.bottomAnchor,constant : -10 ).isActive = true
         addColorBtn.rightAnchor.constraint(equalTo: mainView.rightAnchor,constant : -60 ).isActive = true
         addColorBtn.widthAnchor.constraint(equalTo: mainView.widthAnchor,multiplier : 0.3).isActive = true
         addColorBtn.heightAnchor.constraint(equalToConstant : 25).isActive = true
+        addColorBtn.isUserInteractionEnabled = true
+
         
         
-        
-        mainView.addSubview(addSizeBtn)
+        addSubview(addSizeBtn)
         addSizeBtn.bottomAnchor.constraint(equalTo: mainView.bottomAnchor,constant : -10 ).isActive = true
         addSizeBtn.rightAnchor.constraint(equalTo: addColorBtn.leftAnchor,constant : -10 ).isActive = true
         addSizeBtn.widthAnchor.constraint(equalTo: mainView.widthAnchor,multiplier : 0.3).isActive = true
         addSizeBtn.heightAnchor.constraint(equalToConstant : 25).isActive = true
+        addSizeBtn.isUserInteractionEnabled = true
         
-    
+        
+
     }
     
     
@@ -497,12 +502,6 @@ class ProductOprionsView: BaseCell,FloatRatingViewDelegate {
         return tf
     }()
     
-    
-    
-    
-    
-    
-    
     let toolbar : RichEditorToolbar = {
     let tb = RichEditorToolbar()
     tb.translatesAutoresizingMaskIntoConstraints = false
@@ -513,7 +512,7 @@ class ProductOprionsView: BaseCell,FloatRatingViewDelegate {
     
     
     
-    let addColorBtn : UIButton = {
+     lazy var addColorBtn : UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor =  UIColor.rgb(235, green: 69, blue: 105)
@@ -528,16 +527,17 @@ class ProductOprionsView: BaseCell,FloatRatingViewDelegate {
     
     @objc func asd (){
         
+        let notificationName = Notification.Name("showColor")
+        NotificationCenter.default.post(name: notificationName, object: nil)
     }
     
     
     
     
+   
     
     
-    
-    
-    let addSizeBtn : UIButton = {
+    lazy var addSizeBtn : UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor =  UIColor.rgb(235, green: 69, blue: 105)
@@ -550,11 +550,11 @@ class ProductOprionsView: BaseCell,FloatRatingViewDelegate {
         return button
     }()
     
+    
     @objc func asd2 (){
-        
+        let notificationName = Notification.Name("showSize")
+        NotificationCenter.default.post(name: notificationName, object: nil)
     }
-    
-    
 }
 
 

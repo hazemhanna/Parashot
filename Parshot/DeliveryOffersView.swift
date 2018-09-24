@@ -33,7 +33,7 @@ class DeliveryOffersView: BaseCell,FloatRatingViewDelegate {
         mainView.addSubview(ImageView)
         ImageView.topAnchor.constraint(equalTo: mainView.topAnchor,constant : 10).isActive = true
         ImageView.rightAnchor.constraint(equalTo: mainView.rightAnchor,constant : -10 ).isActive = true
-        ImageView.widthAnchor.constraint(equalTo: mainView.widthAnchor, multiplier: 0.3).isActive = true
+        ImageView.widthAnchor.constraint(equalTo: mainView.widthAnchor, multiplier: 0.25).isActive = true
         ImageView.heightAnchor.constraint(equalTo: ImageView.widthAnchor).isActive = true
         
         

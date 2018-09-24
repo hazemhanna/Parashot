@@ -34,7 +34,6 @@ class FirstAddProductImagesController  : BaseCell  , UICollectionViewDataSource,
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cell, for: indexPath) as! FirstAddProductImagesView
         cell.itemImage.image  = image[indexPath.item]
-        
         return cell
         
     }
@@ -55,10 +54,6 @@ class FirstAddProductImagesController  : BaseCell  , UICollectionViewDataSource,
     
     
     }
-    
-    
-    
-    
     //////////
     override func setupViews() {
         
@@ -68,10 +63,7 @@ class FirstAddProductImagesController  : BaseCell  , UICollectionViewDataSource,
         mainView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         mainView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
         mainView.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
-     
-        
-        
-        
+    
         mainView.addSubview(collectionView)
         collectionView.centerXAnchor.constraint(equalTo: mainView.centerXAnchor ).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: mainView.bottomAnchor,constant : -10  ).isActive = true
@@ -84,7 +76,6 @@ class FirstAddProductImagesController  : BaseCell  , UICollectionViewDataSource,
             
         }
         
-        
         mainView.addSubview(circleView)
         circleView.centerXAnchor.constraint(equalTo: mainView.centerXAnchor).isActive = true
         circleView.widthAnchor.constraint(equalTo: mainView.widthAnchor,multiplier:0.15).isActive = true
@@ -92,20 +83,16 @@ class FirstAddProductImagesController  : BaseCell  , UICollectionViewDataSource,
         circleView.heightAnchor.constraint(equalTo: circleView.widthAnchor).isActive = true
         circleView.isUserInteractionEnabled = true
 
-        
         mainView.addSubview(horizantalLine)
-        horizantalLine.bottomAnchor.constraint(equalTo: circleView.topAnchor ,constant : -5).isActive = true
+        horizantalLine.bottomAnchor.constraint(equalTo: circleView.topAnchor ).isActive = true
         horizantalLine.centerXAnchor.constraint(equalTo: mainView.centerXAnchor ).isActive = true
         horizantalLine.widthAnchor.constraint(equalTo: mainView.widthAnchor ).isActive = true
         horizantalLine.heightAnchor.constraint(equalToConstant : 1).isActive = true
-        
         
         mainView.addSubview(ProductImagesLabel)
         ProductImagesLabel.bottomAnchor.constraint(equalTo: horizantalLine.topAnchor).isActive = true
         ProductImagesLabel.rightAnchor.constraint(equalTo: mainView.rightAnchor,constant : -10).isActive = true
 
-     
-        
         circleView.addSubview(pruductImage)
         pruductImage.centerXAnchor.constraint(equalTo: circleView.centerXAnchor).isActive = true
         pruductImage.widthAnchor.constraint(equalTo: circleView.widthAnchor,multiplier : 0.8).isActive = true
@@ -115,15 +102,11 @@ class FirstAddProductImagesController  : BaseCell  , UICollectionViewDataSource,
         self.pruductImage.clipsToBounds = true
         pruductImage.isUserInteractionEnabled = true
 
-        
-        
         pruductImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(switchToImagePickerController)))
         pruductImage.isUserInteractionEnabled = true
         
     }
-    
-    
-    
+
     //// make
     func switchToImagePickerController (tapGestureRecognizer: UITapGestureRecognizer)
         
@@ -151,7 +134,6 @@ class FirstAddProductImagesController  : BaseCell  , UICollectionViewDataSource,
         
     }()
     
-    
     let  horizantalLine  :UIView = {
         let uv = UIView()
         uv.backgroundColor = UIColor.rgb(230, green: 234, blue: 237)
@@ -161,7 +143,6 @@ class FirstAddProductImagesController  : BaseCell  , UICollectionViewDataSource,
         return uv
     }()
     
-    
     let  circleView :UIView = {
         let uv = UIView()
         uv.backgroundColor =  UIColor.rgb(230, green: 234, blue: 237)
@@ -170,15 +151,12 @@ class FirstAddProductImagesController  : BaseCell  , UICollectionViewDataSource,
         return uv
     }()
     
-    
-    
     let  pruductImage :UIImageView = {
         let ci = UIImageView(image:#imageLiteral(resourceName: "photo (3)"))
         ci.translatesAutoresizingMaskIntoConstraints = false
         return ci
         
     }()
-    
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()

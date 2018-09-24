@@ -10,10 +10,6 @@
 		048D0D932156FCF1004B1BA2 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 048D0D922156FCF0004B1BA2 /* Podfile */; };
 		048D0EDB21570C33004B1BA2 /* DKImagePickerController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048D0EDC21570C33004B1BA2 /* DKImagePickerController.framework */; };
 		048D0EDD21570C45004B1BA2 /* RichEditorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048D0EDE21570C45004B1BA2 /* RichEditorView.framework */; };
-		048D0EDF21570C47004B1BA2 /* ChromaColorPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048D0EE021570C47004B1BA2 /* ChromaColorPicker.framework */; };
-		048D0EE22157126D004B1BA2 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048D0EE12157126D004B1BA2 /* SQLite.framework */; };
-		048D0EE321571323004B1BA2 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048D0EE12157126D004B1BA2 /* SQLite.framework */; };
-		048D0EE421571323004B1BA2 /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 048D0EE12157126D004B1BA2 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		048D0EE9215718B9004B1BA2 /* SliderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D0EE8215718B9004B1BA2 /* SliderModel.swift */; };
 		048D0EEB2157190C004B1BA2 /* SliderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D0EEA2157190C004B1BA2 /* SliderViewModel.swift */; };
 		048D0EEE2157199E004B1BA2 /* ApiServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D0EED2157199E004B1BA2 /* ApiServices.swift */; };
@@ -146,20 +142,6 @@
 		A1EF05C0214FB478009A9D86 /* MyAcountView4.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EF05BF214FB478009A9D86 /* MyAcountView4.swift */; };
 		A1F5EBE82146C22200268B7E /* AddToCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F5EBE72146C22200268B7E /* AddToCardView.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		048D0EE521571323004B1BA2 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				048D0EE421571323004B1BA2 /* SQLite.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		048D0D922156FCF0004B1BA2 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -371,10 +353,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				048D0EE22157126D004B1BA2 /* SQLite.framework in Frameworks */,
-				048D0EDF21570C47004B1BA2 /* ChromaColorPicker.framework in Frameworks */,
 				048D0EDD21570C45004B1BA2 /* RichEditorView.framework in Frameworks */,
-				048D0EE321571323004B1BA2 /* SQLite.framework in Frameworks */,
 				048D0EDB21570C33004B1BA2 /* DKImagePickerController.framework in Frameworks */,
 				5F79D1BCA941DA5DA863F3EC /* Pods_Parshot.framework in Frameworks */,
 			);
@@ -1525,7 +1504,6 @@
 				A1C4A45C213D428900C87D27 /* Resources */,
 				14527F92347B0A29630380C7 /* [CP] Embed Pods Frameworks */,
 				58ADDD173BE4F453A55806AB /* [CP] Copy Pods Resources */,
-				048D0EE521571323004B1BA2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1897,10 +1875,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = CYL3JT27CL;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/SQLite.swift",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Parshot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;

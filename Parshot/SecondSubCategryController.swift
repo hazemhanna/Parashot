@@ -14,16 +14,6 @@
 //  Copyright © 2018 hazem. All rights reserved.
 //
 
-
-
-//
-//  subcontroller.swift
-//  Chalihats
-//
-//  Created by hazem on 7/17/18.
-//  Copyright © 2018 hazem. All rights reserved.
-//
-
 import UIKit
 
 

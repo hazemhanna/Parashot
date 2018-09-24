@@ -58,8 +58,7 @@ class AddProductColorController : BaseCell  , UICollectionViewDataSource, UIColl
     override func setupViews() {
         
         
-        
-        
+        isHidden = true
         addSubview(mainView)
         mainView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         mainView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
@@ -86,19 +85,17 @@ class AddProductColorController : BaseCell  , UICollectionViewDataSource, UIColl
         addColorImage.leftAnchor.constraint(equalTo: mainView.leftAnchor,constant : 10).isActive = true
         addColorImage.widthAnchor.constraint(equalTo: mainView.widthAnchor,multiplier : 0.05 ).isActive = true
         addColorImage.heightAnchor.constraint(equalTo : heightAnchor,multiplier : 0.2).isActive = true
-        
+       // collectionView.isHidden = true
 
-        
-        
-        
+
         
         mainView.addSubview(collectionView)
         collectionView.topAnchor.constraint(equalTo:horizantalLine.bottomAnchor,constant : 10).isActive = true
         collectionView.widthAnchor.constraint(equalTo: mainView.widthAnchor,multiplier : 0.8).isActive = true
         collectionView.rightAnchor.constraint(equalTo: mainView.rightAnchor,constant : -5 ).isActive = true
         collectionView.heightAnchor.constraint(equalTo: mainView.heightAnchor,multiplier : 0.5).isActive = true
-        
-        collectionView.register(AddProductColorView.self, forCellWithReuseIdentifier: cell)
+       // collectionView.isHidden = true
+       collectionView.register(AddProductColorView.self, forCellWithReuseIdentifier: cell)
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.scrollDirection = .horizontal
             
@@ -113,6 +110,21 @@ class AddProductColorController : BaseCell  , UICollectionViewDataSource, UIColl
         
         addColorImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(switchToImagePickerController)))
         addColorImage.isUserInteractionEnabled = true
+    
+    
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.showColor(_:)), name: NSNotification.Name(rawValue: "showColor"), object: nil)
+        
+    }
+    
+  
+    
+    
+    ////// function to show color cell
+    func showColor(_ notification: NSNotification) {
+        isHidden = false
+        
     }
     
     //// make

@@ -37,7 +37,7 @@ class StoreSettingHeader : FirstSubCategryHeaders {
         backView.bottomAnchor.constraint(equalTo: bottomAnchor,constant : -10 ).isActive = true
         backView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         backView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.95).isActive = true
-        backView.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        backView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3).isActive = true
         
       
         
@@ -47,7 +47,7 @@ class StoreSettingHeader : FirstSubCategryHeaders {
         StoreView.bottomAnchor.constraint(equalTo: backView.topAnchor ).isActive = true
         StoreView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         StoreView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.95).isActive = true
-        StoreView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        StoreView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2).isActive = true
        
         StoreView.addSubview(storeLink)
         storeLink.centerYAnchor.constraint(equalTo: StoreView.centerYAnchor).isActive = true
@@ -79,7 +79,6 @@ class StoreSettingHeader : FirstSubCategryHeaders {
         uv.translatesAutoresizingMaskIntoConstraints = false
         uv.layer.borderColor = UIColor.rgb(230, green: 234, blue: 237).cgColor
         uv.layer.borderWidth = 1
-      //  uv.layer.cornerRadius = 7
         
         return uv
     }()
@@ -103,8 +102,6 @@ class StoreSettingHeader : FirstSubCategryHeaders {
         uv.translatesAutoresizingMaskIntoConstraints = false
         uv.layer.borderColor = UIColor.rgb(230, green: 234, blue: 237).cgColor
         uv.layer.borderWidth = 1
-       // uv.layer.cornerRadius = 7
-        
         return uv
     }()
     

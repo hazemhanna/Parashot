@@ -45,7 +45,7 @@ class StoreDepartmentView : BaseCell {
         changeBtn.topAnchor.constraint(equalTo: horizantalLine.bottomAnchor,constant : 10).isActive = true
         changeBtn.centerXAnchor.constraint(equalTo: mainView.centerXAnchor ).isActive = true
         changeBtn.widthAnchor.constraint(equalTo: mainView.widthAnchor,multiplier : 0.5).isActive = true
-        changeBtn.heightAnchor.constraint(equalToConstant : 30).isActive = true
+        changeBtn.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3).isActive = true
     
     
     }
