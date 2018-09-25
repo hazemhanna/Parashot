@@ -101,25 +101,12 @@ class AddProductColorController : BaseCell  , UICollectionViewDataSource, UIColl
             
         }
         
-        
-        
-        
-        
-        
-        
-        
         addColorImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(switchToImagePickerController)))
         addColorImage.isUserInteractionEnabled = true
     
-    
-        
-        
         NotificationCenter.default.addObserver(self, selector: #selector(self.showColor(_:)), name: NSNotification.Name(rawValue: "showColor"), object: nil)
         
     }
-    
-  
-    
     
     ////// function to show color cell
     func showColor(_ notification: NSNotification) {
@@ -134,8 +121,6 @@ class AddProductColorController : BaseCell  , UICollectionViewDataSource, UIColl
         controller?.PresentColorPicker()
     
     }
-    
-    
         let  mainView :UIView = {
         let uv = UIView()
         uv.backgroundColor = .white
@@ -146,7 +131,6 @@ class AddProductColorController : BaseCell  , UICollectionViewDataSource, UIColl
             
        }()
     
-    
         let ProductColorLabel :UILabel = {
         let NL = UILabel()
         NL.textColor = UIColor.black
@@ -156,8 +140,6 @@ class AddProductColorController : BaseCell  , UICollectionViewDataSource, UIColl
         NL.text = NSLocalizedString("  الوان المنتج  ", comment: "this is name")
         return NL
       }()
-    
-    
     let  horizantalLine  :UIView = {
         let uv = UIView()
         uv.backgroundColor = UIColor.rgb(230, green: 234, blue: 237)
@@ -166,17 +148,12 @@ class AddProductColorController : BaseCell  , UICollectionViewDataSource, UIColl
         uv.layer.borderWidth = 0.5
         return uv
     }()
-    
-    
-    
-    
+
     let  addColorImage :UIImageView = {
         let ci = UIImageView(image:#imageLiteral(resourceName: "41782963_971523843049624_6235180503809392640_n"))
         ci.translatesAutoresizingMaskIntoConstraints = false
         return ci
-        
     }()
-    
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -189,9 +166,4 @@ class AddProductColorController : BaseCell  , UICollectionViewDataSource, UIColl
         cv.delegate = self
         return cv
     }()
-    
 }
-
-
-
-

@@ -18,10 +18,34 @@
 
 import UIKit
 
-class ThirdSubCategryView: BaseCell,FloatRatingViewDelegate {
+class ThirdSubCategryView: BaseCell,FloatRatingViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
    
-    var  controller : thirdSubCateryControllerCell?
     
+    var cell = "cell"
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return 5
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cell, for: indexPath) as! ImageView
+        return cell
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width:(collectionView.frame.width / 2.5 ) ,height:frame.height)
+    }
+  
     override func setupViews() {
         
         addSubview(mainView)
@@ -29,28 +53,29 @@ class ThirdSubCategryView: BaseCell,FloatRatingViewDelegate {
         mainView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         mainView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
         mainView.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
+        
+        
+       
         /////
-        mainView.addSubview(itemImage)
-        itemImage.topAnchor.constraint(equalTo: mainView.topAnchor,constant : 10).isActive = true
-        itemImage.rightAnchor.constraint(equalTo: mainView.rightAnchor,constant : -30 ).isActive = true
-        itemImage.widthAnchor.constraint(equalTo: mainView.widthAnchor, multiplier: 0.2).isActive = true
-        itemImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6).isActive = true
-        /////
-        mainView.addSubview(item2Image)
-        item2Image.topAnchor.constraint(equalTo: mainView.topAnchor,constant : 10).isActive = true
-        item2Image.centerXAnchor.constraint(equalTo: centerXAnchor ).isActive = true
-        item2Image.widthAnchor.constraint(equalTo: mainView.widthAnchor, multiplier: 0.2).isActive = true
-        item2Image.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6).isActive = true
-        //////
-        mainView.addSubview(item3Image)
-        item3Image.topAnchor.constraint(equalTo: mainView.topAnchor,constant : 10).isActive = true
-        item3Image.leftAnchor.constraint(equalTo: leftAnchor,constant : 30 ).isActive = true
-        item3Image.widthAnchor.constraint(equalTo: mainView.widthAnchor, multiplier: 0.2).isActive = true
-        item3Image.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6).isActive = true
+        mainView.addSubview(collectionView)
+        collectionView.topAnchor.constraint(equalTo: mainView.topAnchor,constant : 10).isActive = true
+        collectionView.centerXAnchor.constraint(equalTo: centerXAnchor ).isActive = true
+        collectionView.widthAnchor.constraint(equalTo: mainView.widthAnchor, multiplier: 0.8).isActive = true
+        collectionView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6).isActive = true
+        collectionView.register(ImageView.self, forCellWithReuseIdentifier: cell)
+        
+        
+        
+        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.scrollDirection = .horizontal
+            
+        }
+        
+       
         
         
         mainView.addSubview(horizantalLine)
-        horizantalLine.topAnchor.constraint(equalTo: item3Image.bottomAnchor,constant : 10).isActive = true
+        horizantalLine.topAnchor.constraint(equalTo: collectionView.bottomAnchor,constant : 10).isActive = true
         horizantalLine.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         horizantalLine.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
         horizantalLine.heightAnchor.constraint(equalToConstant : 1).isActive = true
@@ -114,7 +139,7 @@ class ThirdSubCategryView: BaseCell,FloatRatingViewDelegate {
         
         
         mainView.addSubview(rightArowImage)
-        rightArowImage.centerYAnchor.constraint(equalTo: itemImage.centerYAnchor).isActive = true
+        rightArowImage.centerYAnchor.constraint(equalTo: collectionView.centerYAnchor).isActive = true
         rightArowImage.rightAnchor.constraint(equalTo: rightAnchor,constant : -3).isActive = true
         rightArowImage.widthAnchor.constraint(equalTo: widthAnchor,multiplier : 0.04).isActive = true
         rightArowImage.heightAnchor.constraint(equalTo : rightArowImage.widthAnchor).isActive = true
@@ -122,7 +147,7 @@ class ThirdSubCategryView: BaseCell,FloatRatingViewDelegate {
         
         
         mainView.addSubview(leftArowImage)
-        leftArowImage.centerYAnchor.constraint(equalTo: item3Image.centerYAnchor).isActive = true
+        leftArowImage.centerYAnchor.constraint(equalTo: collectionView.centerYAnchor).isActive = true
         leftArowImage.leftAnchor.constraint(equalTo:  leftAnchor,constant : 3).isActive = true
         leftArowImage.widthAnchor.constraint(equalTo:  widthAnchor,multiplier : 0.04).isActive = true
         leftArowImage.heightAnchor.constraint(equalTo : leftArowImage.widthAnchor).isActive = true
@@ -158,29 +183,9 @@ class ThirdSubCategryView: BaseCell,FloatRatingViewDelegate {
         uv.layer.cornerRadius = 10
         return uv
     }()
+ 
     
-    let itemImage:CustomImageView = {
-        let ci = CustomImageView(image:#imageLiteral(resourceName: "41340190_309132106337334_7072167568491937792_n"))
-        ci.translatesAutoresizingMaskIntoConstraints = false
-        return ci
-        
-    }()
-    
-    
-    let item2Image:CustomImageView = {
-        let ci = CustomImageView(image:#imageLiteral(resourceName: "41356482_234556987221009_3617552121928351744_n"))
-        ci.translatesAutoresizingMaskIntoConstraints = false
-        return ci
-        
-    }()
-    
-    
-    let item3Image:CustomImageView = {
-        let ci = CustomImageView(image:#imageLiteral(resourceName: "hazem-2"))
-        ci.translatesAutoresizingMaskIntoConstraints = false
-        return ci
-        
-    }()
+  
     
     
     
@@ -320,6 +325,29 @@ class ThirdSubCategryView: BaseCell,FloatRatingViewDelegate {
         return ci
         
     }()
+
+
+
+
+
+
+
+
+
+    lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.backgroundColor =  UIColor.white
+        cv.layer.rasterizationScale = UIScreen.main.scale
+        cv.dataSource = self
+        cv.delegate = self
+        return cv
+    }()
+    
+
+
+
 }
 
 

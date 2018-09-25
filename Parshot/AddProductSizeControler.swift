@@ -15,6 +15,7 @@ class AddProductSizeControler : BaseCell  , UICollectionViewDataSource, UICollec
     
     var cell = "cell"
     var data = [String]()
+    var controller : FirstAddProductController?
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -44,19 +45,17 @@ class AddProductSizeControler : BaseCell  , UICollectionViewDataSource, UICollec
         return CGSize(width:(collectionView.frame.width / 2 ) ,height:frame.height)
     }
     
-    
-    func InsertNewSize(Size : String){
-        data.append(Size)
-        collectionView.reloadData()
-        
-    }
-    
+  
     
     
     //////////
     override func setupViews() {
         
+        
         isHidden = true
+
+      
+        
         addSubview(mainView)
         mainView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         mainView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
@@ -68,10 +67,7 @@ class AddProductSizeControler : BaseCell  , UICollectionViewDataSource, UICollec
         mainView.addSubview(ProductSizeLabel)
         ProductSizeLabel.topAnchor.constraint(equalTo:mainView.topAnchor,constant : 5).isActive = true
         ProductSizeLabel.rightAnchor.constraint(equalTo: mainView.rightAnchor,constant : -10).isActive = true
-        
-        
-        
-        
+ 
         mainView.addSubview(horizantalLine)
         horizantalLine.topAnchor.constraint(equalTo: ProductSizeLabel.bottomAnchor,constant : 5).isActive = true
         horizantalLine.centerXAnchor.constraint(equalTo: mainView.centerXAnchor ).isActive = true
@@ -104,31 +100,34 @@ class AddProductSizeControler : BaseCell  , UICollectionViewDataSource, UICollec
         
         
    
-        
-        
+        ////// this add size to collection ,, post in main controller
+         NotificationCenter.default.addObserver(self, selector: #selector(self.insetDataInArray(_:)), name: NSNotification.Name(rawValue: "insetDataInArray"), object: nil)
 
-        
+        /// this show collection post in product option view
         NotificationCenter.default.addObserver(self, selector: #selector(self.showSize(_:)), name: NSNotification.Name(rawValue: "showSize"), object: nil)
     
     }
     
-    func AddNEwSize(){
-       InsertNewSize(Size: "ASd12")
-        
-    }
     
-    
-    
+    ///to show collection of size
     func showSize(_ notification: NSNotification) {
         isHidden = false
 
     }
     
+    ///to show inset Data In array
+    func insetDataInArray(_ notification : NSNotification) {
+        data.append(notification.object as! String)
+        collectionView.reloadData()
+        
+    }
     
-    
-    
-    
-    
+    ///// to show black view to add size
+    func AddNEwSize(){
+        
+        controller?.ShowBlackView()
+        
+    }
     
     
     let  mainView :UIView = {
@@ -170,8 +169,6 @@ class AddProductSizeControler : BaseCell  , UICollectionViewDataSource, UICollec
         
     }()
     
-    
-    
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -183,12 +180,6 @@ class AddProductSizeControler : BaseCell  , UICollectionViewDataSource, UICollec
        
         return cv
     }()
-
-
-    
-    
-    
-    
 }
 
 

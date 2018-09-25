@@ -199,9 +199,12 @@ class StoreOptionsView : BaseCell {
         Demo.setOn(true, animated: false)
         Demo.addTarget(self, action: #selector(switchValueDidChange), for: .touchUpInside)
         Demo.translatesAutoresizingMaskIntoConstraints = false
+        Demo.onTintColor = UIColor.rgb(84, green: 0, blue: 121)
+        Demo.tintColor = UIColor.rgb(84, green: 0, blue: 121)
         return Demo
     }()
     @objc func switchValueDidChange(sender:UISwitch!)
+    
     {
         if (sender.isOn == true){
         
@@ -238,6 +241,8 @@ class StoreOptionsView : BaseCell {
         Demo.setOn(true, animated: false)
         Demo.addTarget(self, action: #selector(switchValueDidChange3), for: .touchUpInside)
         Demo.translatesAutoresizingMaskIntoConstraints = false
+        Demo.onTintColor = UIColor.rgb(84, green: 0, blue: 121)
+        Demo.tintColor = UIColor.rgb(84, green: 0, blue: 121)
         return Demo
     }()
     @objc func switchValueDidChange3(sender:UISwitch!)
@@ -280,6 +285,8 @@ class StoreOptionsView : BaseCell {
         Demo.setOn(true, animated: false)
         Demo.addTarget(self, action: #selector(switchValueDidChange4), for: .touchUpInside)
         Demo.translatesAutoresizingMaskIntoConstraints = false
+        Demo.onTintColor = UIColor.rgb(84, green: 0, blue: 121)
+        Demo.tintColor = UIColor.rgb(84, green: 0, blue: 121)
         return Demo
     }()
     @objc func switchValueDidChange4(sender:UISwitch!)
@@ -320,6 +327,8 @@ class StoreOptionsView : BaseCell {
         Demo.setOn(true, animated: false)
         Demo.addTarget(self, action: #selector(switchValueDidChange5), for: .touchUpInside)
         Demo.translatesAutoresizingMaskIntoConstraints = false
+        Demo.onTintColor = UIColor.rgb(84, green: 0, blue: 121)
+        Demo.tintColor = UIColor.rgb(84, green: 0, blue: 121)
         return Demo
     }()
     @objc func switchValueDidChange5(sender:UISwitch!)

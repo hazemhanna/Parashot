@@ -20,7 +20,7 @@ import UIKit
 import RichEditorView
 
 
-class ProductOprionsView: BaseCell,FloatRatingViewDelegate {
+class ProductOprionsView: BaseCell,FloatRatingViewDelegate,UITextFieldDelegate {
     
     var controller : AddProductSizeControler?
     
@@ -85,7 +85,8 @@ class ProductOprionsView: BaseCell,FloatRatingViewDelegate {
         productAmountText.rightAnchor.constraint(equalTo: pruductNameImage.leftAnchor,constant : -5 ).isActive = true
         productAmountText.widthAnchor.constraint(equalTo: sView.widthAnchor,multiplier : 0.9).isActive = true
         productAmountText.heightAnchor.constraint(equalToConstant : 30).isActive = true
-        
+        productAmountText.keyboardType = .numberPad
+
         
         
         mainView.addSubview(priceView)
@@ -105,7 +106,8 @@ class ProductOprionsView: BaseCell,FloatRatingViewDelegate {
         productPriceText.rightAnchor.constraint(equalTo: pruductPriceImage.leftAnchor,constant : -5 ).isActive = true
         productPriceText.widthAnchor.constraint(equalTo: priceView.widthAnchor,multiplier : 0.9).isActive = true
         productPriceText.heightAnchor.constraint(equalToConstant : 30).isActive = true
-        
+        productPriceText.keyboardType = .numberPad
+
         
         
         
@@ -126,7 +128,8 @@ class ProductOprionsView: BaseCell,FloatRatingViewDelegate {
         productCostText.rightAnchor.constraint(equalTo: pruductCostImage.leftAnchor,constant : -5 ).isActive = true
         productCostText.widthAnchor.constraint(equalTo: costView.widthAnchor,multiplier : 0.9).isActive = true
         productCostText.heightAnchor.constraint(equalToConstant : 30).isActive = true
-        
+        productCostText.keyboardType = .numberPad
+
         
         
         mainView.addSubview(discountView)
@@ -146,7 +149,8 @@ class ProductOprionsView: BaseCell,FloatRatingViewDelegate {
         discountText.rightAnchor.constraint(equalTo: discountImage.leftAnchor,constant : -5 ).isActive = true
         discountText.widthAnchor.constraint(equalTo: discountView.widthAnchor,multiplier : 0.9).isActive = true
         discountText.heightAnchor.constraint(equalToConstant : 30).isActive = true
-        
+        discountText.keyboardType = .numberPad
+
         
         ////////////
         mainView.addSubview(discountperiodView)
@@ -166,6 +170,7 @@ class ProductOprionsView: BaseCell,FloatRatingViewDelegate {
         discountperiodText.rightAnchor.constraint(equalTo: discountperiodImage.leftAnchor,constant : -5 ).isActive = true
         discountperiodText.widthAnchor.constraint(equalTo: discountperiodView.widthAnchor,multiplier : 0.9).isActive = true
         discountperiodText.heightAnchor.constraint(equalToConstant : 30).isActive = true
+        discountperiodText.delegate = self
         
         
         mainView.addSubview(toolbar)
@@ -175,9 +180,6 @@ class ProductOprionsView: BaseCell,FloatRatingViewDelegate {
         toolbar.heightAnchor.constraint(equalTo : mainView.heightAnchor,multiplier : 0.09).isActive = true
         toolbar.options = RichEditorDefaultOption.all
         toolbar.editor = productDescription
-        
-        
-        
         
         
         mainView.addSubview(textiew)
@@ -442,6 +444,15 @@ class ProductOprionsView: BaseCell,FloatRatingViewDelegate {
         return uv
     }()
     
+    
+    let  discountperiodImage :UIImageView = {
+        let ci = UIImageView(image:#imageLiteral(resourceName: "stopwatch"))
+        ci.translatesAutoresizingMaskIntoConstraints = false
+        return ci
+        
+    }()
+    
+    
     let  discountperiodText :UITextField = {
         let tf = UITextField()
         tf.textColor = UIColor.rgb(48, green: 39, blue: 133)
@@ -455,17 +466,73 @@ class ProductOprionsView: BaseCell,FloatRatingViewDelegate {
         return tf
     }()
     
+   
     
-    
-    let  discountperiodImage :UIImageView = {
-        let ci = UIImageView(image:#imageLiteral(resourceName: "stopwatch"))
-        ci.translatesAutoresizingMaskIntoConstraints = false
-        return ci
+    ///////
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        var datePicker  : UIDatePicker = UIDatePicker()
+        datePicker.datePickerMode = UIDatePickerMode.date
+        datePicker.backgroundColor = UIColor.white
+        datePicker.addTarget(self, action: #selector(self.datePickerValueChanged(datePicker:)), for: .valueChanged)
+        discountperiodText.inputView = datePicker
         
-    }()
+        ///// create taool bar
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = UIColor.rgb(18, green: 179, blue: 251)
+        toolBar.sizeToFit()
+        
+        let todayButton = UIBarButtonItem(title: "Today", style: .plain, target: self, action: #selector(todayButn))
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(donebutton))
+        
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        
+        
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: frame.width/3, height: 40))
+        label.text = "Choose your Date"
+        var font = UIFont(name: "JFFlat-Regular", size: 14)
+        label.font = font
+        let labelButton = UIBarButtonItem(customView:label)
+        
+        
+        toolBar.setItems([todayButton,flexibleSpace,labelButton,flexibleSpace,doneButton], animated: true)
+        
+        discountperiodText.inputAccessoryView = toolBar
+    }
+    
+    @objc func datePickerValueChanged(datePicker: UIDatePicker) {
+        
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        discountperiodText.text = dateFormatter.string(from: datePicker.date)
+        
+        
+    }
+    
+    /////// today button
+    func todayButn() {
+        
+        let dateFormatter = DateFormatter() // 1
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        discountperiodText.text = dateFormatter.string(from: Date()) // 2
+        discountperiodText.resignFirstResponder()
+        
+    }
+    
+    
+    /////// done button function
+    func donebutton () {
+        discountperiodText.resignFirstResponder()
+    }
+    
     
 
-    
     
     let DescribePruductlabel :UILabel = {
         let NL = UILabel()

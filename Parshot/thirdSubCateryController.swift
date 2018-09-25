@@ -39,7 +39,7 @@ class thirdSubCateryController : UICollectionViewController , UICollectionViewDe
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cell, for: indexPath) as! thirdSubCateryControllerCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cell, for: indexPath) as! ThirdSubCategryView
         return cell
         
     }
@@ -87,7 +87,7 @@ class thirdSubCateryController : UICollectionViewController , UICollectionViewDe
         
         collectionView?.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
         collectionView?.backgroundColor = UIColor.rgb(252, green: 244, blue: 246)
-        collectionView?.register(thirdSubCateryControllerCell.self, forCellWithReuseIdentifier: cell)
+        collectionView?.register(ThirdSubCategryView.self, forCellWithReuseIdentifier: cell)
         
         collectionView?.register(thirdMainFooter.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: footer)
         collectionView?.register(FirstSubCategryHeaders.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: Headers)
@@ -112,6 +112,8 @@ class thirdSubCateryController : UICollectionViewController , UICollectionViewDe
         navigationItem.leftBarButtonItem = chatButton
         
     }
+    
+    
     
     ///////////
     func chat()  {  }
