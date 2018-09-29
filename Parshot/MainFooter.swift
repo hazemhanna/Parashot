@@ -7,10 +7,14 @@
 //
 import UIKit
 class MainFooter: BaseCell {
+   
+    var controller : FirstMainPageController?
     
     override func setupViews() {
         backgroundColor = .white
        // layer.cornerRadius = 25
+        
+        
         
         ////////////// image
         addSubview(fView)
@@ -147,6 +151,8 @@ class MainFooter: BaseCell {
         
     {
        
+        
+        controller?.goToMenuPage ()
     }
     
     ////
@@ -236,7 +242,7 @@ class MainFooter: BaseCell {
     
     let mainlabel :UILabel = {
         let pl = UILabel()
-        pl.textColor = UIColor.rgb(48, green: 39, blue: 133)
+        pl.textColor = UIColor.black
         var font = UIFont(name: "JFFlat-Regular", size: 12)
         pl.font = font
         pl.translatesAutoresizingMaskIntoConstraints = false
@@ -257,7 +263,7 @@ class MainFooter: BaseCell {
     ///////  label
     let orderlabel :UILabel = {
         let pl = UILabel()
-        pl.textColor = UIColor.rgb(48, green: 39, blue: 133)
+        pl.textColor = UIColor.black
         var font = UIFont(name: "JFFlat-Regular", size: 12)
         pl.font = font
         pl.translatesAutoresizingMaskIntoConstraints = false
@@ -279,7 +285,7 @@ class MainFooter: BaseCell {
     /////// favourite label
     let ofeerlabel :UILabel = {
         let pl = UILabel()
-        pl.textColor = UIColor.rgb(48, green: 39, blue: 133)
+        pl.textColor = UIColor.black
         var font = UIFont(name: "JFFlat-Regular", size: 12)
         pl.font = font
         pl.translatesAutoresizingMaskIntoConstraints = false
@@ -299,7 +305,7 @@ class MainFooter: BaseCell {
     /////// offers label
     let notificationlabel :UILabel = {
         let pl = UILabel()
-        pl.textColor = UIColor.rgb(48, green: 39, blue: 133)
+        pl.textColor = UIColor.black
         var font = UIFont(name: "JFFlat-Regular", size: 12)
         pl.font = font
         pl.translatesAutoresizingMaskIntoConstraints = false
@@ -321,7 +327,7 @@ class MainFooter: BaseCell {
     /////// nearest image
     let morelabel :UILabel = {
         let pl = UILabel()
-        pl.textColor =  UIColor.rgb(48, green: 39, blue: 133)
+        pl.textColor =  UIColor.black
         var font = UIFont(name: "JFFlat-Regular", size: 12)
         pl.font = font
         pl.translatesAutoresizingMaskIntoConstraints = false

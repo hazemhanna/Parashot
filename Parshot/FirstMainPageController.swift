@@ -61,6 +61,7 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: self.footer, for: indexPath as IndexPath) as! MainFooter
+        footer.controller = self
         
         return footer
     }
@@ -77,6 +78,15 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
     
     override func viewDidLoad() {
         
+        
+        
+        view.addSubview(blacView)
+        blacView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        blacView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        blacView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        blacView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
+        blacView.isHidden = true
+        
        // FetchDataForSlider()
         collectionView?.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
         collectionView?.backgroundColor = UIColor.rgb(230, green: 234, blue: 237)
@@ -85,7 +95,6 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
    
         collectionView?.register(MainFooter.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: footer)
         collectionView?.isScrollEnabled = false
-        
         
         // casting is required because UICollectionViewLayout doesn't offer header pin. Its feature of UICollectionViewFlowLayout
         let layout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
@@ -107,15 +116,57 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
         navigationItem.leftBarButtonItem = chatButton
         
         
+        
+        blacView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(HideBackView)))
+        blacView.isUserInteractionEnabled = true
+        
     }
+    
+    
+    
+    //// make
+    func HideBackView(tapGestureRecognizer: UITapGestureRecognizer)
+        
+    {
+        blacView.isHidden = true
+        
+    }
+    
     
     ///////////
     func chat()  {  }
     /////
     func star ()  {  }
     
-
-    //////////// Api service Functions
+    ///// meunu Function 
+    
+    func goToMenuPage (){
+    
+    
+    blacView.isHidden = false
+    
+    
+    }
+ 
+    let  blacView :UIView = {
+        let uv = UIView()
+        uv.backgroundColor = UIColor.black
+        uv.translatesAutoresizingMaskIntoConstraints = false
+        uv.alpha = 0.7
+        return uv
+    }()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+ //////////// Api service Functions
     
 //    func FetchDataForSlider(){
 //        ApiService.SharedInstance.fetchFeedForUrl(URL: "products"){ (data:Data) in
@@ -134,12 +185,7 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
 //            }
 //            }
         
-    
-        
-        
-        
-   
-    
+
     
     
     

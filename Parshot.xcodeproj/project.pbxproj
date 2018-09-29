@@ -85,6 +85,20 @@
 		A162E93B21469BF400139EB8 /* ProductDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = A162E93A21469BF400139EB8 /* ProductDetails.swift */; };
 		A162E93D21469C0E00139EB8 /* ProductCompanyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A162E93C21469C0E00139EB8 /* ProductCompanyView.swift */; };
 		A162E93F2146A5D700139EB8 /* ProductCapacityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A162E93E2146A5D700139EB8 /* ProductCapacityController.swift */; };
+		A1651509215F79FA001A9FC9 /* FirstMainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1651508215F79FA001A9FC9 /* FirstMainMenuController.swift */; };
+		A165150B215F7A13001A9FC9 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165150A215F7A13001A9FC9 /* MenuView.swift */; };
+		A165150D215F7A30001A9FC9 /* MenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165150C215F7A30001A9FC9 /* MenuHeader.swift */; };
+		A165150F215F81A5001A9FC9 /* FirstMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165150E215F81A5001A9FC9 /* FirstMenuController.swift */; };
+		A1651515215F96E3001A9FC9 /* SecondMainMenuControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1651514215F96E3001A9FC9 /* SecondMainMenuControler.swift */; };
+		A1651517215F971E001A9FC9 /* SecondMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1651516215F971E001A9FC9 /* SecondMenuController.swift */; };
+		A1651519215F9728001A9FC9 /* SecondMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1651518215F9728001A9FC9 /* SecondMenuView.swift */; };
+		A165151B215FA346001A9FC9 /* VericallCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165151A215FA346001A9FC9 /* VericallCollectionView.swift */; };
+		A165151D215FA374001A9FC9 /* HorizantalCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165151C215FA374001A9FC9 /* HorizantalCollectionView.swift */; };
+		A165151F215FA469001A9FC9 /* ProductImagesHorizentalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165151E215FA469001A9FC9 /* ProductImagesHorizentalView.swift */; };
+		A165152B215FD839001A9FC9 /* PaymentMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165152A215FD839001A9FC9 /* PaymentMainController.swift */; };
+		A165152D215FD854001A9FC9 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165152C215FD854001A9FC9 /* PaymentView.swift */; };
+		A1651532215FE18C001A9FC9 /* NotExistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1651531215FE18C001A9FC9 /* NotExistController.swift */; };
+		A1651534215FE24B001A9FC9 /* NotExistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1651533215FE24B001A9FC9 /* NotExistView.swift */; };
 		A16FC16D215A57C000A029B6 /* CommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16FC16C215A57C000A029B6 /* CommentController.swift */; };
 		A16FC16F215A57E500A029B6 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16FC16E215A57E500A029B6 /* CommentView.swift */; };
 		A171392F213FE43500063F5C /* ThirdMainPageController  .swift in Sources */ = {isa = PBXBuildFile; fileRef = A171392E213FE43500063F5C /* ThirdMainPageController  .swift */; };
@@ -290,6 +304,21 @@
 		A162E93A21469BF400139EB8 /* ProductDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetails.swift; sourceTree = "<group>"; };
 		A162E93C21469C0E00139EB8 /* ProductCompanyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCompanyView.swift; sourceTree = "<group>"; };
 		A162E93E2146A5D700139EB8 /* ProductCapacityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCapacityController.swift; sourceTree = "<group>"; };
+		A1651508215F79FA001A9FC9 /* FirstMainMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstMainMenuController.swift; sourceTree = "<group>"; };
+		A165150A215F7A13001A9FC9 /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		A165150C215F7A30001A9FC9 /* MenuHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuHeader.swift; sourceTree = "<group>"; };
+		A165150E215F81A5001A9FC9 /* FirstMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstMenuController.swift; sourceTree = "<group>"; };
+		A1651514215F96E3001A9FC9 /* SecondMainMenuControler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondMainMenuControler.swift; sourceTree = "<group>"; };
+		A1651516215F971E001A9FC9 /* SecondMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondMenuController.swift; sourceTree = "<group>"; };
+		A1651518215F9728001A9FC9 /* SecondMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondMenuView.swift; sourceTree = "<group>"; };
+		A165151A215FA346001A9FC9 /* VericallCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VericallCollectionView.swift; sourceTree = "<group>"; };
+		A165151C215FA374001A9FC9 /* HorizantalCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizantalCollectionView.swift; sourceTree = "<group>"; };
+		A165151E215FA469001A9FC9 /* ProductImagesHorizentalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductImagesHorizentalView.swift; sourceTree = "<group>"; };
+		A1651525215FD3B5001A9FC9 /* SocketIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SocketIO.framework; path = "Pods/../build/Debug-iphoneos/Socket.IO-Client-Swift/SocketIO.framework"; sourceTree = "<group>"; };
+		A165152A215FD839001A9FC9 /* PaymentMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentMainController.swift; sourceTree = "<group>"; };
+		A165152C215FD854001A9FC9 /* PaymentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
+		A1651531215FE18C001A9FC9 /* NotExistController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotExistController.swift; sourceTree = "<group>"; };
+		A1651533215FE24B001A9FC9 /* NotExistView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotExistView.swift; sourceTree = "<group>"; };
 		A16FC16C215A57C000A029B6 /* CommentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentController.swift; sourceTree = "<group>"; };
 		A16FC16E215A57E500A029B6 /* CommentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		A171392E213FE43500063F5C /* ThirdMainPageController  .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ThirdMainPageController  .swift"; sourceTree = "<group>"; };
@@ -1140,18 +1169,19 @@
 			name = SecondMainPageController;
 			sourceTree = "<group>";
 		};
-		A162E92321466CCA00139EB8 /* FirstProductDetails */ = {
+		A162E92321466CCA00139EB8 /* ProductDetails */ = {
 			isa = PBXGroup;
 			children = (
 				A162E92721466CFB00139EB8 /* FirstProductDetails Controller */,
 				A162E92421466CE500139EB8 /* FirstProductDetails View */,
 			);
-			name = FirstProductDetails;
+			name = ProductDetails;
 			sourceTree = "<group>";
 		};
 		A162E92421466CE500139EB8 /* FirstProductDetails View */ = {
 			isa = PBXGroup;
 			children = (
+				A165151E215FA469001A9FC9 /* ProductImagesHorizentalView.swift */,
 				A162E92C214671D000139EB8 /* ProductImagesView.swift */,
 				A162E93421469A0700139EB8 /* ProductNameView.swift */,
 				A162E9322146992300139EB8 /* ProductColorView.swift */,
@@ -1169,10 +1199,124 @@
 			children = (
 				A162E92821466D7C00139EB8 /* FirstProductDetailsController.swift */,
 				A162E92E2146886B00139EB8 /* ProductImagesController.swift */,
+				A165151C215FA374001A9FC9 /* HorizantalCollectionView.swift */,
+				A165151A215FA346001A9FC9 /* VericallCollectionView.swift */,
 				A162E9302146991000139EB8 /* ProductColorController.swift */,
 				A162E93E2146A5D700139EB8 /* ProductCapacityController.swift */,
 			);
 			name = "FirstProductDetails Controller";
+			sourceTree = "<group>";
+		};
+		A1651505215F79C1001A9FC9 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				A1651510215F964B001A9FC9 /* FirstMenu */,
+				A1651511215F9675001A9FC9 /* SecondMenu */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		A1651506215F79CC001A9FC9 /* FirstMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				A165150A215F7A13001A9FC9 /* MenuView.swift */,
+				A165150C215F7A30001A9FC9 /* MenuHeader.swift */,
+			);
+			name = FirstMenuView;
+			sourceTree = "<group>";
+		};
+		A1651507215F79CF001A9FC9 /* FirstMenuController */ = {
+			isa = PBXGroup;
+			children = (
+				A1651508215F79FA001A9FC9 /* FirstMainMenuController.swift */,
+				A165150E215F81A5001A9FC9 /* FirstMenuController.swift */,
+			);
+			name = FirstMenuController;
+			sourceTree = "<group>";
+		};
+		A1651510215F964B001A9FC9 /* FirstMenu */ = {
+			isa = PBXGroup;
+			children = (
+				A1651507215F79CF001A9FC9 /* FirstMenuController */,
+				A1651506215F79CC001A9FC9 /* FirstMenuView */,
+			);
+			name = FirstMenu;
+			sourceTree = "<group>";
+		};
+		A1651511215F9675001A9FC9 /* SecondMenu */ = {
+			isa = PBXGroup;
+			children = (
+				A1651513215F968E001A9FC9 /* SecondMenuController */,
+				A1651512215F968B001A9FC9 /* SeondMenuView */,
+			);
+			name = SecondMenu;
+			sourceTree = "<group>";
+		};
+		A1651512215F968B001A9FC9 /* SeondMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				A1651518215F9728001A9FC9 /* SecondMenuView.swift */,
+			);
+			name = SeondMenuView;
+			sourceTree = "<group>";
+		};
+		A1651513215F968E001A9FC9 /* SecondMenuController */ = {
+			isa = PBXGroup;
+			children = (
+				A1651514215F96E3001A9FC9 /* SecondMainMenuControler.swift */,
+				A1651516215F971E001A9FC9 /* SecondMenuController.swift */,
+			);
+			name = SecondMenuController;
+			sourceTree = "<group>";
+		};
+		A1651527215FD7E1001A9FC9 /* PaymentWay */ = {
+			isa = PBXGroup;
+			children = (
+				A1651529215FD7FD001A9FC9 /* PaymentController */,
+				A1651528215FD7FA001A9FC9 /* PaymentView */,
+			);
+			name = PaymentWay;
+			sourceTree = "<group>";
+		};
+		A1651528215FD7FA001A9FC9 /* PaymentView */ = {
+			isa = PBXGroup;
+			children = (
+				A165152C215FD854001A9FC9 /* PaymentView.swift */,
+			);
+			name = PaymentView;
+			sourceTree = "<group>";
+		};
+		A1651529215FD7FD001A9FC9 /* PaymentController */ = {
+			isa = PBXGroup;
+			children = (
+				A165152A215FD839001A9FC9 /* PaymentMainController.swift */,
+			);
+			name = PaymentController;
+			sourceTree = "<group>";
+		};
+		A165152E215FE11E001A9FC9 /* NotExist */ = {
+			isa = PBXGroup;
+			children = (
+				A1651530215FE12F001A9FC9 /* NotExistController */,
+				A165152F215FE12A001A9FC9 /* NotExistView */,
+			);
+			name = NotExist;
+			sourceTree = "<group>";
+		};
+		A165152F215FE12A001A9FC9 /* NotExistView */ = {
+			isa = PBXGroup;
+			children = (
+				A1651533215FE24B001A9FC9 /* NotExistView.swift */,
+			);
+			name = NotExistView;
+			sourceTree = "<group>";
+		};
+		A1651530215FE12F001A9FC9 /* NotExistController */ = {
+			isa = PBXGroup;
+			children = (
+				A1651531215FE18C001A9FC9 /* NotExistController.swift */,
+			);
+			name = NotExistController;
 			sourceTree = "<group>";
 		};
 		A16FC169215A576C00A029B6 /* CommentController */ = {
@@ -1401,6 +1545,9 @@
 				A1C4A478213D466400C87D27 /* ِExtention */,
 				A1C4A461213D428900C87D27 /* AppDelegate.swift */,
 				A1C1B66C2156952600E500C0 /* DatabaseSql.swift */,
+				A165152E215FE11E001A9FC9 /* NotExist */,
+				A1651527215FD7E1001A9FC9 /* PaymentWay */,
+				A1651505215F79C1001A9FC9 /* Menu */,
 				A16FC16A215A578900A029B6 /* Comments */,
 				A10A64202157A6BD0038BAD8 /* Model  */,
 				A1C1B66421567E5100E500C0 /* ChatList */,
@@ -1414,7 +1561,7 @@
 				A1BB22CB214D0EFD00EF2CB3 /* FirstMyOrder */,
 				A1056E732148145800E28473 /* ProductCart */,
 				A152B52F2147C13900A02469 /* Orders */,
-				A162E92321466CCA00139EB8 /* FirstProductDetails */,
+				A162E92321466CCA00139EB8 /* ProductDetails */,
 				A129F2242143D24F003E88E1 /* MainPages */,
 				A119DA72214553F400D5200B /* SubCategryPages */,
 				A119DA732145545300D5200B /* ٍResturant */,
@@ -1510,6 +1657,7 @@
 		DEB1D27B531B00D15252BBF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A1651525215FD3B5001A9FC9 /* SocketIO.framework */,
 				048D0EE12157126D004B1BA2 /* SQLite.framework */,
 				048D0EE021570C47004B1BA2 /* ChromaColorPicker.framework */,
 				048D0EDE21570C45004B1BA2 /* RichEditorView.framework */,
@@ -1661,6 +1809,7 @@
 			files = (
 				A171394921403E5100063F5C /* OffeersController.swift in Sources */,
 				A1C4A482213D71DA00C87D27 /* BsaeCell.swift in Sources */,
+				A165151B215FA346001A9FC9 /* VericallCollectionView.swift in Sources */,
 				A1C1B663215666C100E500C0 /* PhotographerDetailsView.swift in Sources */,
 				A1BB22DC214D3B6100EF2CB3 /* FirstAddProductImagesController .swift in Sources */,
 				A1EF05BE214FB466009A9D86 /* MyAcountView2.swift in Sources */,
@@ -1668,6 +1817,7 @@
 				A1162540214FF2B40004B4DD /* DeliveryOffersView.swift in Sources */,
 				A10D308621511EC400A765AA /* MapView.swift in Sources */,
 				A1D1E0582147F75500476D12 /* MakeOrderView.swift in Sources */,
+				A1651517215F971E001A9FC9 /* SecondMenuController.swift in Sources */,
 				A129F23C21442C9D003E88E1 /* SecondSubCategryView.swift in Sources */,
 				A15039E3215257710014FE85 /* StoreSettingHeader.swift in Sources */,
 				A1056E792148156200E28473 /* FristProductCartCtroller.swift in Sources */,
@@ -1684,12 +1834,15 @@
 				A10D30772150FA1A00A765AA /* ProductRateView.swift in Sources */,
 				A129F23321441855003E88E1 /* RateView.swift in Sources */,
 				A15CD58F213E8BEB00F03E8D /* TypeController.swift in Sources */,
+				A165151F215FA469001A9FC9 /* ProductImagesHorizentalView.swift in Sources */,
 				A1056E772148151B00E28473 /* FristProductCart.swift in Sources */,
 				A119DA78214554E600D5200B /* RestuarantController.swift in Sources */,
 				A1056E82214835B300E28473 /* FinishOrderController.swift in Sources */,
 				A1056E7D214816E400E28473 /* ProuductCardHeadear.swift in Sources */,
 				A1BB22D1214D21FA00EF2CB3 /* FirstMyOrderController.swift in Sources */,
+				A165150F215F81A5001A9FC9 /* FirstMenuController.swift in Sources */,
 				A1056E7B214815AF00E28473 /* FristProductCartView.swift in Sources */,
+				A1651532215FE18C001A9FC9 /* NotExistController.swift in Sources */,
 				A162E93F2146A5D700139EB8 /* ProductCapacityController.swift in Sources */,
 				A1D1E05A2147F76B00476D12 /* MakeOrederFooter.swift in Sources */,
 				A1EF05B8214FA78F009A9D86 /* MyAcountHeader.swift in Sources */,
@@ -1698,18 +1851,23 @@
 				A162E9312146991000139EB8 /* ProductColorController.swift in Sources */,
 				A162E92D214671D000139EB8 /* ProductImagesView.swift in Sources */,
 				A1C1B66921567E9F00E500C0 /* ChatListController.swift in Sources */,
+				A165152D215FD854001A9FC9 /* PaymentView.swift in Sources */,
 				A1BB22E0214D441700EF2CB3 /* ProductOprionsView.swift in Sources */,
 				A1BB22E8214D477B00EF2CB3 /* AddProductSizeView.swift in Sources */,
 				A1C4A462213D428900C87D27 /* AppDelegate.swift in Sources */,
 				A16FC16F215A57E500A029B6 /* CommentView.swift in Sources */,
+				A1651519215F9728001A9FC9 /* SecondMenuView.swift in Sources */,
 				A1EF05BA214FA911009A9D86 /* MyAcountFooter.swift in Sources */,
+				A165151D215FA374001A9FC9 /* HorizantalCollectionView.swift in Sources */,
 				A171394D21403FCE00063F5C /* FourthDepartmentView.swift in Sources */,
 				A109B910215AAD320079C5E8 /* ImageView.swift in Sources */,
 				A10D309C21515DAF00A765AA /* ColorPickerControler.swift in Sources */,
 				A1056E84214835C500E28473 /* FinishOrderView.swift in Sources */,
 				A15039E92152593F0014FE85 /* StoreOptionsView.swift in Sources */,
 				A1BB22E6214D468B00EF2CB3 /* AddProductColorView.swift in Sources */,
+				A1651509215F79FA001A9FC9 /* FirstMainMenuController.swift in Sources */,
 				A10D308221511C9000A765AA /* MapControler.swift in Sources */,
+				A1651515215F96E3001A9FC9 /* SecondMainMenuControler.swift in Sources */,
 				A1C4A488213D75A400C87D27 /* SliderView.swift in Sources */,
 				A162E93521469A0700139EB8 /* ProductNameView.swift in Sources */,
 				A1713939213FE6C700063F5C /* ThirdDepartmentView.swift in Sources */,
@@ -1724,6 +1882,7 @@
 				A152B5322147C17100A02469 /* ConfirmOrderController.swift in Sources */,
 				A171394521403DF600063F5C /* FourthDepartmentController.swift in Sources */,
 				A171394B21403FC100063F5C /* FourthSliderView.swift in Sources */,
+				A1651534215FE24B001A9FC9 /* NotExistView.swift in Sources */,
 				A1BB22D5214D257A00EF2CB3 /* FirstMyOrderHeader.swift in Sources */,
 				A1713937213FE6B400063F5C /* ThirdSliderView.swift in Sources */,
 				A129F22D2143D3B5003E88E1 /* FirstSubCategryView.swift in Sources */,
@@ -1756,6 +1915,7 @@
 				A116253C214FF0F60004B4DD /* DeliveryOffersControoler.swift in Sources */,
 				A10F4EDC21564A52000C74FD /* PhotographerView.swift in Sources */,
 				A1EF05B6214FA773009A9D86 /* MyAcountView1.swift in Sources */,
+				A165152B215FD839001A9FC9 /* PaymentMainController.swift in Sources */,
 				A129F22B2143D393003E88E1 /* FirstSubCategry.swift in Sources */,
 				A1291C9321451EBD00BD1524 /* ThirdSubCategryView.swift in Sources */,
 				A1C4A47E213D6EDA00C87D27 /* SliderController.swift in Sources */,
@@ -1775,12 +1935,14 @@
 				A15CD587213E89BA00F03E8D /* SecondMainPageController.swift in Sources */,
 				A10D307E215115AF00A765AA /* NewOrderController.swift in Sources */,
 				A1D1E0562147F73900476D12 /* MakeOrderController.swift in Sources */,
+				A165150D215F7A30001A9FC9 /* MenuHeader.swift in Sources */,
 				A1C1B6602156646800E500C0 /* PhotographerDetailsHeader.swift in Sources */,
 				A171393B2140021900063F5C /* thirdMainFooter.swift in Sources */,
 				A15CD595213E8D5D00F03E8D /* BestRateView.swift in Sources */,
 				A15039E72152591F0014FE85 /* StorePlaceView.swift in Sources */,
 				A119DA7A214554FC00D5200B /* RestuarantView.swift in Sources */,
 				A1C1B66B21567EAE00E500C0 /* ChatLisView.swift in Sources */,
+				A165150B215F7A13001A9FC9 /* MenuView.swift in Sources */,
 				A1BB22D3214D229F00EF2CB3 /* FirstMyOrderView.swift in Sources */,
 				A171394321403DBC00063F5C /* FourthSliderController.swift in Sources */,
 				A162E9332146992300139EB8 /* ProductColorView.swift in Sources */,
@@ -1907,7 +2069,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = CYL3JT27CL;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Socket.IO-Client-Swift",
+				);
 				INFOPLIST_FILE = Parshot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
@@ -1949,6 +2114,7 @@
 					"$(PROJECT_DIR)/Pods/GoogleMaps/Base/Frameworks",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/SQLite.swift\"",
 					"$(PROJECT_DIR)/Pods/SQLite.swift",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Socket.IO-Client-Swift",
 				);
 				INFOPLIST_FILE = Parshot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

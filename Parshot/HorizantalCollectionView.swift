@@ -11,10 +11,9 @@
 import UIKit
 
 
-class SliderController : BaseCell  , UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class HorizantalCollectionView : BaseCell  , UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     var cell = "cell"
-    var timer:Timer? = nil
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -25,9 +24,10 @@ class SliderController : BaseCell  , UICollectionViewDataSource, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cell, for: indexPath) as! SliderView
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cell, for: indexPath) as! ProductImagesHorizentalView
         
         return cell
+        
         
     }
     
@@ -45,7 +45,7 @@ class SliderController : BaseCell  , UICollectionViewDataSource, UICollectionVie
         return CGSize(width:(collectionView.frame.width ) ,height:frame.height)
     }
     
-   
+    
     
     
     //////////
@@ -54,55 +54,33 @@ class SliderController : BaseCell  , UICollectionViewDataSource, UICollectionVie
         addSubview(collectionView)
         collectionView.centerYAnchor.constraint(equalTo:centerYAnchor).isActive = true
         collectionView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
-        collectionView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        collectionView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         collectionView.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
-        
-        collectionView.register(SliderView.self, forCellWithReuseIdentifier: cell)
-        
-        
+        collectionView.register(ProductImagesHorizentalView.self, forCellWithReuseIdentifier: cell)
         
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.scrollDirection = .horizontal
             
         }
-   
-    setTimer()
-    
+        
+        
     }
+    
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.backgroundColor =  UIColor.rgb(252, green: 244, blue: 246)
+        cv.backgroundColor =  UIColor.white
         cv.layer.rasterizationScale = UIScreen.main.scale
         cv.dataSource = self
         cv.delegate = self
         return cv
     }()
     
-    ////  Invokes Timer to start Automatic Animation with repeat enabled
     
-    func setTimer() {
-        let _ = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(SliderController.autoScroll), userInfo: nil, repeats: true)
-    }
-    
-    /////// make my collectionview scroll automatic
-    
-    var x = 1
-    
-    @objc func autoScroll() {
-        if self.x < 5 { //self.datasource.count
-            let indexPath = IndexPath(item: x, section: 0)
-            self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-            self.x = self.x + 1
-        } else {
-            self.x = 0
-            self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
-        }
-    }
 }
 
- 
+
 
 

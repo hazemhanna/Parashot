@@ -5,16 +5,6 @@
 //  Created by hazem on 9/8/18.
 //  Copyright © 2018 hazem. All rights reserved.
 //
-
-//
-//  MainSubjectController.swift
-//  Boshra
-//
-//  Created by hazem on 8/26/18.
-//  Copyright © 2018 hazem. All rights reserved.
-//
-
-
 import UIKit
 
 

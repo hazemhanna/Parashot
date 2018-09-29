@@ -16,11 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
        
         let layout = UICollectionViewFlowLayout()
-        let featuredAppsController = thirdSubCateryController(collectionViewLayout:layout )
+        let featuredAppsController = NotExistController(collectionViewLayout:layout )
         window?.rootViewController = UINavigationController(rootViewController: featuredAppsController)
-
+        
         return true
+    
+
     }
-
 }
-

@@ -11,17 +11,10 @@
 import UIKit
 
 class FirstSubCategryHeaders: BaseCell {
-    
-    
-    
-    
-    
-    
+
     override func setupViews() {
         
         backgroundColor =  UIColor.rgb(252, green: 244, blue: 246)
-        
-      
         
         addSubview(blackimage)
         blackimage.topAnchor.constraint(equalTo: topAnchor).isActive = true

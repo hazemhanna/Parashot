@@ -15,6 +15,7 @@ class ThirdSliderView : BaseCell {
     override func setupViews() {
         
          backgroundColor = UIColor.rgb(252, green: 244, blue: 246)
+        
         addSubview(viewImage)
         viewImage.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         viewImage.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true

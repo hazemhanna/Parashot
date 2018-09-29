@@ -6,14 +6,6 @@
 //  Copyright © 2018 hazem. All rights reserved.
 //
 
-//
-//  FirstSubCategryView.swift
-//  Parshot
-//
-//  Created by hazem on 9/8/18.
-//  Copyright © 2018 hazem. All rights reserved.
-//
-
 
 
 import UIKit

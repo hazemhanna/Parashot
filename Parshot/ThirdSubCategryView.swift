@@ -24,13 +24,19 @@ class ThirdSubCategryView: BaseCell,FloatRatingViewDelegate, UICollectionViewDat
     var cell = "cell"
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 5
+        return 10
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cell, for: indexPath) as! ImageView
+       
+        
+        ////// to get indexpath doesnot work
+        let indexPath = self.collectionView.indexPath(for: cell)
+        print(indexPath)
+
         return cell
         
     }
@@ -46,6 +52,14 @@ class ThirdSubCategryView: BaseCell,FloatRatingViewDelegate, UICollectionViewDat
         return CGSize(width:(collectionView.frame.width / 2.5 ) ,height:frame.height)
     }
   
+//     func indexPath(for cell: UICollectionViewCell) -> IndexPath?{
+//        
+//        return  index
+//    }
+    
+    
+    
+    
     override func setupViews() {
         
         addSubview(mainView)
@@ -152,28 +166,39 @@ class ThirdSubCategryView: BaseCell,FloatRatingViewDelegate, UICollectionViewDat
         leftArowImage.widthAnchor.constraint(equalTo:  widthAnchor,multiplier : 0.04).isActive = true
         leftArowImage.heightAnchor.constraint(equalTo : leftArowImage.widthAnchor).isActive = true
         
-        rightArowImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(switchToVextItem)))
+        
+        ///// get next image
+        rightArowImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(switchToNextItem)))
         rightArowImage.isUserInteractionEnabled = true
         
+        ///// get privous  image
+        leftArowImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(switchToPrivous)))
+        leftArowImage.isUserInteractionEnabled = true
+    
+    
     }
-    
-    
-    
-    //// make
-    func switchToVextItem (tapGestureRecognizer: UITapGestureRecognizer)
+     ///// get next image
+    func switchToNextItem (tapGestureRecognizer: UITapGestureRecognizer)
         
     {
-        controller?.switchToItem()
-      
+    var indexPath = 2
+        self.collectionView.scrollToItem(at:IndexPath(item: indexPath, section: 0), at: .left, animated: true)
+
+      indexPath +=  5
+    
+    }
+    ///// get privous  image
+    func switchToPrivous (tapGestureRecognizer: UITapGestureRecognizer)
+        
+    {
+        
+        var indexPath = 0
+        self.collectionView.scrollToItem(at:IndexPath(item: indexPath, section: 0), at: .left, animated: true)
+        
+       
     }
     
-    
 
-    
-    
-    
-    
-    
     let  mainView :UIView = {
         let uv = UIView()
         uv.backgroundColor = .white
@@ -183,13 +208,7 @@ class ThirdSubCategryView: BaseCell,FloatRatingViewDelegate, UICollectionViewDat
         uv.layer.cornerRadius = 10
         return uv
     }()
- 
-    
-  
-    
-    
-    
-    
+   
     let leftArowImage:CustomImageView = {
         let ci = CustomImageView(image:#imageLiteral(resourceName: "41393510_381842899017264_6044721716666564608_n"))
         ci.translatesAutoresizingMaskIntoConstraints = false
@@ -214,12 +233,7 @@ class ThirdSubCategryView: BaseCell,FloatRatingViewDelegate, UICollectionViewDat
         uv.layer.borderWidth = 0.5
         return uv
     }()
-    
-    
 
-    
-    
-    
     let itemName :UILabel = {
         let NL = UILabel()
         NL.textColor = UIColor.black
@@ -325,15 +339,7 @@ class ThirdSubCategryView: BaseCell,FloatRatingViewDelegate, UICollectionViewDat
         return ci
         
     }()
-
-
-
-
-
-
-
-
-
+    
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -344,10 +350,6 @@ class ThirdSubCategryView: BaseCell,FloatRatingViewDelegate, UICollectionViewDat
         cv.delegate = self
         return cv
     }()
-    
-
-
-
 }
 
 

@@ -91,7 +91,7 @@ class FourthSliderController : BaseCell  , UICollectionViewDataSource, UICollect
     ////  Invokes Timer to start Automatic Animation with repeat enabled
     
     func setTimer() {
-        let _ = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(SliderController.autoScroll), userInfo: nil, repeats: true)
+        let _ = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(FourthSliderController.autoScroll), userInfo: nil, repeats: true)
     }
     
     /////// make my collectionview scroll automatic
