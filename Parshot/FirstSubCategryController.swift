@@ -17,7 +17,7 @@ class FirstSubCategryController : BaseCell, UICollectionViewDataSource, UICollec
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

@@ -45,6 +45,7 @@ class FirstSubCategry : UICollectionViewController , UICollectionViewDelegateFlo
         switch kind {
         case UICollectionElementKindSectionHeader:
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: self.Headers, for: indexPath as IndexPath) as! FirstSubCategryHeaders
+            //header.marketName.text = ""
             return header
             
         case UICollectionElementKindSectionFooter:

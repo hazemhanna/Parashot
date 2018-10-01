@@ -21,8 +21,8 @@ class FirstSubCategryView: BaseCell,FloatRatingViewDelegate {
         
         mainView.addSubview(itemImage)
         itemImage.topAnchor.constraint(equalTo: mainView.topAnchor,constant : 20).isActive = true
-        itemImage.rightAnchor.constraint(equalTo: mainView.rightAnchor,constant : -10 ).isActive = true
-        itemImage.widthAnchor.constraint(equalTo: mainView.widthAnchor, multiplier: 0.3).isActive = true
+        itemImage.rightAnchor.constraint(equalTo: mainView.rightAnchor,constant : -40 ).isActive = true
+        itemImage.widthAnchor.constraint(equalTo: mainView.widthAnchor, multiplier: 0.15).isActive = true
         itemImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6).isActive = true
         
         
@@ -52,7 +52,7 @@ class FirstSubCategryView: BaseCell,FloatRatingViewDelegate {
         
         mainView.addSubview(verticallLine)
         verticallLine.centerYAnchor.constraint(equalTo: mainView.centerYAnchor).isActive = true
-        verticallLine.rightAnchor.constraint(equalTo: itemImage.leftAnchor,constant : -10 ).isActive = true
+        verticallLine.rightAnchor.constraint(equalTo: itemImage.leftAnchor,constant : -40 ).isActive = true
         verticallLine.widthAnchor.constraint(equalToConstant : 1 ).isActive = true
         verticallLine.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
         
@@ -120,7 +120,7 @@ class FirstSubCategryView: BaseCell,FloatRatingViewDelegate {
     
     
     let itemImage:CustomImageView = {
-        let ci = CustomImageView(image:#imageLiteral(resourceName: "3292016114244AM_635_samsung_galaxy_j7_2016"))
+        let ci = CustomImageView(image:#imageLiteral(resourceName: "41356482_234556987221009_3617552121928351744_n"))
         ci.translatesAutoresizingMaskIntoConstraints = false
         return ci
         

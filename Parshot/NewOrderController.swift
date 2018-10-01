@@ -26,11 +26,11 @@ class NewOrderController : UICollectionViewController , UICollectionViewDelegate
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if indexPath.item == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cellid0, for: indexPath) as! MapControler
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cellid0, for: indexPath) as! MapView
             return cell
         }
         else  {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cellid1, for: indexPath) as!OrderDetailsController
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cellid1, for: indexPath) as!OrderDetailsView
             return cell
             
         }
@@ -93,8 +93,8 @@ class NewOrderController : UICollectionViewController , UICollectionViewDelegate
         
         collectionView?.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
         collectionView?.backgroundColor = UIColor.rgb(252, green: 244, blue: 246)
-        collectionView?.register(MapControler.self, forCellWithReuseIdentifier: Cellid0)
-        collectionView?.register(OrderDetailsController.self, forCellWithReuseIdentifier: Cellid1)
+        collectionView?.register(MapView.self, forCellWithReuseIdentifier: Cellid0)
+        collectionView?.register(OrderDetailsView.self, forCellWithReuseIdentifier: Cellid1)
 
         collectionView?.register(NewOrderFooter.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: footer)
         collectionView?.register(HeadrWithoutCart.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: Headers)

@@ -28,20 +28,11 @@ class NotExistView: BaseCell {
         itemImage.widthAnchor.constraint(equalTo:widthAnchor, multiplier: 0.5).isActive = true
         itemImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.5).isActive = true
         
-        
-           addSubview(itemName)
+        ////// not exist
+        addSubview(itemName)
         itemName.centerXAnchor.constraint(equalTo: itemImage.centerXAnchor).isActive = true
         itemName.topAnchor.constraint(equalTo: itemImage.bottomAnchor,constant: 20).isActive = true
-        
 
-        
-        
-        
-        
- 
-        
-        
-        
         
     }
     
