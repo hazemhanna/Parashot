@@ -11,8 +11,8 @@ import UIKit
 
 class ParashotOffersHeader : FirstSubCategryHeaders {
     
-
-    
+   
+    var controller : parashotOffersMainController?
     override func setupViews() {
         super.setupViews()
         
@@ -28,28 +28,19 @@ class ParashotOffersHeader : FirstSubCategryHeaders {
         segmentedControl.bottomAnchor.constraint(equalTo: bottomAnchor ).isActive = true
         segmentedControl.widthAnchor.constraint(equalTo: widthAnchor,multiplier : 0.6 ).isActive = true
         segmentedControl.heightAnchor.constraint(equalToConstant :30).isActive = true
-         segmentedControl.selectedSegmentIndex = 1
+       segmentedControl.selectedSegmentIndex = 0
     
+       
     
-        
-        
-        
     }
-    
-
  
-
-   
-    
-      lazy var  segmentedControl : UISegmentedControl = {
-       let SC   = UISegmentedControl(items : ["صفقات ","عروض"])
+    lazy var  segmentedControl : UISegmentedControl = {
+    let SC   = UISegmentedControl(items : ["صفقات ","عروض"])
      SC.addTarget(self, action: #selector(segmentAction(_:)), for: .valueChanged)
-   // SC.addTarget(self, action: #selector(segmentAction(_:)), for: .touchUpInside)
-    SC.translatesAutoresizingMaskIntoConstraints = false
-      SC.backgroundColor = .white
-      SC.layer.cornerRadius = 7
-      
-        return SC
+     SC.translatesAutoresizingMaskIntoConstraints = false
+     SC.backgroundColor = .white
+     SC.layer.cornerRadius = 7
+     return SC
     
     
     }()
@@ -59,12 +50,12 @@ class ParashotOffersHeader : FirstSubCategryHeaders {
     switch (segmentedControl.selectedSegmentIndex) {
     
     case 0:
-        backgroundColor = UIColor.red
+       controller?.selectedIndex = 0
+       
         break
-    
-    
     case 1:
-       backgroundColor = UIColor.white
+        controller?.selectedIndex = 1
+        
         break
     default:
         break

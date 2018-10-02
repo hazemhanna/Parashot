@@ -1,117 +1,97 @@
 //
-//  File.swift
+//  SubCategryController.swift
 //  Parshot
 //
-//  Created by hazem on 9/30/18.
+//  Created by hazem on 9/8/18.
 //  Copyright © 2018 hazem. All rights reserved.
 //
-//
-//  MainSubjectController.swift
-//  Boshra
-//
-//  Created by hazem on 8/26/18.
-//  Copyright © 2018 hazem. All rights reserved.
-//
+
 
 
 import UIKit
 
 
-class parashotOffersController : UICollectionViewController , UICollectionViewDelegateFlowLayout {
+class parashotOffersController : BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    var footer = "footer"
     var cell = "cell"
-    var Headers = "Headers"
     
     
-    
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
-    
-    
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
     }
-    
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cell, for: indexPath) as! parashotOffers
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cell, for: indexPath) as! ParashotOffersView
+        
         return cell
         
     }
     
+    
+    //////// give to colletionview how many image  in every cell
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width:collectionView.frame.width  , height: collectionView.frame.height)
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        switch kind {
-        case UICollectionElementKindSectionHeader:
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: self.Headers, for: indexPath as IndexPath) as! ParashotOffersHeader
-            header.marketName.text = "عروض برشوت"
-            
-            return header
-        case UICollectionElementKindSectionFooter:
-            
-            let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier:  footer, for: indexPath as IndexPath) as! thirdMainFooter
-            return footerView
-            
-        default:
-            
-            fatalError("Unexpected element kind")
-        }
-        
-    }
-    
-    /////// size for the footer
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        
-        return CGSize(width:collectionView.frame.width , height: collectionView.frame.height  * 0.08)
-        
-    }
-    
-    /////// give header size
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width:collectionView.frame.width , height: collectionView.frame.height  * 0.15)
+        return CGSize(width:collectionView.frame.width-20  , height: collectionView.frame.height * 0.25)
     }
     
     
-    override func viewDidLoad() {
-        collectionView?.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
-        collectionView?.backgroundColor = UIColor.rgb(252, green: 244, blue: 246)
-        collectionView?.register(parashotOffers.self, forCellWithReuseIdentifier: cell)
-        
-        collectionView?.register(thirdMainFooter.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: footer)
-        collectionView?.register(ParashotOffersHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: Headers)
-        
-        // setup navBar.....
-        navigationController?.navigationBar.barTintColor = UIColor.rgb(252, green: 244, blue: 246)
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-        let layout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
-        layout?.sectionFootersPinToVisibleBounds = true
-        //////////
-        let logo = UIImage(named: "P A R A S H O T E@1X")
-        let imageView = UIImageView(image:logo)
-        self.navigationItem.titleView = imageView
+    
+    override func setupViews() {
         
         
-        let StarButton = UIBarButtonItem(image: UIImage(named: "search2")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(star))
-        navigationItem.rightBarButtonItem = StarButton
+        addSubview(collectionView)
+        collectionView.topAnchor.constraint(equalTo:topAnchor,constant : 20).isActive = true
+        collectionView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
+        collectionView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        collectionView.heightAnchor.constraint(equalTo: heightAnchor,multiplier : 0.95).isActive = true
+        collectionView.register(ParashotOffersView.self, forCellWithReuseIdentifier: cell)
         
-        let chatButton = UIBarButtonItem(image: UIImage(named: "menue3")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(chat))
-        navigationItem.leftBarButtonItem = chatButton
+        
+        
+        
+        collectionView.addSubview(activityIndicatorView)
+        activityIndicatorView.centerXAnchor.constraint(equalTo: (collectionView.centerXAnchor)).isActive = true
+        activityIndicatorView.centerYAnchor.constraint(equalTo: (collectionView.centerYAnchor)).isActive = true
+        activityIndicatorView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        activityIndicatorView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        activityIndicatorView.isHidden = false
+        activityIndicatorView.hidesWhenStopped = true
+        //  activityIndicatorView.startAnimating()
+        
         
     }
     
-    ///////////
-    func chat()  {  }
-    /////
-    func star ()  {  }
-
+    lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.backgroundColor = UIColor.rgb(252, green: 244, blue: 246)
+        cv.layer.rasterizationScale = UIScreen.main.scale
+        cv.dataSource = self
+        cv.delegate = self
+        return cv
+    }()
+    
+    /////// activity indicator
+    let activityIndicatorView: UIActivityIndicatorView = {
+        let aiv = UIActivityIndicatorView(activityIndicatorStyle:.whiteLarge)
+        aiv.translatesAutoresizingMaskIntoConstraints = false
+        aiv.color = .black
+        return aiv
+    }()
+    
+    
 }
+
+
+
+
 
