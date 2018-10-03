@@ -50,11 +50,8 @@ class ParashotDealsController : BaseCell, UICollectionViewDataSource, UICollecti
         return CGSize(width:collectionView.frame.width  , height: collectionView.frame.height * 0.5 - 20)
     }
     
-    
-    
     override func setupViews() {
-        
-        
+        //// view
         addSubview(collectionView)
         collectionView.topAnchor.constraint(equalTo:topAnchor,constant : 20).isActive = true
         collectionView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
