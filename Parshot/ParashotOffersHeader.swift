@@ -28,7 +28,7 @@ class ParashotOffersHeader : FirstSubCategryHeaders {
         segmentedControl.bottomAnchor.constraint(equalTo: bottomAnchor ).isActive = true
         segmentedControl.widthAnchor.constraint(equalTo: widthAnchor,multiplier : 0.6 ).isActive = true
         segmentedControl.heightAnchor.constraint(equalToConstant :30).isActive = true
-       segmentedControl.selectedSegmentIndex = 0
+       segmentedControl.selectedSegmentIndex = 1 
     
        
     
@@ -47,21 +47,8 @@ class ParashotOffersHeader : FirstSubCategryHeaders {
 
     
 @objc func segmentAction(_ segmentedControl: UISegmentedControl) {
-    switch (segmentedControl.selectedSegmentIndex) {
     
-    case 0:
-       controller?.selectedIndex = 0
-       
-        break
-    case 1:
-        controller?.selectedIndex = 1
-        
-        break
-    default:
-        break
-    }
-
+    controller?.ChangeSegmValue(id: segmentedControl.selectedSegmentIndex)
     
     }
-
 }

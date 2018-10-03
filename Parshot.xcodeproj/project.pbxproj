@@ -15,7 +15,7 @@
 		048D0EEE2157199E004B1BA2 /* ApiServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D0EED2157199E004B1BA2 /* ApiServices.swift */; };
 		048D0EF121571EE1004B1BA2 /* extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D0EF021571EE1004B1BA2 /* extentions.swift */; };
 		2706E2EE21636E1A002F8323 /* ParashotDealsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2706E2ED21636E1A002F8323 /* ParashotDealsView.swift */; };
-		2706E2F021636F14002F8323 /* ParashotDealsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2706E2EF21636F14002F8323 /* ParashotDealsController.swift */; };
+		2706E2F021636F14002F8323 /* ParashotDeals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2706E2EF21636F14002F8323 /* ParashotDeals.swift */; };
 		2706E2F521639889002F8323 /* FollowOrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2706E2F421639889002F8323 /* FollowOrderController.swift */; };
 		2706E2F7216399A8002F8323 /* FollowOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2706E2F6216399A8002F8323 /* FollowOrderView.swift */; };
 		2706E2FA2163D28D002F8323 /* ResturantPlaceControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2706E2F92163D28D002F8323 /* ResturantPlaceControler.swift */; };
@@ -25,6 +25,11 @@
 		278BF87F21622C58008A66F0 /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278BF87E21622C58008A66F0 /* ProductsView.swift */; };
 		278BF88121622C72008A66F0 /* ProductsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278BF88021622C72008A66F0 /* ProductsController.swift */; };
 		278BF88321622C98008A66F0 /* ProductsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278BF88221622C98008A66F0 /* ProductsHeader.swift */; };
+		27CC92792164C1CF000F35EA /* DoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CC92782164C1CF000F35EA /* DoneController.swift */; };
+		27CC927B2164C1DE000F35EA /* DoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CC927A2164C1DE000F35EA /* DoneView.swift */; };
+		27CC927D2164C331000F35EA /* DonFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CC927C2164C331000F35EA /* DonFooter.swift */; };
+		27CC927F2164C34B000F35EA /* DoneHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CC927E2164C34B000F35EA /* DoneHeader.swift */; };
+		27F768F52165331200AD9BA6 /* ParashotDealsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F768F42165331200AD9BA6 /* ParashotDealsController.swift */; };
 		5F79D1BCA941DA5DA863F3EC /* Pods_Parshot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F8678F5A445FC66E68E336 /* Pods_Parshot.framework */; };
 		A1056E772148151B00E28473 /* FristProductCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1056E762148151B00E28473 /* FristProductCart.swift */; };
 		A1056E792148156200E28473 /* FristProductCartCtroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1056E782148156200E28473 /* FristProductCartCtroller.swift */; };
@@ -245,17 +250,25 @@
 		048D0EED2157199E004B1BA2 /* ApiServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiServices.swift; sourceTree = "<group>"; };
 		048D0EF021571EE1004B1BA2 /* extentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extentions.swift; sourceTree = "<group>"; };
 		0A82C640E9028CB02A8E152A /* Pods-Parshot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parshot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Parshot/Pods-Parshot.debug.xcconfig"; sourceTree = "<group>"; };
+		2700CD1C2164F44500EB8582 /* SwiftCharts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftCharts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2706E2ED21636E1A002F8323 /* ParashotDealsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParashotDealsView.swift; sourceTree = "<group>"; };
-		2706E2EF21636F14002F8323 /* ParashotDealsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParashotDealsController.swift; sourceTree = "<group>"; };
+		2706E2EF21636F14002F8323 /* ParashotDeals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParashotDeals.swift; sourceTree = "<group>"; };
 		2706E2F421639889002F8323 /* FollowOrderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowOrderController.swift; sourceTree = "<group>"; };
 		2706E2F6216399A8002F8323 /* FollowOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowOrderView.swift; sourceTree = "<group>"; };
 		2706E2F92163D28D002F8323 /* ResturantPlaceControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantPlaceControler.swift; sourceTree = "<group>"; };
 		2706E2FD2163D3A5002F8323 /* ResturantPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantPlaceView.swift; sourceTree = "<group>"; };
 		2706E2FF2163D3BF002F8323 /* ResturantPlaceFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantPlaceFooter.swift; sourceTree = "<group>"; };
+		2716CCB62164F09C0028368A /* SwiftCharts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftCharts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2764E29A216505E000B09E48 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		278BF87C21622C45008A66F0 /* ProductsMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsMainController.swift; sourceTree = "<group>"; };
 		278BF87E21622C58008A66F0 /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
 		278BF88021622C72008A66F0 /* ProductsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsController.swift; sourceTree = "<group>"; };
 		278BF88221622C98008A66F0 /* ProductsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsHeader.swift; sourceTree = "<group>"; };
+		27CC92782164C1CF000F35EA /* DoneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneController.swift; sourceTree = "<group>"; };
+		27CC927A2164C1DE000F35EA /* DoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneView.swift; sourceTree = "<group>"; };
+		27CC927C2164C331000F35EA /* DonFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonFooter.swift; sourceTree = "<group>"; };
+		27CC927E2164C34B000F35EA /* DoneHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneHeader.swift; sourceTree = "<group>"; };
+		27F768F42165331200AD9BA6 /* ParashotDealsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParashotDealsController.swift; sourceTree = "<group>"; };
 		5720C9E5BB81674CB4699806 /* Pods-Parshot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parshot.release.xcconfig"; path = "Pods/Target Support Files/Pods-Parshot/Pods-Parshot.release.xcconfig"; sourceTree = "<group>"; };
 		69F8678F5A445FC66E68E336 /* Pods_Parshot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parshot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1056E762148151B00E28473 /* FristProductCart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FristProductCart.swift; sourceTree = "<group>"; };
@@ -814,6 +827,33 @@
 				278BF88021622C72008A66F0 /* ProductsController.swift */,
 			);
 			name = ProductsController;
+			sourceTree = "<group>";
+		};
+		27CC92752164C193000F35EA /* Done */ = {
+			isa = PBXGroup;
+			children = (
+				27CC92772164C1A5000F35EA /* DoneController */,
+				27CC92762164C1A3000F35EA /* DoneView */,
+			);
+			name = Done;
+			sourceTree = "<group>";
+		};
+		27CC92762164C1A3000F35EA /* DoneView */ = {
+			isa = PBXGroup;
+			children = (
+				27CC927A2164C1DE000F35EA /* DoneView.swift */,
+				27CC927C2164C331000F35EA /* DonFooter.swift */,
+				27CC927E2164C34B000F35EA /* DoneHeader.swift */,
+			);
+			name = DoneView;
+			sourceTree = "<group>";
+		};
+		27CC92772164C1A5000F35EA /* DoneController */ = {
+			isa = PBXGroup;
+			children = (
+				27CC92782164C1CF000F35EA /* DoneController.swift */,
+			);
+			name = DoneController;
 			sourceTree = "<group>";
 		};
 		456AFD6D425ACF018EDA4F7C /* Pods */ = {
@@ -1523,7 +1563,8 @@
 			children = (
 				A17151E62160CB830007A5C8 /* parashotOffersMainController.swift */,
 				A17151EA2160CD250007A5C8 /* parashotOffersController.swift */,
-				2706E2EF21636F14002F8323 /* ParashotDealsController.swift */,
+				27F768F42165331200AD9BA6 /* ParashotDealsController.swift */,
+				2706E2EF21636F14002F8323 /* ParashotDeals.swift */,
 			);
 			name = parashotOffersController;
 			sourceTree = "<group>";
@@ -1677,6 +1718,7 @@
 				A1C4A478213D466400C87D27 /* ِExtention */,
 				A1C4A461213D428900C87D27 /* AppDelegate.swift */,
 				A1C1B66C2156952600E500C0 /* DatabaseSql.swift */,
+				27CC92752164C193000F35EA /* Done */,
 				2706E2F1216396B6002F8323 /* FollowOrder */,
 				278BF87921622C04008A66F0 /* Products */,
 				A10A64202157A6BD0038BAD8 /* Model  */,
@@ -1792,6 +1834,9 @@
 		DEB1D27B531B00D15252BBF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2764E29A216505E000B09E48 /* Charts.framework */,
+				2700CD1C2164F44500EB8582 /* SwiftCharts.framework */,
+				2716CCB62164F09C0028368A /* SwiftCharts.framework */,
 				A1651525215FD3B5001A9FC9 /* SocketIO.framework */,
 				048D0EE12157126D004B1BA2 /* SQLite.framework */,
 				048D0EE021570C47004B1BA2 /* ChromaColorPicker.framework */,
@@ -1948,7 +1993,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2706E2F021636F14002F8323 /* ParashotDealsController.swift in Sources */,
+				2706E2F021636F14002F8323 /* ParashotDeals.swift in Sources */,
 				A171394921403E5100063F5C /* OffeersController.swift in Sources */,
 				A1C4A482213D71DA00C87D27 /* BsaeCell.swift in Sources */,
 				A165151B215FA346001A9FC9 /* VericallCollectionView.swift in Sources */,
@@ -1974,12 +2019,14 @@
 				A15CD597213E8D7400F03E8D /* TypeView.swift in Sources */,
 				A162E93B21469BF400139EB8 /* ProductDetails.swift in Sources */,
 				A10D30772150FA1A00A765AA /* ProductRateView.swift in Sources */,
+				27CC927F2164C34B000F35EA /* DoneHeader.swift in Sources */,
 				A129F23321441855003E88E1 /* RateView.swift in Sources */,
 				A15CD58F213E8BEB00F03E8D /* TypeController.swift in Sources */,
 				A165151F215FA469001A9FC9 /* ProductImagesHorizentalView.swift in Sources */,
 				A1056E772148151B00E28473 /* FristProductCart.swift in Sources */,
 				A119DA78214554E600D5200B /* RestuarantController.swift in Sources */,
 				A1056E82214835B300E28473 /* FinishOrderController.swift in Sources */,
+				27F768F52165331200AD9BA6 /* ParashotDealsController.swift in Sources */,
 				A1056E7D214816E400E28473 /* ProuductCardHeadear.swift in Sources */,
 				2706E2F521639889002F8323 /* FollowOrderController.swift in Sources */,
 				A1BB22D1214D21FA00EF2CB3 /* FirstMyOrderController.swift in Sources */,
@@ -2011,6 +2058,7 @@
 				A10D309C21515DAF00A765AA /* ColorPickerControler.swift in Sources */,
 				A1056E84214835C500E28473 /* FinishOrderView.swift in Sources */,
 				A15039E92152593F0014FE85 /* StoreOptionsView.swift in Sources */,
+				27CC92792164C1CF000F35EA /* DoneController.swift in Sources */,
 				278BF87F21622C58008A66F0 /* ProductsView.swift in Sources */,
 				A1BB22E6214D468B00EF2CB3 /* AddProductColorView.swift in Sources */,
 				A1651509215F79FA001A9FC9 /* FirstMainMenuController.swift in Sources */,
@@ -2036,7 +2084,9 @@
 				A1713937213FE6B400063F5C /* ThirdSliderView.swift in Sources */,
 				A129F22D2143D3B5003E88E1 /* FirstSubCategryView.swift in Sources */,
 				A15039E5215258750014FE85 /* StoreSettingFooter.swift in Sources */,
+				27CC927D2164C331000F35EA /* DonFooter.swift in Sources */,
 				A15039EB215259680014FE85 /* StoreDepartmentView.swift in Sources */,
+				27CC927B2164C1DE000F35EA /* DoneView.swift in Sources */,
 				A1BB22E2214D44C800EF2CB3 /* AddProductColorController.swift in Sources */,
 				A15CD589213E8AD800F03E8D /* SecondSliderController.swift in Sources */,
 				A10F4EDA215646D9000C74FD /* PhotographerController.swift in Sources */,

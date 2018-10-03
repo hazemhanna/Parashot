@@ -172,6 +172,7 @@ class ResturantPlaceView : BaseCell, GMSMapViewDelegate{
         return googlemaps
     }()
     
+    
     let parashotTextView :UITextView = {
         let NL = UITextView()
         NL.textColor = UIColor.black
