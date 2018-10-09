@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		044044D9216B6CDA00C97F79 /* DesigenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044044D4216B6CD900C97F79 /* DesigenModel.swift */; };
+		044044DA216B6CDA00C97F79 /* HeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044044D5216B6CD900C97F79 /* HeaderModel.swift */; };
+		044044DB216B6CDA00C97F79 /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044044D6216B6CDA00C97F79 /* StoreModel.swift */; };
+		044044DC216B6CDA00C97F79 /* BodyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044044D7216B6CDA00C97F79 /* BodyModel.swift */; };
+		044044DD216B6CDA00C97F79 /* StoreSettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044044D8216B6CDA00C97F79 /* StoreSettingModel.swift */; };
+		044044E4216B6D0B00C97F79 /* TblHeadel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044044DE216B6D0A00C97F79 /* TblHeadel.swift */; };
+		044044E5216B6D0B00C97F79 /* TblStoreSetting .swift in Sources */ = {isa = PBXBuildFile; fileRef = 044044DF216B6D0A00C97F79 /* TblStoreSetting .swift */; };
+		044044E6216B6D0B00C97F79 /* TblStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044044E0216B6D0B00C97F79 /* TblStore.swift */; };
+		044044E7216B6D0B00C97F79 /* TblBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044044E1216B6D0B00C97F79 /* TblBody.swift */; };
+		044044E8216B6D0B00C97F79 /* TblDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044044E2216B6D0B00C97F79 /* TblDesign.swift */; };
+		044044E9216B6D0B00C97F79 /* TblFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044044E3216B6D0B00C97F79 /* TblFooter.swift */; };
+		044044EB216B6D8E00C97F79 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 044044EA216B6D8E00C97F79 /* SQLite.framework */; };
+		044044EC216B6D8E00C97F79 /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 044044EA216B6D8E00C97F79 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		044044EE216B6E1D00C97F79 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048D0EE12157126D004B1BA2 /* SQLite.framework */; };
+		044044EF216B6E1D00C97F79 /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 048D0EE12157126D004B1BA2 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		044044F6216B72A000C97F79 /* Intractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044044F3216B72A000C97F79 /* Intractor.swift */; };
+		044044F7216B72A000C97F79 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044044F4216B72A000C97F79 /* Router.swift */; };
+		044044F8216B72A000C97F79 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044044F5216B72A000C97F79 /* Presenter.swift */; };
+		044044FA216B8CF700C97F79 /* MainData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044044F9216B8CF700C97F79 /* MainData.swift */; };
+		046BF5C6216B964500231D0C /* SlidersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046BF5C5216B964500231D0C /* SlidersModel.swift */; };
 		048D0D932156FCF1004B1BA2 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 048D0D922156FCF0004B1BA2 /* Podfile */; };
 		048D0EDB21570C33004B1BA2 /* DKImagePickerController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048D0EDC21570C33004B1BA2 /* DKImagePickerController.framework */; };
 		048D0EDD21570C45004B1BA2 /* RichEditorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048D0EDE21570C45004B1BA2 /* RichEditorView.framework */; };
@@ -177,7 +197,39 @@
 		A1F5EBE82146C22200268B7E /* AddToCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F5EBE72146C22200268B7E /* AddToCardView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		044044ED216B6D8E00C97F79 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				044044EF216B6E1D00C97F79 /* SQLite.framework in Embed Frameworks */,
+				044044EC216B6D8E00C97F79 /* SQLite.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		044044D4216B6CD900C97F79 /* DesigenModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesigenModel.swift; sourceTree = "<group>"; };
+		044044D5216B6CD900C97F79 /* HeaderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderModel.swift; sourceTree = "<group>"; };
+		044044D6216B6CDA00C97F79 /* StoreModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
+		044044D7216B6CDA00C97F79 /* BodyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyModel.swift; sourceTree = "<group>"; };
+		044044D8216B6CDA00C97F79 /* StoreSettingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreSettingModel.swift; sourceTree = "<group>"; };
+		044044DE216B6D0A00C97F79 /* TblHeadel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TblHeadel.swift; sourceTree = "<group>"; };
+		044044DF216B6D0A00C97F79 /* TblStoreSetting .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TblStoreSetting .swift"; sourceTree = "<group>"; };
+		044044E0216B6D0B00C97F79 /* TblStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TblStore.swift; sourceTree = "<group>"; };
+		044044E1216B6D0B00C97F79 /* TblBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TblBody.swift; sourceTree = "<group>"; };
+		044044E2216B6D0B00C97F79 /* TblDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TblDesign.swift; sourceTree = "<group>"; };
+		044044E3216B6D0B00C97F79 /* TblFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TblFooter.swift; sourceTree = "<group>"; };
+		044044EA216B6D8E00C97F79 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = "../../Desktop/projects/Parshot 4/Pods/SQLite.swift/SQLite.framework"; sourceTree = "<group>"; };
+		044044F3216B72A000C97F79 /* Intractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Intractor.swift; sourceTree = "<group>"; };
+		044044F4216B72A000C97F79 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		044044F5216B72A000C97F79 /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		044044F9216B8CF700C97F79 /* MainData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainData.swift; sourceTree = "<group>"; };
+		046BF5C5216B964500231D0C /* SlidersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidersModel.swift; sourceTree = "<group>"; };
 		048D0D922156FCF0004B1BA2 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		048D0D952156FEFA004B1BA2 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		048D0D962156FEFA004B1BA2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -264,6 +316,7 @@
 		278BF87E21622C58008A66F0 /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
 		278BF88021622C72008A66F0 /* ProductsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsController.swift; sourceTree = "<group>"; };
 		278BF88221622C98008A66F0 /* ProductsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsHeader.swift; sourceTree = "<group>"; };
+		27A8ED4B2168BAEE00487A4E /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27CC92782164C1CF000F35EA /* DoneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneController.swift; sourceTree = "<group>"; };
 		27CC927A2164C1DE000F35EA /* DoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneView.swift; sourceTree = "<group>"; };
 		27CC927C2164C331000F35EA /* DonFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonFooter.swift; sourceTree = "<group>"; };
@@ -427,6 +480,8 @@
 			files = (
 				048D0EDD21570C45004B1BA2 /* RichEditorView.framework in Frameworks */,
 				048D0EDB21570C33004B1BA2 /* DKImagePickerController.framework in Frameworks */,
+				044044EB216B6D8E00C97F79 /* SQLite.framework in Frameworks */,
+				044044EE216B6E1D00C97F79 /* SQLite.framework in Frameworks */,
 				5F79D1BCA941DA5DA863F3EC /* Pods_Parshot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,6 +489,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		044044CF216B6BAF00C97F79 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				044044D0216B6BE100C97F79 /* MainData */,
+			);
+			name = Entity;
+			sourceTree = "<group>";
+		};
+		044044D0216B6BE100C97F79 /* MainData */ = {
+			isa = PBXGroup;
+			children = (
+				044044D2216B6BEF00C97F79 /* DataMangment */,
+				044044D1216B6BE900C97F79 /* Models */,
+			);
+			name = MainData;
+			sourceTree = "<group>";
+		};
+		044044D1216B6BE900C97F79 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				044044D7216B6CDA00C97F79 /* BodyModel.swift */,
+				044044D4216B6CD900C97F79 /* DesigenModel.swift */,
+				044044D5216B6CD900C97F79 /* HeaderModel.swift */,
+				044044D6216B6CDA00C97F79 /* StoreModel.swift */,
+				044044D8216B6CDA00C97F79 /* StoreSettingModel.swift */,
+				044044F9216B8CF700C97F79 /* MainData.swift */,
+				046BF5C5216B964500231D0C /* SlidersModel.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		044044D2216B6BEF00C97F79 /* DataMangment */ = {
+			isa = PBXGroup;
+			children = (
+				044044E1216B6D0B00C97F79 /* TblBody.swift */,
+				044044E2216B6D0B00C97F79 /* TblDesign.swift */,
+				044044E3216B6D0B00C97F79 /* TblFooter.swift */,
+				044044DE216B6D0A00C97F79 /* TblHeadel.swift */,
+				044044E0216B6D0B00C97F79 /* TblStore.swift */,
+				044044DF216B6D0A00C97F79 /* TblStoreSetting .swift */,
+			);
+			name = DataMangment;
+			sourceTree = "<group>";
+		};
+		044044F2216B728400C97F79 /* Viper */ = {
+			isa = PBXGroup;
+			children = (
+				044044F3216B72A000C97F79 /* Intractor.swift */,
+				044044F5216B72A000C97F79 /* Presenter.swift */,
+				044044F4216B72A000C97F79 /* Router.swift */,
+			);
+			name = Viper;
+			sourceTree = "<group>";
+		};
 		048D0D942156FEFA004B1BA2 /* SQLite.swift */ = {
 			isa = PBXGroup;
 			children = (
@@ -1123,6 +1232,7 @@
 		A129F2242143D24F003E88E1 /* MainPages */ = {
 			isa = PBXGroup;
 			children = (
+				044044F2216B728400C97F79 /* Viper */,
 				048D0EE721571892004B1BA2 /* MainPagesViewModel */,
 				048D0EE621571883004B1BA2 /* MainPagesModel */,
 				A1C4A473213D42E400C87D27 /* FirstMainPage */,
@@ -1692,6 +1802,7 @@
 		A1C4A455213D428900C87D27 = {
 			isa = PBXGroup;
 			children = (
+				044044EA216B6D8E00C97F79 /* SQLite.framework */,
 				048D0D922156FCF0004B1BA2 /* Podfile */,
 				A1C4A483213D727600C87D27 /* JF-Flat-regular.otf */,
 				A1C4A460213D428900C87D27 /* Parshot */,
@@ -1712,6 +1823,7 @@
 		A1C4A460213D428900C87D27 /* Parshot */ = {
 			isa = PBXGroup;
 			children = (
+				044044CF216B6BAF00C97F79 /* Entity */,
 				048D0EEF21571ED5004B1BA2 /* Extentions */,
 				048D0EEC2157196B004B1BA2 /* Api */,
 				A15CD583213E81BA00F03E8D /* Helper */,
@@ -1834,6 +1946,7 @@
 		DEB1D27B531B00D15252BBF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				27A8ED4B2168BAEE00487A4E /* SQLite.framework */,
 				2764E29A216505E000B09E48 /* Charts.framework */,
 				2700CD1C2164F44500EB8582 /* SwiftCharts.framework */,
 				2716CCB62164F09C0028368A /* SwiftCharts.framework */,
@@ -1862,6 +1975,7 @@
 				A1C4A45C213D428900C87D27 /* Resources */,
 				14527F92347B0A29630380C7 /* [CP] Embed Pods Frameworks */,
 				58ADDD173BE4F453A55806AB /* [CP] Copy Pods Resources */,
+				044044ED216B6D8E00C97F79 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1884,7 +1998,7 @@
 				TargetAttributes = {
 					A1C4A45D213D428900C87D27 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = CYL3JT27CL;
+						DevelopmentTeam = 462YD86X5Y;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -1932,6 +2046,8 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/ChromaColorPicker/ChromaColorPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/DKImagePickerController/DKImagePickerController.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RichEditorView/RichEditorView.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -1940,6 +2056,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChromaColorPicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DKImagePickerController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RichEditorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -1960,8 +2078,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2024,9 +2141,11 @@
 				A15CD58F213E8BEB00F03E8D /* TypeController.swift in Sources */,
 				A165151F215FA469001A9FC9 /* ProductImagesHorizentalView.swift in Sources */,
 				A1056E772148151B00E28473 /* FristProductCart.swift in Sources */,
+				044044D9216B6CDA00C97F79 /* DesigenModel.swift in Sources */,
 				A119DA78214554E600D5200B /* RestuarantController.swift in Sources */,
 				A1056E82214835B300E28473 /* FinishOrderController.swift in Sources */,
 				27F768F52165331200AD9BA6 /* ParashotDealsController.swift in Sources */,
+				044044E9216B6D0B00C97F79 /* TblFooter.swift in Sources */,
 				A1056E7D214816E400E28473 /* ProuductCardHeadear.swift in Sources */,
 				2706E2F521639889002F8323 /* FollowOrderController.swift in Sources */,
 				A1BB22D1214D21FA00EF2CB3 /* FirstMyOrderController.swift in Sources */,
@@ -2055,19 +2174,25 @@
 				2706E3002163D3BF002F8323 /* ResturantPlaceFooter.swift in Sources */,
 				A17151F52161316A0007A5C8 /* ParashotOffersHeader.swift in Sources */,
 				A109B910215AAD320079C5E8 /* ImageView.swift in Sources */,
+				044044F8216B72A000C97F79 /* Presenter.swift in Sources */,
 				A10D309C21515DAF00A765AA /* ColorPickerControler.swift in Sources */,
 				A1056E84214835C500E28473 /* FinishOrderView.swift in Sources */,
 				A15039E92152593F0014FE85 /* StoreOptionsView.swift in Sources */,
 				27CC92792164C1CF000F35EA /* DoneController.swift in Sources */,
 				278BF87F21622C58008A66F0 /* ProductsView.swift in Sources */,
+				044044E4216B6D0B00C97F79 /* TblHeadel.swift in Sources */,
 				A1BB22E6214D468B00EF2CB3 /* AddProductColorView.swift in Sources */,
+				044044FA216B8CF700C97F79 /* MainData.swift in Sources */,
 				A1651509215F79FA001A9FC9 /* FirstMainMenuController.swift in Sources */,
 				A1651515215F96E3001A9FC9 /* SecondMainMenuControler.swift in Sources */,
+				046BF5C6216B964500231D0C /* SlidersModel.swift in Sources */,
 				278BF88121622C72008A66F0 /* ProductsController.swift in Sources */,
+				044044DD216B6CDA00C97F79 /* StoreSettingModel.swift in Sources */,
 				A1C4A488213D75A400C87D27 /* SliderView.swift in Sources */,
 				A162E93521469A0700139EB8 /* ProductNameView.swift in Sources */,
 				A1713939213FE6C700063F5C /* ThirdDepartmentView.swift in Sources */,
 				A1713933213FE4FE00063F5C /* ThirdDepartmentController .swift in Sources */,
+				044044E8216B6D0B00C97F79 /* TblDesign.swift in Sources */,
 				2706E2FE2163D3A5002F8323 /* ResturantPlaceView.swift in Sources */,
 				A1C4A477213D437200C87D27 /* FirstMainPageController.swift in Sources */,
 				A15CD58B213E8B2C00F03E8D /* SecondDepartmentController.swift in Sources */,
@@ -2076,6 +2201,7 @@
 				048D0EE9215718B9004B1BA2 /* SliderModel.swift in Sources */,
 				A10D30792150FDE400A765AA /* productRateFooter.swift in Sources */,
 				048D0EF121571EE1004B1BA2 /* extentions.swift in Sources */,
+				044044E5216B6D0B00C97F79 /* TblStoreSetting .swift in Sources */,
 				A152B5322147C17100A02469 /* ConfirmOrderController.swift in Sources */,
 				A171394521403DF600063F5C /* FourthDepartmentController.swift in Sources */,
 				A171394B21403FC100063F5C /* FourthSliderView.swift in Sources */,
@@ -2098,12 +2224,15 @@
 				A10A64222157A82B0038BAD8 /* FooterModel.swift in Sources */,
 				A1BB22DE214D41AA00EF2CB3 /* FirstAddProductImagesView.swift in Sources */,
 				A129F23A21442A47003E88E1 /* SecondSubCategryController.swift in Sources */,
+				044044DA216B6CDA00C97F79 /* HeaderModel.swift in Sources */,
 				A171392F213FE43500063F5C /* ThirdMainPageController  .swift in Sources */,
+				044044F6216B72A000C97F79 /* Intractor.swift in Sources */,
 				A162E93721469BA700139EB8 /* ProductCapacityView.swift in Sources */,
 				A15CD58D213E8BB900F03E8D /* BestRateController.swift in Sources */,
 				A1EF05C0214FB478009A9D86 /* MyAcountView4.swift in Sources */,
 				A152B5362147C5BF00A02469 /* ConfirmOrderView.swift in Sources */,
 				A15CD591213E8D1C00F03E8D /* SecondSliderView.swift in Sources */,
+				044044DB216B6CDA00C97F79 /* StoreModel.swift in Sources */,
 				A171394121403DA800063F5C /* FourthMainPageController.swift in Sources */,
 				2706E2FA2163D28D002F8323 /* ResturantPlaceControler.swift in Sources */,
 				A1F5EBE82146C22200268B7E /* AddToCardView.swift in Sources */,
@@ -2121,6 +2250,7 @@
 				A1C4A47E213D6EDA00C87D27 /* SliderController.swift in Sources */,
 				A1162530214FD72F0004B4DD /* DellerAccountController.swift in Sources */,
 				A116253E214FF1A30004B4DD /* DeliveryOffers.swift in Sources */,
+				044044E7216B6D0B00C97F79 /* TblBody.swift in Sources */,
 				A1056E86214836CE00E28473 /* HeadrWithoutCart.swift in Sources */,
 				A10D30882151331800A765AA /* NewOrderFooter.swift in Sources */,
 				A10F4EDF21564C61000C74FD /* PhotographerHeader.swift in Sources */,
@@ -2142,18 +2272,21 @@
 				2706E2F7216399A8002F8323 /* FollowOrderView.swift in Sources */,
 				A171393B2140021900063F5C /* thirdMainFooter.swift in Sources */,
 				A15CD595213E8D5D00F03E8D /* BestRateView.swift in Sources */,
+				044044DC216B6CDA00C97F79 /* BodyModel.swift in Sources */,
 				A15039E72152591F0014FE85 /* StorePlaceView.swift in Sources */,
 				A17151E72160CB830007A5C8 /* parashotOffersMainController.swift in Sources */,
 				A119DA7A214554FC00D5200B /* RestuarantView.swift in Sources */,
 				A1C1B66B21567EAE00E500C0 /* ChatLisView.swift in Sources */,
 				A165150B215F7A13001A9FC9 /* MenuView.swift in Sources */,
 				A1BB22D3214D229F00EF2CB3 /* FirstMyOrderView.swift in Sources */,
+				044044F7216B72A000C97F79 /* Router.swift in Sources */,
 				A171394321403DBC00063F5C /* FourthSliderController.swift in Sources */,
 				A162E9332146992300139EB8 /* ProductColorView.swift in Sources */,
 				A1C4A480213D715800C87D27 /* MainFooter.swift in Sources */,
 				A1EF05B4214FA61F009A9D86 /* MyAcountController.swift in Sources */,
 				A10D3080215115C500A765AA /* OrderDetailsView.swift in Sources */,
 				A1C1B65E215663CC00E500C0 /* PhotographerDetailsController.swift in Sources */,
+				044044E6216B6D0B00C97F79 /* TblStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2272,10 +2405,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = CYL3JT27CL;
+				DEVELOPMENT_TEAM = 462YD86X5Y;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Socket.IO-Client-Swift",
+					"$(PROJECT_DIR)/Pods/SQLite.swift",
 				);
 				INFOPLIST_FILE = Parshot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2298,7 +2432,7 @@
 					"-framework",
 					"\"RichEditorView\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hazem.Parshot;
+				PRODUCT_BUNDLE_IDENTIFIER = codesroots.Parshot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
@@ -2311,7 +2445,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = CYL3JT27CL;
+				DEVELOPMENT_TEAM = 462YD86X5Y;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/GoogleMaps/Maps/Frameworks",
@@ -2331,7 +2465,7 @@
 					"-framework",
 					"\"RichEditorView\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hazem.Parshot;
+				PRODUCT_BUNDLE_IDENTIFIER = codesroots.Parshot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;

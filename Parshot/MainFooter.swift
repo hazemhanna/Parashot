@@ -152,7 +152,7 @@ class MainFooter: BaseCell {
     {
        
         
-        controller?.goToMenuPage ()
+      //  controller?.goToMenuPage ()
     }
     
     ////

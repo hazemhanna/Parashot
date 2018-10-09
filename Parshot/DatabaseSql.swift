@@ -48,7 +48,7 @@
 //            print ("Unable to open database")
 //        }
 //    }
-//    /////// creat table 
+//    /////// creat table
 //    func createTablefooter() {
 //
 //        do {
@@ -93,7 +93,7 @@
 //            print("Unable to create table")
 //        }
 //    }
-//    ////// insert in table function 
+//    ////// insert in table function
 //    
 //    func addFooter(data:[String:Any]) -> Int64? {
 //        do {
@@ -145,7 +145,7 @@
 //        }
 //        return false
 //    }
-//
+////////
 //
 //    
 //    
@@ -168,3 +168,4 @@
 //    
 //
 //}
+//

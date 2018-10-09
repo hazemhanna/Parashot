@@ -21,8 +21,9 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
     
     ////// models variables
     
-   // var sliderViewModel = [SliderViewModel]()
-////////// end models variables
+    var presenter: CarsPresenterProtocol?
+    var viewModels: [SliderViewModel] = []
+    ////////// end models variables
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -61,7 +62,6 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: self.footer, for: indexPath as IndexPath) as! MainFooter
-        footer.controller = self
         
         return footer
     }
@@ -74,118 +74,61 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
         
     }
     
-
+    
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         
         
-        
-        view.addSubview(blacView)
-        blacView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        blacView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        blacView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-        blacView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
-        blacView.isHidden = true
-        
-       // FetchDataForSlider()
         collectionView?.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
         collectionView?.backgroundColor = UIColor.rgb(230, green: 234, blue: 237)
         collectionView?.register(SliderController.self, forCellWithReuseIdentifier: Cellid0)
         collectionView?.register(DepartMentController.self, forCellWithReuseIdentifier: Cellid1)
-   
+        
         collectionView?.register(MainFooter.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: footer)
         collectionView?.isScrollEnabled = false
         
+        // setup navBar.....
+        navigationController?.navigationBar.barTintColor = UIColor.rgb(99, green: 27, blue: 103)
+        navigationItem.title = NSLocalizedString("parashot", comment: "this is name")
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         // casting is required because UICollectionViewLayout doesn't offer header pin. Its feature of UICollectionViewFlowLayout
         let layout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
         layout?.sectionFootersPinToVisibleBounds = true
         
-     
-        // setup navBar.....
-        navigationController?.navigationBar.barTintColor = UIColor.rgb(99, green: 27, blue: 103)
-        let logo = UIImage(named: "parashotImage")
-        let imageView = UIImageView(image:logo)
-        self.navigationItem.titleView = imageView
         
-        let StarButton = UIBarButtonItem(image: UIImage(named: "Starimage")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(star))
+        let StarButton = UIBarButtonItem(image: UIImage(named: "nav_more_icon")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(star))
         navigationItem.rightBarButtonItem = StarButton
         
         
         
-        let chatButton = UIBarButtonItem(image: UIImage(named: "chatingimage")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(chat))
+        let chatButton = UIBarButtonItem(image: UIImage(named: "nav_more_icon")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(chat))
         navigationItem.leftBarButtonItem = chatButton
         
-        
-        
-        blacView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(HideBackView)))
-        blacView.isUserInteractionEnabled = true
-        
+        presenter?.showCars { (viewModels) in
+            self.viewModels = viewModels
+            
+        }
     }
     
     
-    
-    //// make
-    func HideBackView(tapGestureRecognizer: UITapGestureRecognizer)
-        
-    {
-        blacView.isHidden = true
+    func chat()  {
         
     }
     
-    
-    ///////////
-    func chat()  {  }
-    /////
-    func star ()  {  }
-    
-    ///// meunu Function 
-    
-    func goToMenuPage (){
-    
-    
-    blacView.isHidden = false
-    
-    
-    }
- 
-    let  blacView :UIView = {
-        let uv = UIView()
-        uv.backgroundColor = UIColor.black
-        uv.translatesAutoresizingMaskIntoConstraints = false
-        uv.alpha = 0.7
-        return uv
-    }()
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
- //////////// Api service Functions
-    
-//    func FetchDataForSlider(){
-//        ApiService.SharedInstance.fetchFeedForUrl(URL: "products"){ (data:Data) in
-//
-//            do {
-//                print(data)
-//                let Sliders = try JSONDecoder().decode(MainData.self, from: data)
-//                self.sliderViewModel = Sliders.data.map({return SliderViewModel(slider: $0)}) ?? []
-//                DispatchQueue.main.async {
-//                    self.collectionView?.reloadData()
-//                }
-//            } catch let jsonErr {
-//              print(jsonErr)
-//            }
-//
-//            }
-//            }
+    func star ()  {
         
-
+    }
+    //////////// Api service Functions
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -193,3 +136,5 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
     
     //////////// End Api Service Function
 }
+
+
