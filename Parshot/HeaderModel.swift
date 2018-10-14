@@ -11,7 +11,7 @@ import UIKit
 
 struct  HeaderModel : Decodable {
     
-    var id: Int
+  //  var id: Int
     var background: String
     var red: Int
     var green: Int
@@ -21,10 +21,11 @@ struct  HeaderModel : Decodable {
     var left_icon: String
     var template_id: Int
     
-
- 
     
 }
+
+
+
 
 
 

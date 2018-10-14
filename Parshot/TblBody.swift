@@ -16,26 +16,26 @@ class Body {
     private let db: Connection?
     
     private let TbBody = Table("Body")
-    private var id = Expression<Int64>("id")
+    private var id = Expression<Int>("id")
     private let background = Expression<String?>("background")
-    private let red = Expression<Int64?>("red")
-    private let green = Expression<Int64?>("green")
-    private let blue = Expression<Int64?>("blue")
+    private let red = Expression<Int?>("red")
+    private let green = Expression<Int?>("green")
+    private let blue = Expression<Int?>("blue")
     
     private let first_label = Expression<String?>("first_label")
     private let second_label = Expression<String?>("second_label")
     private let third_label = Expression<String?>("third_label")
-    private var template_id = Expression<Int64>("template_id")
+    private var template_id = Expression<Int>("template_id")
     
     private let categorybackground = Expression<String?>("categorybackground")
-    private let category_red = Expression<Int64?>("category_red")
-    private let category_green = Expression<Int64?>("category_green")
-    private let category_blue = Expression<Int64?>("category_blue")
+    private let category_red = Expression<Int?>("category_red")
+    private let category_green = Expression<Int?>("category_green")
+    private let category_blue = Expression<Int?>("category_blue")
     
     private let font_color = Expression<String?>("font_color")
-    private let font_red = Expression<Int64?>("font_red")
-    private let font_green = Expression<Int64?>("font_green")
-    private let font_blue = Expression<Int64?>("font_blue")
+    private let font_red = Expression<Int?>("font_red")
+    private let font_green = Expression<Int?>("font_green")
+    private let font_blue = Expression<Int?>("font_blue")
     
     
     
@@ -92,10 +92,10 @@ class Body {
     }
     
     
-    func addBody(data:[String:Any]) -> Int64? {
+    func addBody(data:BodyModel) -> Int64? {
         do {
-            let insert = TbBody.insert(background <- data["background"]! as! String,red <- data["red"]! as! Int64,green <- data["green"]! as! Int64 ,blue <- data["blue"]!  as! Int64 ,first_label <- data["first_label"]! as! String,second_label <- data["second_label"]! as! String,third_label <- data["third_label"] as! String,template_id <- data["template_id"]  as! Int64,categorybackground <- data["categorybackground"]as! String,category_red <- data["category_red"]  as! Int64, category_green <- data["category_green"] as! Int64,category_blue <- data["category_blue"] as! Int64 ,font_color <- data["font_color"]as! String,font_red <- data["font_red"]  as! Int64, font_green <- data["font_green"] as! Int64,font_blue <- data["font_blue"] as! Int64)
-            
+            let insert = TbBody.insert(background <- data.background,red <- data.red ,green <- data.green ,blue <- data.blue ,first_label <- data.first_label ,second_label <- data.second_label,third_label <- data.third_label,template_id <- Int(data.template_id)!,categorybackground <- data.categorybackground ,category_red <- data.category_red, category_green <- data.category_green,category_blue <- data.category_blue ,font_color <- data.font_color ,font_red <- data.font_red, font_green <- data.font_green,font_blue <- data.font_blue)
+
             let id = try db!.run(insert)
             print("Insert to tblBody successfully")
             print(id)
@@ -108,33 +108,33 @@ class Body {
     
     
         //////
-        func queryAllFooterByName(bodyid:Int64) -> BodyModel {
-            var Bodies : BodyModel?
+        func queryAllBodyByName() -> [BodyModel] {
+            var data  =  [BodyModel]()
     
             do {
     
-                for Body in try db!.prepare(self.TbBody.filter(id == bodyid)) {
-                    Bodies?.background = Body[background]!
-                    Bodies?.id = Int(Body[id])
-                    Bodies?.red  = Body[red] as! Int
-                }
+                for Body in try db!.prepare(self.TbBody) {
+                    print(Body)
+                    let jsonEncoder = JSONEncoder()
+                    
+                      data.append(BodyModel(background:Body[background]!, red:Body[red]!, green:Body[green]!, blue:Body[blue]!, first_label:Body[first_label]!, second_label:Body[second_label]!, third_label:Body[third_label]!, template_id:String(Body[template_id]), categorybackground:Body[categorybackground]!, category_red:Body[category_red]!, category_green:Body[category_green]!, category_blue:Body[category_blue]!, font_color:Body[font_color]!, font_red:Body[font_red]!, font_green:Body[font_green]!, font_blue:Body[font_blue]!))
+                   
 
-                
-              
-                
+               
+                }
                 
             } catch {
                 print("Cannot get list of footer ")
             }
     
-            return Bodies!
+            return data
         }
     
     
     
     
     ///////// update table
-    func updateBody(BodyId:Int64  , newBody : String) -> Bool {
+    func updateBody(BodyId:Int  , newBody : String) -> Bool {
         let tblFilterBody  = TbBody.filter(id == BodyId)
         do {
             let update = tblFilterBody.update([
@@ -152,7 +152,7 @@ class Body {
     }
     
     ////// delet table
-    func deleteBody (inputId: Int64) -> Bool {
+    func deleteBody (inputId: Int) -> Bool {
         do {
             let tblFilterBody = TbBody.filter(id == inputId)
             try db!.run(TbBody.delete())

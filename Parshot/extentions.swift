@@ -92,7 +92,7 @@ class CustomImageView: UIImageView {
     
     var imageUrlString: String?
     
-    func loadImageUsingUrlString(_ urlString: String,completion: @escaping (UIImage) -> ()) {
+    func loadImageUsingUrlString(_ urlString: String) {
         
         imageUrlString = urlString
         
@@ -102,7 +102,7 @@ class CustomImageView: UIImageView {
         
         if let imageFromCache = imageCache.object(forKey: urlString as NSString) {
             self.image = imageFromCache
-          
+            return
         }
         
         URLSession.shared.dataTask(with: url!, completionHandler: { (data, respones, error) in
@@ -121,14 +121,11 @@ class CustomImageView: UIImageView {
                         
                         self.image = imageToCache
                         imageCache.setObject(imageToCache, forKey: urlString as NSString)
-                        completion(self.image!)
                     }
                 }
             })
             
         }).resume()
-        
-       
     }
     
 }

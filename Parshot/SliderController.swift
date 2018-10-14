@@ -16,21 +16,31 @@ class SliderController : BaseCell  , UICollectionViewDataSource, UICollectionVie
     var cell = "cell"
     var timer:Timer? = nil
     
-    
+    var data:[SliderViewModel]?{
+        
+        
+        didSet{
+            
+            
+            collectionView.reloadData()
+            
+            
+        }
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 5
+        return (data?.count)!
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cell, for: indexPath) as! SliderView
-        
+        cell.data = data![indexPath.item]
         return cell
         
     }
-    
+
     
     //////// give to colletionview how many image  in every cell
     
@@ -92,13 +102,13 @@ class SliderController : BaseCell  , UICollectionViewDataSource, UICollectionVie
     var x = 1
     
     @objc func autoScroll() {
-        if self.x < 5 { //self.datasource.count
+        if self.x < (self.data?.count)! { //self.datasource.count
             let indexPath = IndexPath(item: x, section: 0)
             self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
             self.x = self.x + 1
         } else {
-            self.x = 0
-            self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
+        //    self.x = 0
+           // self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
         }
     }
 }

@@ -5,12 +5,19 @@ import UIKit
 
 struct SliderViewModel {
     
-    let name: String
+    var photo: String?
+    var Image: CustomImageView?
 
-    init(slider: StoreModel) {
-        self.name = slider.name
-
+    init(slider: SlidersModel) {
+        self.photo = slider.photo
+       GetImageFromUrl()
     }
-    
+    func GetImageFromUrl() {
+      
+        var  url = "http://parashote.codesroots.com/library/\(self.photo!)" as? String
+        if let imageurl = url {
+            Image?.loadImageUsingUrlString(imageurl)
+        }
+    }
 }
 

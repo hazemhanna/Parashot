@@ -12,10 +12,10 @@ class Design {
     static let shared:Design = Design()
     private let db: Connection?
     private let tblDesign = Table("Design")
-    private var id = Expression<Int64>("id")
-    private var header_id = Expression<Int64>("header_id")
-    private var footer_id = Expression<Int64>("footer_id")
-    private var body_id = Expression<Int64>("body_id")
+    private var id = Expression<Int>("id")
+    private var header_id = Expression<Int>("header_id")
+    private var footer_id = Expression<Int>("footer_id")
+    private var body_id = Expression<Int>("body_id")
    
     /////// open database and make connection
    ///// creat location to store database in app
@@ -49,9 +49,9 @@ class Design {
         }
     }
     // insert in table function
-        func addDesign(data:[String:Any]) -> Int64? {
+        func addDesigen (data:DesigenModel) -> Int64? {
             do {
-                let insert = tblDesign.insert( header_id <- data["header_id"]! as! Int64,footer_id <- data["footer_id"]! as! Int64 ,body_id <- data["body_id"]!  as! Int64 )
+                let insert = tblDesign.insert( header_id <- data.header_id,footer_id <- data.footer_id ,body_id <- data.body_id )
                 
                 let id = try db!.run(insert)
                 print("Insert to tblDesign successfully")
@@ -62,8 +62,33 @@ class Design {
             }
         }
     
+    
+    func queryAllDesignsByName() -> [DesigenModel] {
+        
+        var data = [DesigenModel]()
+        
+        do {
+            for Design in try db!.prepare(self.tblDesign) {
+                print(Design)
+
+                var footer1 = footer.shared.queryAllFooterByName()
+                var header1 = Header.shared.queryAllHeadersByName()
+                var body1 = Body.shared.queryAllBodyByName()
+                 var slider1 = Slider.shared.queryAllBodyByName()
+                data.append(DesigenModel(header_id : Design[header_id],body_id : Design[body_id], footer_id : Design[footer_id],footer : footer1[0] , body : body1[0], header :header1[0],sliders:slider1))
+                
+            }
+        } catch {
+            print("Cannot get list of desigen ")
+        }
+        return data
+    }
+    
+    
+    
+    
     ////////// update  update table
-    func updateDesign(DesignId:Int64  , newDesign : String) -> Bool {
+    func updateDesign(DesignId:Int  , newDesign : String) -> Bool {
         let tblFilterDesign  = tblDesign.filter(id == DesignId)
         do {
             let update = tblFilterDesign.update([
@@ -81,9 +106,9 @@ class Design {
     }
 
     ////// delet table
-    func deleteDesign (inputId: Int64) -> Bool {
+    func deleteDesign (inputId: Int) -> Bool {
         do {
-            let tblFilterDesign = tblDesign.filter(id == inputId)
+            _ = tblDesign.filter(id == inputId)
             try db!.run(tblDesign.delete())
             print("delete sucessfully")
             return true

@@ -11,7 +11,7 @@ import UIKit
 
 struct  StoreSettingModel : Decodable {
     
-    var id: Int
+    //var id: Int
     var store_id: Int
     var payment_id: Int
     var design_id: Int
@@ -27,7 +27,7 @@ struct  StoreSettingModel : Decodable {
     var close_time: String
     var update_: String
     var design :DesigenModel
-
+    
 }
 
 

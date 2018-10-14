@@ -10,8 +10,8 @@ import UIKit
 import Foundation
 
 struct StoreModel   :  Decodable {
-
-    let id: Int
+    
+   // let id: Int
     let name: String
     let bank_accounts: String
     let phone: String
@@ -30,16 +30,12 @@ struct StoreModel   :  Decodable {
     let design_id: Int
     let template_id: Int
     let storesettings : [StoreSettingModel]
-    
+  
     
 }
 
 
 
-struct SliderModelss : Decodable {
-    let id: Int
-    let name: String
-}
 
 
 

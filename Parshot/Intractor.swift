@@ -8,16 +8,13 @@
 
 import Foundation
 import UIKit
-import RealmSwift
 
 protocol CarsInteractorProtocol {
     func getsStore(completion: @escaping (MainData) -> Void)
+    func getsCategory(completion: @escaping (StoreCategoryModel) -> Void)
+
 }
-public protocol Persistable {
-    associatedtype ManagedObject: RealmSwift.Object
-    init(managedObject: ManagedObject)
-    func managedObject() -> ManagedObject
-}
+
 class CarsInteractor: CarsInteractorProtocol {
 
     
@@ -25,23 +22,52 @@ class CarsInteractor: CarsInteractorProtocol {
     init() {
         
     }
-    
-    func getsStore(completion: @escaping (MainData) -> Void) {
-        
-        ApiService.SharedInstance.fetchFeedForUrl(URL: "stores/getalluserstoredata/50.json"){ (data:Data) in
-            
-            do {
-                let Sliders = try JSONDecoder().decode(MainData.self, from: data)
-                
-                DispatchQueue.main.async (execute: {
-                    completion(Sliders)
-                })
-                
-                
-            }     catch let jsonErr {
-                print(jsonErr)
-        }
-        
+    func getsCategory(completion: @escaping (StoreCategoryModel) -> Void) {
+
+            ApiService.SharedInstance.fetchFeedForUrl(URL: "Categories/GetALLCat.json"){ (data:Data) in
+                do {
+                    print(data)
+                  var Cat  = try JSONDecoder().decode(StoreCategoryModel.self, from: data)
+                    /// add all store data to sqlite
+
+                    ///////////////
+                    DispatchQueue.main.async (execute: {
+                        completion(Cat)
+                    })
+                }     catch let jsonErr {
+                    print(jsonErr)
+                }
+            }
+
     }
+    func getsStore(completion: @escaping (MainData) -> Void) {
+        var MainDataVar = [MainData]()
+      let StoreData = Store.shared.queryAllStorssByName()
+        if StoreData.count > 0 {
+             MainDataVar.append(MainData(data:StoreData))
+            DispatchQueue.main.async (execute: {
+                completion(MainDataVar.first!)
+            })
+        }else {
+            ApiService.SharedInstance.fetchFeedForUrl(URL: "stores/getalluserstoredata/50.json"){ (data:Data) in
+                do {
+                     MainDataVar.append(try JSONDecoder().decode(MainData.self, from: data))
+                    /// add all store data to sqlite
+                    Body.shared.addBody(data: MainDataVar[0].data[0].storesettings[0].design.body)
+                    footer.shared.addFooter(data: MainDataVar[0].data[0].storesettings[0].design.footer)
+                    Header.shared.addHeader(data: MainDataVar[0].data[0].storesettings[0].design.header)
+                    Store.shared.addStore(data: MainDataVar[0].data[0] )
+                    StorSetting.shared.addStoreSetting(data: MainDataVar[0].data[0].storesettings[0])
+                    Design.shared.addDesigen(data: MainDataVar[0].data[0].storesettings[0].design)
+                    Slider.shared.addBody(data: [MainDataVar[0].data[0].storesettings[0].design.sliders[0]])
+                    ///////////////
+                    DispatchQueue.main.async (execute: {
+                        completion(MainDataVar.first!)
+                    })
+                }     catch let jsonErr {
+                    print(jsonErr)
+                }
+            }
+        }
 }
 }

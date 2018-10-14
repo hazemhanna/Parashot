@@ -14,3 +14,4 @@ struct MainData: Decodable {
     let data:[StoreModel]
     
 }
+

@@ -8,9 +8,9 @@
 
 import UIKit
 
-struct BodyModel :Decodable  {
+struct BodyModel :Codable  {
     
-    var id: Int
+  //  var id: Int
     var background: String
     var red: Int
     var green: Int
@@ -27,7 +27,8 @@ struct BodyModel :Decodable  {
     var font_red: Int
     var font_green: Int
     var font_blue: Int
-  
-
+    
+    
     
 }
+

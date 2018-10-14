@@ -13,7 +13,6 @@ pod 'GoogleMaps'
 pod 'GooglePlaces'
 pod 'Alamofire', '~> 4.6'
 pod 'SwiftyJSON'
-pod ‘RealmSwift’
 
 
 end

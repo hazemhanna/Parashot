@@ -20,15 +20,18 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
     var Cellid4="Cellid4"
     
     ////// models variables
-    
-    var presenter: CarsPresenterProtocol?
-    var viewModels: [SliderViewModel] = []
-    ////////// end models variables
+    var presenter: CarsPresenterProtocol!
+    var storeViewModel = [StoreViewModel]()
+    var sliderViewModel = [SliderViewModel]()
+    var headerViewModel = [HeaderViewModel]()
+
+////////// end models variables
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if indexPath.item == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cellid0, for: indexPath) as! SliderController
+            cell.data = sliderViewModel
             return cell
         }
         else  {
@@ -74,28 +77,29 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
         
     }
     
-    
+
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         
-        
+       
         collectionView?.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
         collectionView?.backgroundColor = UIColor.rgb(230, green: 234, blue: 237)
         collectionView?.register(SliderController.self, forCellWithReuseIdentifier: Cellid0)
         collectionView?.register(DepartMentController.self, forCellWithReuseIdentifier: Cellid1)
-        
+   
         collectionView?.register(MainFooter.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: footer)
         collectionView?.isScrollEnabled = false
         
         // setup navBar.....
         navigationController?.navigationBar.barTintColor = UIColor.rgb(99, green: 27, blue: 103)
+
         navigationItem.title = NSLocalizedString("parashot", comment: "this is name")
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         // casting is required because UICollectionViewLayout doesn't offer header pin. Its feature of UICollectionViewFlowLayout
         let layout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
         layout?.sectionFootersPinToVisibleBounds = true
         
+     
         
         let StarButton = UIBarButtonItem(image: UIImage(named: "nav_more_icon")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(star))
         navigationItem.rightBarButtonItem = StarButton
@@ -105,10 +109,20 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
         let chatButton = UIBarButtonItem(image: UIImage(named: "nav_more_icon")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(chat))
         navigationItem.leftBarButtonItem = chatButton
         
-        presenter?.showCars { (viewModels) in
-            self.viewModels = viewModels
-            
+        presenter.ShowCategory{ (viewModels) in
+  
         }
+//        presenter.showCars { (viewModels) in
+//          self.storeViewModel = viewModels
+//            self.sliderViewModel = viewModels[0].Slider!
+//            self.headerViewModel = viewModels[0].Header!
+//            self.navigationController?.navigationBar.barTintColor = UIColor.rgb(CGFloat(self.headerViewModel[0].red!), green: CGFloat(self.headerViewModel[0].green!), blue: CGFloat(self.headerViewModel[0].blue!))
+//
+//            self.navigationItem.title = NSLocalizedString("parashot", comment: "this is name")
+//            self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+//
+//                self.collectionView?.reloadData()
+//        }
     }
     
     
@@ -120,21 +134,5 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
         
     }
     //////////// Api service Functions
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     //////////// End Api Service Function
 }
-
-

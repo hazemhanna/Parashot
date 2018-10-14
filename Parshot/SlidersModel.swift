@@ -8,8 +8,12 @@
 
 import Foundation
 struct SlidersModel: Decodable {
-    let photo:String
-    //let name:String
-
-    
+    var photo:String
+   
 }
+
+
+///////
+
+
+

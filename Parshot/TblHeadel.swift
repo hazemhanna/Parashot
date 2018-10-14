@@ -16,15 +16,15 @@ class Header {
     private let db: Connection?
     
     private let TbHeader = Table("Header")
-    private var id = Expression<Int64>("id")
+    private var id = Expression<Int>("id")
     private let background = Expression<String?>("background")
-    private let red = Expression<Int64?>("red")
-    private let green = Expression<Int64?>("green")
-    private let blue = Expression<Int64?>("blue")
+    private let red = Expression<Int?>("red")
+    private let green = Expression<Int?>("green")
+    private let blue = Expression<Int?>("blue")
     private let logo = Expression<String?>("logo")
     private let right_icon = Expression<String?>("right_icon")
     private let left_icon = Expression<String?>("left_icon")
-    private var template_id = Expression<Int64>("template_id")
+    private var template_id = Expression<Int>("template_id")
     
     private init() {
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
@@ -63,22 +63,40 @@ class Header {
     }
     ////// insert data into header
     
-    func addHeader(data:[String:Any]) -> Int64? {
+    func addHeader (data:HeaderModel) -> Int64? {
         do {
-            let insert = TbHeader.insert(background <- data["background"]! as! String,red <- data["red"]! as! Int64,green <- data["green"]! as! Int64 ,blue <- data["blue"]!  as! Int64  ,logo <- data["logo"]!  as! String ,right_icon <- data["right_icon"]!  as! String ,left_icon <- data["left_icon"]!  as! String ,template_id <- data["template_id"]!  as! Int64 )
+            let insert = TbHeader.insert( background <- data.background,red <- data.red ,green <- data.green ,blue <- data.blue ,logo <- data.logo ,right_icon <- data.right_icon ,left_icon <- data.left_icon ,template_id <- data.template_id )
             
             let id = try db!.run(insert)
-            print("Insert to tblHeader successfully")
+            print("Insert to tblDesign successfully")
             return id
         } catch {
             print("Cannot insert to database")
             return nil
         }
     }
+
     
+    func queryAllHeadersByName() -> [HeaderModel] {
+        
+        var data = [HeaderModel]()
+        
+        do {
+            for header in try db!.prepare(self.TbHeader) {
+                print(header)
+                let jsonEncoder = JSONEncoder()
+                
+                data.append(HeaderModel(background:header[background]!, red:header[red]!, green:header[green]!, blue:header[blue]!, logo:header[logo]!, right_icon:header[right_icon]!, left_icon:header[left_icon]!, template_id:header[template_id]))
+                
+            }
+        } catch {
+            print("Cannot get list of headers ")
+        }
+        return data
+    }
     
     ///////// update table
-    func updateHeadear(HeaderId:Int64  , newHeader : String) -> Bool {
+    func updateHeadear(HeaderId:Int  , newHeader : String) -> Bool {
         let tblFilterHeader  = TbHeader.filter(id == HeaderId)
         do {
             let update = tblFilterHeader.update([
@@ -95,8 +113,10 @@ class Header {
         return false
     }
     
+    
+    
     ////// delet table
-    func deleteHeader (inputId: Int64) -> Bool {
+    func deleteHeader (inputId: Int) -> Bool {
         do {
             let tblFilterHeader = TbHeader.filter(id == inputId)
             try db!.run(TbHeader.delete())

@@ -1,19 +1,8 @@
-//
-//  FooterModel.swift
-//  Parshot
-//
-//  Created by hossam ahmed on 10/6/18.
-//  Copyright © 2018 hazem. All rights reserved.
-//
-
-
-import UIKit
-
 
 struct  FooterModel : Decodable {
     
     
-    var id: Int
+   // var id: Int
     var border: String
     var shadow: String
     var background: String
@@ -38,5 +27,4 @@ struct  FooterModel : Decodable {
     
     
 }
-
 

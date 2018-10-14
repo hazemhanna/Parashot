@@ -11,15 +11,15 @@ import UIKit
 struct DesigenModel : Decodable  {
     
     
-   // let id: Int
-    let header_id: Int
-    let body_id: Int
-    let footer_id: Int
-    let footer : FooterModel
-    let body : BodyModel
-    let header : HeaderModel
-    let sliders : [SlidersModel]
-
+  //   var id: Int
+    var header_id: Int
+    var body_id: Int
+    var footer_id: Int
+    var footer : FooterModel
+    var body : BodyModel
+    var header : HeaderModel
+    var sliders : [SlidersModel]
+    
     
 }
 

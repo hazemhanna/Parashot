@@ -10,7 +10,14 @@
 import UIKit
 class SliderView : BaseCell {
     
-    
+    var data:SliderViewModel?{
+        
+        didSet{
+            if data?.Image != nil {
+            ItemImage.image = data!.Image!.image
+            }
+        }
+    }
     override func setupViews() {
         
         addSubview(ItemImage)
@@ -61,4 +68,7 @@ class SliderView : BaseCell {
     
     
     }
+    
+    /////// Functions
+
 }
