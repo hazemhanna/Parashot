@@ -11,7 +11,7 @@ import UIKit
 
 protocol CarsInteractorProtocol {
     func getsStore(completion: @escaping (MainData) -> Void)
-    func getsCategory(completion: @escaping (StoreCategoryModel) -> Void)
+    func getsCategory(completion: @escaping (DataCategory) -> Void)
 
 }
 
@@ -22,12 +22,12 @@ class CarsInteractor: CarsInteractorProtocol {
     init() {
         
     }
-    func getsCategory(completion: @escaping (StoreCategoryModel) -> Void) {
+    func getsCategory(completion: @escaping (DataCategory) -> Void) {
 
             ApiService.SharedInstance.fetchFeedForUrl(URL: "Categories/GetALLCat.json"){ (data:Data) in
                 do {
                     print(data)
-                  var Cat  = try JSONDecoder().decode(StoreCategoryModel.self, from: data)
+                  var Cat  = try JSONDecoder().decode(DataCategory.self, from: data)
                     /// add all store data to sqlite
 
                     ///////////////

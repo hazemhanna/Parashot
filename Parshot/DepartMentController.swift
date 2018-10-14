@@ -22,20 +22,30 @@ import UIKit
 class DepartMentController : BaseCell  , UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     var cell = "cell"
-    
+
+    var data:[CategoryViewModel]?{
+
+
+        didSet{
+            collectionView.reloadData()
+        }
+    }
 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 15
+        return (data?.count)!
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cell, for: indexPath) as! DepartmentView
-        
-        
+        if data![indexPath.item].photo != nil {
+            cell.departmentImage.loadImageUsingUrlString(self.data![indexPath.item].photo!)
+        }
+        cell.namelabel.text = self.data![indexPath.item].name!
+
         return cell
         
     }

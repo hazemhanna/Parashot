@@ -24,6 +24,7 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
     var storeViewModel = [StoreViewModel]()
     var sliderViewModel = [SliderViewModel]()
     var headerViewModel = [HeaderViewModel]()
+    var categoryViewModel = [CategoryViewModel]()
 
 ////////// end models variables
     
@@ -36,6 +37,7 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
         }
         else  {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cellid1, for: indexPath) as! DepartMentController
+            cell.data = categoryViewModel
             return cell
         }
     }
@@ -110,19 +112,20 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
         navigationItem.leftBarButtonItem = chatButton
         
         presenter.ShowCategory{ (viewModels) in
-  
+  self.categoryViewModel = viewModels
+             self.collectionView?.reloadData()
         }
-//        presenter.showCars { (viewModels) in
-//          self.storeViewModel = viewModels
-//            self.sliderViewModel = viewModels[0].Slider!
-//            self.headerViewModel = viewModels[0].Header!
-//            self.navigationController?.navigationBar.barTintColor = UIColor.rgb(CGFloat(self.headerViewModel[0].red!), green: CGFloat(self.headerViewModel[0].green!), blue: CGFloat(self.headerViewModel[0].blue!))
-//
-//            self.navigationItem.title = NSLocalizedString("parashot", comment: "this is name")
-//            self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-//
-//                self.collectionView?.reloadData()
-//        }
+        presenter.showCars { (viewModels) in
+          self.storeViewModel = viewModels
+            self.sliderViewModel = viewModels[0].Slider!
+            self.headerViewModel = viewModels[0].Header!
+            self.navigationController?.navigationBar.barTintColor = UIColor.rgb(CGFloat(self.headerViewModel[0].red!), green: CGFloat(self.headerViewModel[0].green!), blue: CGFloat(self.headerViewModel[0].blue!))
+
+            self.navigationItem.title = NSLocalizedString("parashot", comment: "this is name")
+            self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+
+                self.collectionView?.reloadData()
+        }
     }
     
     

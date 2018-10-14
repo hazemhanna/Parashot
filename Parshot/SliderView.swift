@@ -13,8 +13,8 @@ class SliderView : BaseCell {
     var data:SliderViewModel?{
         
         didSet{
-            if data?.Image != nil {
-            ItemImage.image = data!.Image!.image
+            if data?.photo != nil {
+            ItemImage.loadImageUsingUrlString(data!.photo!)
             }
         }
     }
@@ -43,7 +43,7 @@ class SliderView : BaseCell {
     
     
     lazy var ItemImage:CustomImageView = {
-        let ci = CustomImageView(image:#imageLiteral(resourceName: "Shopclues-Diwali-Flea-Market (1)"))
+        let ci = CustomImageView(image:#imageLiteral(resourceName: "43016006_551318478637599_6211200116552892416_n"))
         ci.translatesAutoresizingMaskIntoConstraints = false
         return ci
         

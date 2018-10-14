@@ -7,10 +7,16 @@
 //
 
 import Foundation
-struct SubCategoryModel: Decodable {
-    var id : Int
-    var photo : String
-    var name  : String
-    var icon : String
-}
+struct Subcat: Codable {
+    let id: Int?
+    let name: String?
+    let categoryID: Int?
+    let photo, icon: String?
+    let created, modified: String?
 
+    enum CodingKeys: String, CodingKey {
+        case id, name
+        case categoryID = "category_id"
+        case photo, icon, created, modified
+    }
+}
