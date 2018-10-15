@@ -350,7 +350,6 @@ class MainFooter: BaseCell {
         
     }()
     
-    
     /////// nearest image
     let morelabel :UILabel = {
         let pl = UILabel()
