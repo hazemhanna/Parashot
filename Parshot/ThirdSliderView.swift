@@ -23,6 +23,16 @@ class ThirdSliderView : BaseCell {
         viewImage.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
  
         
+        
+        
+        
+       viewImage.addSubview(ItemImage)
+        ItemImage.centerYAnchor.constraint(equalTo: viewImage.centerYAnchor).isActive = true
+        ItemImage.centerXAnchor.constraint(equalTo: viewImage.centerXAnchor).isActive = true
+        ItemImage.widthAnchor.constraint(equalTo: viewImage.widthAnchor).isActive = true
+        ItemImage.heightAnchor.constraint(equalTo: viewImage.heightAnchor).isActive = true
+        
+        
     }
     
 
@@ -41,4 +51,16 @@ class ThirdSliderView : BaseCell {
         return ci
         
     }()
+
+
+
+
+    lazy var ItemImage:CustomImageView = {
+        let ci = CustomImageView(image:#imageLiteral(resourceName: "mastercard"))
+        ci.translatesAutoresizingMaskIntoConstraints = false
+        return ci
+        
+    }()
+    
+
 }

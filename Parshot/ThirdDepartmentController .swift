@@ -23,11 +23,18 @@ class ThirdDepartmentController  : BaseCell  , UICollectionViewDataSource, UICol
     
     var cell = "cell"
     
+    var data:[CategoryViewModel]?{
+        
+        
+        didSet{
+            collectionView.reloadData()
+        }
+    }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 9
+        return (data?.count)!
         
     }
     
@@ -35,6 +42,10 @@ class ThirdDepartmentController  : BaseCell  , UICollectionViewDataSource, UICol
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cell, for: indexPath) as! ThirdDepartmentView
         
+        if data![indexPath.item].photo != nil {
+            cell.departmentImage.loadImageUsingUrlString(self.data![indexPath.item].photo!)
+        }
+        cell.namelabel.text = self.data![indexPath.item].name!
         
         return cell
         

@@ -18,9 +18,11 @@ class ThirdMainPageController  :  UICollectionViewController, UICollectionViewDe
     
     ////// models variables
       var presenter: CarsPresenterProtocol!
+     var sliderViewModel = [SliderViewModel]()
       var storeViewModel = [StoreViewModel]()
       var headerViewModel = [HeaderViewModel]()
       var footerViewModel  = [FooterViewModel]()
+     var categoryViewModel = [CategoryViewModel]()
     
     
     
@@ -37,10 +39,15 @@ class ThirdMainPageController  :  UICollectionViewController, UICollectionViewDe
         
         if indexPath.item == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cellid0, for: indexPath) as! ThirdSliderController
+             cell.data = sliderViewModel
             return cell
+       
         }
         else  {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cellid1, for: indexPath) as! ThirdDepartmentController
+            
+            cell.data = categoryViewModel
+            
             return cell
         }
     }
@@ -105,13 +112,19 @@ class ThirdMainPageController  :  UICollectionViewController, UICollectionViewDe
         collectionView?.register(thirdMainFooter.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: footer)
         collectionView?.isScrollEnabled = false
         
+        
+        presenter.ShowCategory{ (viewModels) in
+            self.categoryViewModel = viewModels
+            DispatchQueue.main.async (execute: {
+                self.collectionView?.reloadData()
+            })
+        }
         // setup navBar.....
-        
-        
         presenter.showCars { (viewModels) in
           //  self.storeViewModel = viewModels
-            self.headerViewModel = viewModels[0].Header!
-            self.footerViewModel = viewModels[0].footer!
+             self.headerViewModel = viewModels[0].Header!
+             self.footerViewModel = viewModels[0].footer!
+             self.sliderViewModel = viewModels[0].Slider!
             
             self.navigationController?.navigationBar.barTintColor = UIColor.rgb(CGFloat(self.headerViewModel[0].red!), green: CGFloat(self.headerViewModel[0].green!), blue: CGFloat(self.headerViewModel[0].blue!))
            self.OrderImage.loadImageUsingUrlStringToUIImage(self.headerViewModel[0].right_icon!){(image:UIImage)in

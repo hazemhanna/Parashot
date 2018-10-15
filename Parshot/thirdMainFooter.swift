@@ -46,7 +46,7 @@ class thirdMainFooter: BaseCell {
     
     
     override func setupViews() {
-        backgroundColor = .white
+       
         layer.cornerRadius = 25
        layer.shadowColor = UIColor.black.cgColor
         layer.shadowOffset = CGSize(width: -2, height: 3)

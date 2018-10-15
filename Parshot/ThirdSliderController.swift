@@ -16,9 +16,18 @@ class ThirdSliderController : BaseCell  , UICollectionViewDataSource, UICollecti
     var cell = "cell"
     var timer:Timer? = nil
     
+    var data:[SliderViewModel]?{
+        
+        
+        didSet{
+            collectionView.reloadData()
+        }
+    }
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 5
+        return (data?.count)!
         
     }
     
@@ -26,6 +35,9 @@ class ThirdSliderController : BaseCell  , UICollectionViewDataSource, UICollecti
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cell, for: indexPath) as! ThirdSliderView
         
+        if data![indexPath.item].photo != nil {
+            cell.ItemImage.loadImageUsingUrlString(self.data![indexPath.item].photo!)
+        }
 
         return cell
         
@@ -92,7 +104,7 @@ class ThirdSliderController : BaseCell  , UICollectionViewDataSource, UICollecti
     var x = 1
     
     @objc func autoScroll() {
-        if self.x < 5 { //self.datasource.count
+        if self.x < (self.data?.count)! {
             let indexPath = IndexPath(item: x, section: 0)
             self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
             self.x = self.x + 1
