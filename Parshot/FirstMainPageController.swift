@@ -109,15 +109,7 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
         let layout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
         layout?.sectionFootersPinToVisibleBounds = true
         
-     
         
-        let StarButton = UIBarButtonItem(image: UIImage(named: "nav_more_icon")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(star))
-        navigationItem.rightBarButtonItem = StarButton
-        
-        
-        
-        let chatButton = UIBarButtonItem(image: UIImage(named: "nav_more_icon")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(chat))
-        navigationItem.leftBarButtonItem = chatButton
         
         presenter.ShowCategory{ (viewModels) in
   self.categoryViewModel = viewModels
@@ -134,6 +126,17 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
 
             self.navigationController?.navigationBar.barTintColor = UIColor.rgb(CGFloat(self.headerViewModel[0].red!), green: CGFloat(self.headerViewModel[0].green!), blue: CGFloat(self.headerViewModel[0].blue!))
 
+            
+            let StarButton = UIBarButtonItem(image: UIImage(named: self.headerViewModel[0].right_icon!)?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(self.star))
+            self.navigationItem.rightBarButtonItem = StarButton
+            
+            
+            
+            let chatButton = UIBarButtonItem(image: UIImage(named: self.headerViewModel[0].left_icon!)?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(self.chat))
+            self.navigationItem.leftBarButtonItem = chatButton
+            
+            
+            
             self.navigationItem.title = NSLocalizedString("parashot", comment: "this is name")
             self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
             DispatchQueue.main.async (execute: {

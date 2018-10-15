@@ -4,19 +4,9 @@
 //
 //  Created by hazem on 9/5/18.
 //  Copyright © 2018 hazem. All rights reserved.
-//
-//
-//  MainPageController1.swift
-//  Parshot
-//
-//  Created by hazem on 9/3/18.
-//  Copyright © 2018 hazem. All rights reserved.
-//
 
 
 import UIKit
-
-
 class ThirdMainPageController  :  UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     var footer = "footer"
@@ -26,8 +16,17 @@ class ThirdMainPageController  :  UICollectionViewController, UICollectionViewDe
     var Cellid3="Cellid3"
     var Cellid4="Cellid4"
     
+    ////// models variables
+      var presenter: CarsPresenterProtocol!
+      var storeViewModel = [StoreViewModel]()
+      var headerViewModel = [HeaderViewModel]()
+      var footerViewModel  = [FooterViewModel]()
     
     
+    
+    
+    ////////// end models variables
+
     
     //////// hide status bar
     override var prefersStatusBarHidden: Bool {
@@ -71,6 +70,10 @@ class ThirdMainPageController  :  UICollectionViewController, UICollectionViewDe
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: self.footer, for: indexPath as IndexPath) as! thirdMainFooter
+     
+        if footerViewModel.count > 0 {
+            footer.data = footerViewModel[0]
+        }
         
         return footer
     }
@@ -82,8 +85,16 @@ class ThirdMainPageController  :  UICollectionViewController, UICollectionViewDe
         return CGSize(width:collectionView.frame.width , height: collectionView.frame.height  * 0.08)
         
     }
-    
-    
+    let OrderImage:CustomImageView = {
+        let ci = CustomImageView(image:#imageLiteral(resourceName: "shopping-cart (1)"))
+        return ci
+        
+    }()
+    let OrderImage2:CustomImageView = {
+        let ci = CustomImageView(image:#imageLiteral(resourceName: "shopping-cart (1)"))
+        return ci
+        
+    }()
     
     override func viewDidLoad() {
         collectionView?.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
@@ -95,26 +106,46 @@ class ThirdMainPageController  :  UICollectionViewController, UICollectionViewDe
         collectionView?.isScrollEnabled = false
         
         // setup navBar.....
-        navigationController?.navigationBar.barTintColor = UIColor.rgb(252, green: 244, blue: 246)
-       /// navigationItem.title = NSLocalizedString("parashot", comment: "this is name")
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-        // casting is required because UICollectionViewLayout doesn't offer header pin. Its feature of UICollectionViewFlowLayout
+        
+        
+        presenter.showCars { (viewModels) in
+          //  self.storeViewModel = viewModels
+            self.headerViewModel = viewModels[0].Header!
+            self.footerViewModel = viewModels[0].footer!
+            
+            self.navigationController?.navigationBar.barTintColor = UIColor.rgb(CGFloat(self.headerViewModel[0].red!), green: CGFloat(self.headerViewModel[0].green!), blue: CGFloat(self.headerViewModel[0].blue!))
+           self.OrderImage.loadImageUsingUrlStringToUIImage(self.headerViewModel[0].right_icon!){(image:UIImage)in
+                
+            let StarButton = UIBarButtonItem(image:image.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(self.star))
+                self.navigationItem.rightBarButtonItem = StarButton
+                
+                
+                
+            
+                
+                
+            }
+            self.OrderImage2.loadImageUsingUrlStringToUIImage(self.headerViewModel[0].left_icon!){(images:UIImage)in
+
+            
+            let chatButton = UIBarButtonItem(image:images.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(self.chat))
+            self.navigationItem.leftBarButtonItem = chatButton
+            }
+            
+            
+            DispatchQueue.main.async (execute: {
+                self.collectionView?.reloadData()
+            })
+       }
+     
         let layout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
         layout?.sectionFootersPinToVisibleBounds = true
         
         //////////
+        
         let logo = UIImage(named: "P A R A S H O T E@1X")
         let imageView = UIImageView(image:logo)
         self.navigationItem.titleView = imageView
-        
-        
-        let StarButton = UIBarButtonItem(image: UIImage(named: "search2")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(star))
-        navigationItem.rightBarButtonItem = StarButton
-        
-        
-        
-        let chatButton = UIBarButtonItem(image: UIImage(named: "menue3")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(chat))
-        navigationItem.leftBarButtonItem = chatButton
         
     }
     

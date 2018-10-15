@@ -15,9 +15,9 @@ struct HeaderViewModel {
     var red: Int?
     var green: Int?
     var blue: Int?
-//    var right_icon: String?
-//    var left_icon: String?
-//    var template_id: Int?
+    var right_icon: String?
+    var left_icon: String?
+    var template_id: Int?
     
     init(header : HeaderModel) {
 
@@ -25,6 +25,20 @@ struct HeaderViewModel {
         self.red = header.red
         self.green = header.green
         self.blue = header.blue
+       
+        var  url = "http://parashote.codesroots.com/library/default/\(header.right_icon)" as? String
+        if let imageurl = url {
+            print(imageurl)
+            self.right_icon = imageurl
+        }
+
+        var  url2 = "http://parashote.codesroots.com/library/default/\(header.left_icon)" as? String
+        if let imageurl = url2 {
+            print(imageurl)
+            self.left_icon = imageurl
+        }
+    
+    
     }
  
 }

@@ -16,6 +16,35 @@
 import UIKit
 class thirdMainFooter: BaseCell {
     
+    
+    var data:FooterViewModel?{
+        
+        
+        didSet{
+            
+            
+            backgroundColor = data!.background!
+            
+            
+              favouriteImage.loadImageUsingUrlString(data!.first_icon!)
+              favouritelabel.text = data!.first_label
+            
+             orderImage.loadImageUsingUrlString(data!.second_icon!)
+             orderlabel.text = data!.second_label!
+        
+             homeImage.loadImageUsingUrlString(data!.third_icon!)
+       
+            dealImage.loadImageUsingUrlString(data!.forth_icon!)
+            deallabel.text = data!.first_label!
+            notificationImage.loadImageUsingUrlString(data!.fifth_icon!)
+            notificationlabel.text = data!.fifth_label!
+            
+            
+        }
+    }
+    
+    
+    
     override func setupViews() {
         backgroundColor = .white
         layer.cornerRadius = 25
@@ -189,8 +218,8 @@ class thirdMainFooter: BaseCell {
     
     ///////  image
     
-    let favouriteImage:UIImageView = {
-        let ci = UIImageView(image:#imageLiteral(resourceName: "40978531_266719597302048_6885258902531735552_n"))
+    let favouriteImage:CustomImageView = {
+        let ci = CustomImageView(image:#imageLiteral(resourceName: "40978531_266719597302048_6885258902531735552_n"))
         ci.translatesAutoresizingMaskIntoConstraints = false
         return ci
         
@@ -230,8 +259,8 @@ class thirdMainFooter: BaseCell {
     
     ///////  image
     
-    let orderImage:UIImageView = {
-        let ci = UIImageView(image:#imageLiteral(resourceName: "40779120_226322154902703_6857912631009738752_n"))
+    let orderImage:CustomImageView = {
+        let ci = CustomImageView(image:#imageLiteral(resourceName: "40779120_226322154902703_6857912631009738752_n"))
         ci.translatesAutoresizingMaskIntoConstraints = false
         return ci
         
@@ -263,8 +292,8 @@ class thirdMainFooter: BaseCell {
     }()
     ///////
     
-    let homeImage:UIImageView = {
-        let ci = UIImageView(image:#imageLiteral(resourceName: "40967373_680413545659255_4311881418377527296_n"))
+    let homeImage:CustomImageView = {
+        let ci = CustomImageView(image:#imageLiteral(resourceName: "40967373_680413545659255_4311881418377527296_n"))
         ci.translatesAutoresizingMaskIntoConstraints = false
         return ci
         
@@ -299,8 +328,8 @@ class thirdMainFooter: BaseCell {
         
     }()
     /////// offers image
-    let dealImage:UIImageView = {
-        let ci = UIImageView(image:#imageLiteral(resourceName: "40838677_1947034708668674_8538431835267399680_n"))
+    let dealImage:CustomImageView = {
+        let ci = CustomImageView(image:#imageLiteral(resourceName: "40838677_1947034708668674_8538431835267399680_n"))
         ci.translatesAutoresizingMaskIntoConstraints = false
         return ci
         
@@ -334,8 +363,8 @@ class thirdMainFooter: BaseCell {
     }()
     /////// more imae
     
-    let notificationImage:UIImageView = {
-        let ci = UIImageView(image:#imageLiteral(resourceName: "41019823_1097764583721975_4885416391714275328_n"))
+    let notificationImage:CustomImageView = {
+        let ci = CustomImageView(image:#imageLiteral(resourceName: "41019823_1097764583721975_4885416391714275328_n"))
         ci.translatesAutoresizingMaskIntoConstraints = false
         return ci
         

@@ -13,6 +13,7 @@ protocol CarsRouterProtocol {
     func showCreateCarScreen()
 }
 
+
 class CarsRouter: CarsRouterProtocol {
     let presentingViewController: UIViewController
     var window: UIWindow?
@@ -20,11 +21,11 @@ class CarsRouter: CarsRouterProtocol {
     init(presentingViewController: UIViewController) {
         self.presentingViewController = presentingViewController
     }
-    static func createModule() -> FirstMainPageController {
+    static func createModule() -> ThirdMainPageController {
         
         
         let layout = UICollectionViewFlowLayout()
-        let featuredAppsController = FirstMainPageController(collectionViewLayout:layout )
+        let featuredAppsController = ThirdMainPageController(collectionViewLayout:layout )
         let interactor: CarsInteractorProtocol = CarsInteractor()
         let router:CarsRouterProtocol = CarsRouter(presentingViewController: featuredAppsController)
         let presenter: CarsPresenterProtocol  = CarsPresenter(interactor: interactor, router: router)
