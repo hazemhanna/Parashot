@@ -26,6 +26,8 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
     var headerViewModel = [HeaderViewModel]()
     var categoryViewModel = [CategoryViewModel]()
     var bodyViewModel = [BodyViewModel]()
+     var footerViewModel  = [FooterViewModel]()
+    
 
 ////////// end models variables
     
@@ -71,7 +73,9 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: self.footer, for: indexPath as IndexPath) as! MainFooter
-        
+        if footerViewModel.count > 0 {
+            footer.data = footerViewModel[0]
+        }
         return footer
     }
     
@@ -125,6 +129,7 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
           self.storeViewModel = viewModels
             self.sliderViewModel = viewModels[0].Slider!
             self.headerViewModel = viewModels[0].Header!
+            self.footerViewModel = viewModels[0].footer!
             self.bodyViewModel = viewModels[0].Body!
 
             self.navigationController?.navigationBar.barTintColor = UIColor.rgb(CGFloat(self.headerViewModel[0].red!), green: CGFloat(self.headerViewModel[0].green!), blue: CGFloat(self.headerViewModel[0].blue!))

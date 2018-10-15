@@ -42,6 +42,7 @@
 		2706E2FA2163D28D002F8323 /* ResturantPlaceControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2706E2F92163D28D002F8323 /* ResturantPlaceControler.swift */; };
 		2706E2FE2163D3A5002F8323 /* ResturantPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2706E2FD2163D3A5002F8323 /* ResturantPlaceView.swift */; };
 		2706E3002163D3BF002F8323 /* ResturantPlaceFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2706E2FF2163D3BF002F8323 /* ResturantPlaceFooter.swift */; };
+		274D26CB2174D00F009F6EC9 /* FooterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274D26CA2174D00F009F6EC9 /* FooterViewModel.swift */; };
 		278BF87D21622C45008A66F0 /* ProductsMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278BF87C21622C45008A66F0 /* ProductsMainController.swift */; };
 		278BF87F21622C58008A66F0 /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278BF87E21622C58008A66F0 /* ProductsView.swift */; };
 		278BF88121622C72008A66F0 /* ProductsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278BF88021622C72008A66F0 /* ProductsController.swift */; };
@@ -322,6 +323,7 @@
 		2706E2FD2163D3A5002F8323 /* ResturantPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantPlaceView.swift; sourceTree = "<group>"; };
 		2706E2FF2163D3BF002F8323 /* ResturantPlaceFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantPlaceFooter.swift; sourceTree = "<group>"; };
 		2716CCB62164F09C0028368A /* SwiftCharts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftCharts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		274D26CA2174D00F009F6EC9 /* FooterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterViewModel.swift; sourceTree = "<group>"; };
 		2764E29A216505E000B09E48 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		278BF87C21622C45008A66F0 /* ProductsMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsMainController.swift; sourceTree = "<group>"; };
 		278BF87E21622C58008A66F0 /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
@@ -864,6 +866,7 @@
 				04D78E052171099C0026053B /* StoreViewModel.swift */,
 				27B116A52172628E008EC9B4 /* DesigenViewModel.swift */,
 				04026CB82174A8CC0085AEAF /* BodyViewModel.swift */,
+				274D26CA2174D00F009F6EC9 /* FooterViewModel.swift */,
 			);
 			name = MainPagesViewModel;
 			sourceTree = "<group>";
@@ -2106,7 +2109,8 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2267,6 +2271,7 @@
 				A15CD591213E8D1C00F03E8D /* SecondSliderView.swift in Sources */,
 				044044DB216B6CDA00C97F79 /* StoreModel.swift in Sources */,
 				A171394121403DA800063F5C /* FourthMainPageController.swift in Sources */,
+				274D26CB2174D00F009F6EC9 /* FooterViewModel.swift in Sources */,
 				2706E2FA2163D28D002F8323 /* ResturantPlaceControler.swift in Sources */,
 				A1F5EBE82146C22200268B7E /* AddToCardView.swift in Sources */,
 				A1C4A486213D738E00C87D27 /* DepartMentController.swift in Sources */,

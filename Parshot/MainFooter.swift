@@ -10,6 +10,33 @@ class MainFooter: BaseCell {
    
     var controller : FirstMainPageController?
     
+    
+    var data:FooterViewModel?{
+        
+        
+        didSet{
+            
+            
+            // backgroundColor = data!.background!
+            
+            
+            mainImage.loadImageUsingUrlString(data!.first_icon!)
+            mainlabel.text = data!.first_label
+            
+            OrderImage.loadImageUsingUrlString(data!.second_icon!)
+            orderlabel.text = data!.second_label!
+            
+            offerImage.loadImageUsingUrlString(data!.third_icon!)
+            ofeerlabel.text = data!.third_label!
+            notificationImage.loadImageUsingUrlString(data!.forth_icon!)
+            notificationlabel.text = data!.first_label!
+            moreImage.loadImageUsingUrlString(data!.fifth_icon!)
+            morelabel.text = data!.fifth_label!
+            
+            
+        }
+    }
+    
     override func setupViews() {
         backgroundColor = .white
        // layer.cornerRadius = 25
@@ -230,8 +257,8 @@ class MainFooter: BaseCell {
     
     
     
-    let mainImage:UIImageView = {
-        let ci = UIImageView(image:#imageLiteral(resourceName: "shelter"))
+    let mainImage:CustomImageView = {
+        let ci = CustomImageView(image:#imageLiteral(resourceName: "shelter"))
         ci.translatesAutoresizingMaskIntoConstraints = false
         return ci
         
@@ -253,8 +280,8 @@ class MainFooter: BaseCell {
     
     ///////  image
     
-    let OrderImage:UIImageView = {
-        let ci = UIImageView(image:#imageLiteral(resourceName: "shopping-cart (1)"))
+    let OrderImage:CustomImageView = {
+        let ci = CustomImageView(image:#imageLiteral(resourceName: "shopping-cart (1)"))
         ci.translatesAutoresizingMaskIntoConstraints = false
         return ci
         
@@ -274,8 +301,8 @@ class MainFooter: BaseCell {
     
     ///////
     
-    let offerImage:UIImageView = {
-        let ci = UIImageView(image:#imageLiteral(resourceName: "discount (2)"))
+    let offerImage:CustomImageView = {
+        let ci = CustomImageView(image:#imageLiteral(resourceName: "discount (2)"))
         ci.translatesAutoresizingMaskIntoConstraints = false
         return ci
         
@@ -295,8 +322,8 @@ class MainFooter: BaseCell {
     }()
     /////// offers image
     
-    let notificationImage:UIImageView = {
-        let ci = UIImageView(image:#imageLiteral(resourceName: "notification (3)"))
+    let notificationImage:CustomImageView = {
+        let ci = CustomImageView(image:#imageLiteral(resourceName: "notification (3)"))
         ci.translatesAutoresizingMaskIntoConstraints = false
         return ci
         
@@ -316,8 +343,8 @@ class MainFooter: BaseCell {
     
     /////// more imae
     
-    let moreImage:UIImageView = {
-        let ci = UIImageView(image:#imageLiteral(resourceName: "mode-circular-button"))
+    let moreImage:CustomImageView = {
+        let ci = CustomImageView(image:#imageLiteral(resourceName: "mode-circular-button"))
         ci.translatesAutoresizingMaskIntoConstraints = false
         return ci
         
