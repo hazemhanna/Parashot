@@ -16,10 +16,12 @@ struct StoreViewModel {
     var design: DesigenModel?
     var Slider: [SliderViewModel]?
     var Header: [HeaderViewModel]?
+    var Body: [BodyViewModel]?
 
     init(store: StoreModel) {
         self.Slider =  createCarsViewModels(from : store.storesettings[0].design)
         self.Header =  createHeaderViewModels(from : [store.storesettings[0].design.header])
+        self.Body =  createBodyViewModels(from : [store.storesettings[0].design.body])
 
         self.name = store.name
         self.storeSetting = store.storesettings
@@ -33,9 +35,12 @@ struct StoreViewModel {
     }
     ///////
     
+    private func createBodyViewModels(from body : [BodyModel]) -> [BodyViewModel] {
+        return body.map({return BodyViewModel(body: $0)}) ?? []
+    }
+    //////
     private func createHeaderViewModels(from header : [HeaderModel]) -> [HeaderViewModel] {
         return header.map({return HeaderViewModel(header: $0)}) ?? []
     }
-    
     
 }

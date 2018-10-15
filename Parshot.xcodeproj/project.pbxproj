@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04026CB92174A8CC0085AEAF /* BodyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04026CB82174A8CC0085AEAF /* BodyViewModel.swift */; };
 		044044D9216B6CDA00C97F79 /* DesigenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044044D4216B6CD900C97F79 /* DesigenModel.swift */; };
 		044044DA216B6CDA00C97F79 /* HeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044044D5216B6CD900C97F79 /* HeaderModel.swift */; };
 		044044DB216B6CDA00C97F79 /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044044D6216B6CDA00C97F79 /* StoreModel.swift */; };
@@ -218,6 +219,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		04026CB82174A8CC0085AEAF /* BodyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyViewModel.swift; sourceTree = "<group>"; };
 		044044D4216B6CD900C97F79 /* DesigenModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesigenModel.swift; sourceTree = "<group>"; };
 		044044D5216B6CD900C97F79 /* HeaderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderModel.swift; sourceTree = "<group>"; };
 		044044D6216B6CDA00C97F79 /* StoreModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
@@ -861,6 +863,7 @@
 				048D0EEA2157190C004B1BA2 /* SliderViewModel.swift */,
 				04D78E052171099C0026053B /* StoreViewModel.swift */,
 				27B116A52172628E008EC9B4 /* DesigenViewModel.swift */,
+				04026CB82174A8CC0085AEAF /* BodyViewModel.swift */,
 			);
 			name = MainPagesViewModel;
 			sourceTree = "<group>";
@@ -2248,6 +2251,7 @@
 				A1162542214FF2F50004B4DD /* DeliveryOffersHeader.swift in Sources */,
 				A1162532214FD74E0004B4DD /* DellerAccountView.swift in Sources */,
 				A15039E1215255840014FE85 /* StoreSettingController.swift in Sources */,
+				04026CB92174A8CC0085AEAF /* BodyViewModel.swift in Sources */,
 				A1C4A48A213D75B300C87D27 /* DepartmentView.swift in Sources */,
 				A162E92F2146886C00139EB8 /* ProductImagesController.swift in Sources */,
 				A10A64222157A82B0038BAD8 /* FooterModel.swift in Sources */,

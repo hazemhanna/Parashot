@@ -30,7 +30,13 @@ class DepartMentController : BaseCell  , UICollectionViewDataSource, UICollectio
             collectionView.reloadData()
         }
     }
+    var categorySetting:BodyViewModel?{
 
+
+        didSet{
+            collectionView.reloadData()
+        }
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -45,7 +51,7 @@ class DepartMentController : BaseCell  , UICollectionViewDataSource, UICollectio
             cell.departmentImage.loadImageUsingUrlString(self.data![indexPath.item].photo!)
         }
         cell.namelabel.text = self.data![indexPath.item].name!
-
+        cell.Settingdata =  self.categorySetting
         return cell
         
     }

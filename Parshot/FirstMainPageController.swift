@@ -25,6 +25,7 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
     var sliderViewModel = [SliderViewModel]()
     var headerViewModel = [HeaderViewModel]()
     var categoryViewModel = [CategoryViewModel]()
+    var bodyViewModel = [BodyViewModel]()
 
 ////////// end models variables
     
@@ -37,6 +38,9 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
         }
         else  {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cellid1, for: indexPath) as! DepartMentController
+            if bodyViewModel.count > 0 {
+            cell.categorySetting = bodyViewModel[0]
+            }
             cell.data = categoryViewModel
             return cell
         }
@@ -113,19 +117,26 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
         
         presenter.ShowCategory{ (viewModels) in
   self.categoryViewModel = viewModels
-             self.collectionView?.reloadData()
+            DispatchQueue.main.async (execute: {
+                self.collectionView?.reloadData()
+            })
         }
         presenter.showCars { (viewModels) in
           self.storeViewModel = viewModels
             self.sliderViewModel = viewModels[0].Slider!
             self.headerViewModel = viewModels[0].Header!
+            self.bodyViewModel = viewModels[0].Body!
+
             self.navigationController?.navigationBar.barTintColor = UIColor.rgb(CGFloat(self.headerViewModel[0].red!), green: CGFloat(self.headerViewModel[0].green!), blue: CGFloat(self.headerViewModel[0].blue!))
 
             self.navigationItem.title = NSLocalizedString("parashot", comment: "this is name")
             self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-
+            DispatchQueue.main.async (execute: {
                 self.collectionView?.reloadData()
+            })
         }
+
+        
     }
     
     

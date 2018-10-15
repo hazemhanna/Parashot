@@ -11,7 +11,14 @@ import UIKit
 
 class DepartmentView : BaseCell {
     
-    
+    var Settingdata :BodyViewModel?{
+        didSet{
+
+            mainView.backgroundColor = Settingdata?.categorybackground
+            namelabel.textColor = Settingdata?.fontcolor?.textColor
+          
+        }
+    }
     override func setupViews() {
         
         addSubview(mainView)
@@ -19,17 +26,13 @@ class DepartmentView : BaseCell {
         mainView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         mainView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
         mainView.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
-        
-    
-       mainView.addSubview(departmentImage)
+
+        mainView.addSubview(departmentImage)
         departmentImage.topAnchor.constraint(equalTo: mainView.topAnchor,constant : 10).isActive = true
         departmentImage.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         departmentImage.widthAnchor.constraint(equalTo: widthAnchor,multiplier : 1/2).isActive = true
         departmentImage.heightAnchor.constraint(equalTo: heightAnchor ,multiplier : 1/2).isActive = true
-        
-        
-        
-        
+
         mainView.addSubview(namelabel)
         namelabel.topAnchor.constraint(equalTo: departmentImage.bottomAnchor,constant : 10).isActive = true
         namelabel.centerXAnchor.constraint(equalTo: departmentImage.centerXAnchor).isActive = true
