@@ -35,7 +35,7 @@ class ThirdMainPageController  : FirstMainPageController {
             
             cell.data = categoryViewModel
             if bodyViewModel.count > 0 {
-                cell.categorySetting = bodyViewModel[0]
+         //       cell.categorySetting = bodyViewModel[0]
                 cell.presenter = presenter
             }
             return cell
