@@ -117,7 +117,7 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
             })
         }
         presenter.showCars { (viewModels) in
-          self.storeViewModel = viewModels
+            self.storeViewModel = viewModels
             self.sliderViewModel = viewModels[0].Slider!
             self.headerViewModel = viewModels[0].Header!
             self.footerViewModel = viewModels[0].footer!
@@ -132,15 +132,9 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
                 let StarButton = UIBarButtonItem(image:image.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(self.star))
                 self.navigationItem.rightBarButtonItem = StarButton
 
-
-
-
-
-
             }
             var NavImageleft = CustomImageView()
             NavImageleft.loadImageUsingUrlStringToUIImage(self.headerViewModel[0].left_icon!){(images:UIImage)in
-
 
                 let chatButton = UIBarButtonItem(image:images.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(self.chat))
                 self.navigationItem.leftBarButtonItem = chatButton

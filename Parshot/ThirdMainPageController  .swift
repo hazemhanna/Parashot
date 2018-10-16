@@ -35,7 +35,8 @@ class ThirdMainPageController  : FirstMainPageController {
             
             cell.data = categoryViewModel
             if bodyViewModel.count > 0 {
-                cell.categorySetting = bodyViewModel[0]
+         //       cell.categorySetting = bodyViewModel[0]
+                cell.presenter = presenter
             }
             return cell
         }
@@ -47,7 +48,7 @@ class ThirdMainPageController  : FirstMainPageController {
         return 2
         
     }
-    
+
     ////// size of the cell
     
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -22,7 +22,7 @@ import UIKit
 class ThirdDepartmentController  : BaseCell  , UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     var cell = "cell"
-    
+    var presenter: CarsPresenterProtocol!
     var data:[CategoryViewModel]?{
         
         
@@ -58,7 +58,10 @@ class ThirdDepartmentController  : BaseCell  , UICollectionViewDataSource, UICol
         return cell
         
     }
-    
+     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+     presenter.showCarDetail(for: data![indexPath.item])
+    }
     
     //////// give to colletionview how many image  in every cell
     

@@ -13,7 +13,7 @@ protocol CarsPresenterProtocol {
     func showCars(completion: @escaping ([StoreViewModel]) -> Void)
     func ShowCategory(completion: @escaping ([CategoryViewModel]) -> Void)
 
-    func showCarDetail(for viewModel: SliderViewModel)
+    func showCarDetail(for viewModel: CategoryViewModel)
     func showCreateCarScreen()
 }
 
@@ -38,7 +38,7 @@ class CarsPresenter: CarsPresenterProtocol {
     }
 
     
-    func showCarDetail(for viewModel: SliderViewModel) {
+    func showCarDetail(for viewModel: CategoryViewModel) {
         router.showCarDetail(for: viewModel)
     }
     
