@@ -18,9 +18,8 @@
 import UIKit
 
 
-class thirdSubCateryController : UICollectionViewController , UICollectionViewDelegateFlowLayout {
+class thirdSubCateryController : ThirdMainPageController {
     
-    var footer = "footer"
     var cell = "cell"
     var Headers = "Headers"
     
@@ -44,7 +43,7 @@ class thirdSubCateryController : UICollectionViewController , UICollectionViewDe
         
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return CGSize(width:collectionView.frame.width-10  , height: collectionView.frame.height * 0.45 - 50)
     }
@@ -68,11 +67,7 @@ class thirdSubCateryController : UICollectionViewController , UICollectionViewDe
     }
     
     /////// size for the footer
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        
-        return CGSize(width:collectionView.frame.width , height: collectionView.frame.height  * 0.08)
-        
-    }
+
     
     /////// give header size
     
@@ -81,46 +76,21 @@ class thirdSubCateryController : UICollectionViewController , UICollectionViewDe
     }
     
     
-    
-    
-    override func viewDidLoad() {
-        
-        collectionView?.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
-        collectionView?.backgroundColor = UIColor.rgb(252, green: 244, blue: 246)
+    override func RegisterCell() {
         collectionView?.register(ThirdSubCategryView.self, forCellWithReuseIdentifier: cell)
-        
         collectionView?.register(thirdMainFooter.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: footer)
         collectionView?.register(FirstSubCategryHeaders.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: Headers)
-        
-        // setup navBar.....
-        navigationController?.navigationBar.barTintColor = UIColor.rgb(252, green: 244, blue: 246)
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+
         let layout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
         layout?.sectionFootersPinToVisibleBounds = true
         
-        
-        //////////
-        let logo = UIImage(named: "P A R A S H O T E@1X")
-        let imageView = UIImageView(image:logo)
-        self.navigationItem.titleView = imageView
-        
-        
-        let StarButton = UIBarButtonItem(image: UIImage(named: "search2")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(star))
-        navigationItem.rightBarButtonItem = StarButton
-        
-        let chatButton = UIBarButtonItem(image: UIImage(named: "menue3")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(chat))
-        navigationItem.leftBarButtonItem = chatButton
-        
     }
     
-    
-    
-    ///////////
-    func chat()  {  }
-    /////
-    func star ()  {  }
-    
-    
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+
+    }
+
     
 }
