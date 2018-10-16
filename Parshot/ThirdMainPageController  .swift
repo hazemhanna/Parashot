@@ -7,22 +7,9 @@
 
 
 import UIKit
-class ThirdMainPageController  :  UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class ThirdMainPageController  : FirstMainPageController {
     
-    var footer = "footer"
-    var Cellid0="Cellid0"
-    var Cellid1="Cellid1"
-    var Cellid2="Cellid2"
-    var Cellid3="Cellid3"
-    var Cellid4="Cellid4"
-    
-    ////// models variables
-      var presenter: CarsPresenterProtocol!
-     var sliderViewModel = [SliderViewModel]()
-      var storeViewModel = [StoreViewModel]()
-      var headerViewModel = [HeaderViewModel]()
-      var footerViewModel  = [FooterViewModel]()
-     var categoryViewModel = [CategoryViewModel]()
+
     
     
     
@@ -47,7 +34,9 @@ class ThirdMainPageController  :  UICollectionViewController, UICollectionViewDe
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cellid1, for: indexPath) as! ThirdDepartmentController
             
             cell.data = categoryViewModel
-            
+            if bodyViewModel.count > 0 {
+                cell.categorySetting = bodyViewModel[0]
+            }
             return cell
         }
     }
@@ -61,7 +50,7 @@ class ThirdMainPageController  :  UICollectionViewController, UICollectionViewDe
     
     ////// size of the cell
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         if indexPath.item == 0 {
             
@@ -86,89 +75,30 @@ class ThirdMainPageController  :  UICollectionViewController, UICollectionViewDe
     }
     
     /////// size for the footer
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        
-        return CGSize(width:collectionView.frame.width , height: collectionView.frame.height  * 0.08)
-        
-    }
-    let OrderImage:CustomImageView = {
-        let ci = CustomImageView(image:#imageLiteral(resourceName: "shopping-cart (1)"))
-        return ci
-        
-    }()
-    let OrderImage2:CustomImageView = {
-        let ci = CustomImageView(image:#imageLiteral(resourceName: "shopping-cart (1)"))
-        return ci
-        
-    }()
-    
-    override func viewDidLoad() {
-        collectionView?.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
-        collectionView?.backgroundColor = UIColor.rgb(252, green: 244, blue: 246)
+    override func RegisterCell() {
+
         collectionView?.register(ThirdSliderController.self, forCellWithReuseIdentifier: Cellid0)
         collectionView?.register(ThirdDepartmentController .self, forCellWithReuseIdentifier: Cellid1)
-        
         collectionView?.register(thirdMainFooter.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: footer)
-        collectionView?.isScrollEnabled = false
-        
-        
-        presenter.ShowCategory{ (viewModels) in
-            self.categoryViewModel = viewModels
-            DispatchQueue.main.async (execute: {
-                self.collectionView?.reloadData()
-            })
-        }
+        let logo = UIImage(named: "P A R A S H O T E@1X")
+        let imageView = UIImageView(image:logo)
+        self.navigationItem.titleView = imageView
+    }
+    
+    override func viewDidLoad() {
+super.viewDidLoad()
         // setup navBar.....
-        presenter.showCars { (viewModels) in
-          //  self.storeViewModel = viewModels
-             self.headerViewModel = viewModels[0].Header!
-             self.footerViewModel = viewModels[0].footer!
-             self.sliderViewModel = viewModels[0].Slider!
-            
-            self.navigationController?.navigationBar.barTintColor = UIColor.rgb(CGFloat(self.headerViewModel[0].red!), green: CGFloat(self.headerViewModel[0].green!), blue: CGFloat(self.headerViewModel[0].blue!))
-           self.OrderImage.loadImageUsingUrlStringToUIImage(self.headerViewModel[0].right_icon!){(image:UIImage)in
-                
-            let StarButton = UIBarButtonItem(image:image.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(self.star))
-                self.navigationItem.rightBarButtonItem = StarButton
-                
-                
-                
-            
-                
-                
-            }
-            self.OrderImage2.loadImageUsingUrlStringToUIImage(self.headerViewModel[0].left_icon!){(images:UIImage)in
 
-            
-            let chatButton = UIBarButtonItem(image:images.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(self.chat))
-            self.navigationItem.leftBarButtonItem = chatButton
-            }
-            
-            
-            DispatchQueue.main.async (execute: {
-                self.collectionView?.reloadData()
-            })
-       }
      
         let layout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
         layout?.sectionFootersPinToVisibleBounds = true
         
         //////////
-        
-        let logo = UIImage(named: "P A R A S H O T E@1X")
-        let imageView = UIImageView(image:logo)
-        self.navigationItem.titleView = imageView
+         RegisterCell()
+
         
     }
     
-    
-    func chat()  {
-        
-    }
-    
-    func star ()  {
-        
-    }
+
     
 }

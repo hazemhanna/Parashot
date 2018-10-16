@@ -30,7 +30,15 @@ class ThirdDepartmentController  : BaseCell  , UICollectionViewDataSource, UICol
             collectionView.reloadData()
         }
     }
-    
+    var categorySetting:BodyViewModel?{
+
+
+        didSet{
+            self.collectionView.backgroundColor = self.categorySetting!.backgroundValue
+
+            collectionView.reloadData()
+        }
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -74,14 +82,13 @@ class ThirdDepartmentController  : BaseCell  , UICollectionViewDataSource, UICol
         collectionView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         collectionView.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
         collectionView.register(ThirdDepartmentView.self, forCellWithReuseIdentifier: cell)
-        
+
     }
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.backgroundColor = UIColor.clear
         cv.layer.rasterizationScale = UIScreen.main.scale
         cv.dataSource = self
         cv.delegate = self

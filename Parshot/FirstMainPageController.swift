@@ -88,26 +88,25 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
     }
     
 
-    
+ func   RegisterCell()
+
+    {
+        collectionView?.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        collectionView?.register(SliderController.self, forCellWithReuseIdentifier: Cellid0)
+        collectionView?.register(DepartMentController.self, forCellWithReuseIdentifier: Cellid1)
+        collectionView?.register(MainFooter.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: footer)
+
+        navigationItem.title = NSLocalizedString("parashot", comment: "this is name")
+
+    }
     override func viewDidLoad() {
         
        
-        collectionView?.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
-        collectionView?.backgroundColor = UIColor.rgb(230, green: 234, blue: 237)
-        collectionView?.register(SliderController.self, forCellWithReuseIdentifier: Cellid0)
-        collectionView?.register(DepartMentController.self, forCellWithReuseIdentifier: Cellid1)
-   
-        collectionView?.register(MainFooter.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: footer)
-        collectionView?.isScrollEnabled = false
-        
-        // setup navBar.....
-        navigationController?.navigationBar.barTintColor = UIColor.rgb(99, green: 27, blue: 103)
 
-        navigationItem.title = NSLocalizedString("parashot", comment: "this is name")
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-        // casting is required because UICollectionViewLayout doesn't offer header pin. Its feature of UICollectionViewFlowLayout
-        let layout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
-        layout?.sectionFootersPinToVisibleBounds = true
+   
+        collectionView?.isScrollEnabled = false
+
+
         
         
         
@@ -124,21 +123,30 @@ class FirstMainPageController:  UICollectionViewController, UICollectionViewDele
             self.footerViewModel = viewModels[0].footer!
             self.bodyViewModel = viewModels[0].Body!
 
+            self.collectionView?.backgroundColor = self.bodyViewModel[0].backgroundValue
+            var NavImageRight = CustomImageView()
+            
             self.navigationController?.navigationBar.barTintColor = UIColor.rgb(CGFloat(self.headerViewModel[0].red!), green: CGFloat(self.headerViewModel[0].green!), blue: CGFloat(self.headerViewModel[0].blue!))
+            NavImageRight.loadImageUsingUrlStringToUIImage(self.headerViewModel[0].right_icon!){(image:UIImage)in
 
-            
-            let StarButton = UIBarButtonItem(image: UIImage(named: self.headerViewModel[0].right_icon!)?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(self.star))
-            self.navigationItem.rightBarButtonItem = StarButton
-            
-            
-            
-            let chatButton = UIBarButtonItem(image: UIImage(named: self.headerViewModel[0].left_icon!)?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(self.chat))
-            self.navigationItem.leftBarButtonItem = chatButton
-            
-            
-            
-            self.navigationItem.title = NSLocalizedString("parashot", comment: "this is name")
-            self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+                let StarButton = UIBarButtonItem(image:image.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(self.star))
+                self.navigationItem.rightBarButtonItem = StarButton
+
+
+
+
+
+
+            }
+            var NavImageleft = CustomImageView()
+            NavImageleft.loadImageUsingUrlStringToUIImage(self.headerViewModel[0].left_icon!){(images:UIImage)in
+
+
+                let chatButton = UIBarButtonItem(image:images.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(self.chat))
+                self.navigationItem.leftBarButtonItem = chatButton
+            }
+
+
             DispatchQueue.main.async (execute: {
                 self.collectionView?.reloadData()
             })
