@@ -61,6 +61,7 @@ class ThirdDepartmentController  : BaseCell  , UICollectionViewDataSource, UICol
      func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
      presenter.showCarDetail(for: data![indexPath.item])
+    
     }
     
     //////// give to colletionview how many image  in every cell

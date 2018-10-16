@@ -19,12 +19,19 @@
 import UIKit
 
 class ThirdSubCategryView: BaseCell,FloatRatingViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-   
+
     
+    var data : [SubCategoryViewModel]?{
+        
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+   
     var cell = "cell"
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 10
+        return (data?.count)!
         
     }
     
@@ -35,8 +42,13 @@ class ThirdSubCategryView: BaseCell,FloatRatingViewDelegate, UICollectionViewDat
         
         ////// to get indexpath doesnot work
         let indexPath = self.collectionView.indexPath(for: cell)
-        print(indexPath)
+        
 
+        
+        if   data![(indexPath?.item)!].photo != nil {
+            cell.itemImage.loadImageUsingUrlString(data![(indexPath?.item)!].photo!)
+        }
+        
         return cell
         
     }

@@ -21,11 +21,11 @@ class CarsRouter: CarsRouterProtocol {
     init(presentingViewController: UIViewController) {
         self.presentingViewController = presentingViewController
     }
-    static func createModule() -> ThirdMainPageController {
+    static func createModule() -> fourthSubCategury {
         
         
         let layout = UICollectionViewFlowLayout()
-        let featuredAppsController = ThirdMainPageController(collectionViewLayout:layout )
+        let featuredAppsController = fourthSubCategury(collectionViewLayout:layout )
         let interactor: CarsInteractorProtocol = CarsInteractor()
         let router:CarsRouterProtocol = CarsRouter(presentingViewController: featuredAppsController)
         let presenter: CarsPresenterProtocol  = CarsPresenter(interactor: interactor, router: router)
@@ -46,9 +46,7 @@ class CarsRouter: CarsRouterProtocol {
         let presenter: CarsPresenterProtocol  = CarsPresenter(interactor: interactor, router: router)
         featuredAppsController.categoryViewModel = [viewModel]
         featuredAppsController.presenter = presenter
-
-//
-          navigationController.pushViewController(featuredAppsController, animated: true)
+        navigationController.pushViewController(featuredAppsController, animated: true)
     }
     
     func showCreateCarScreen() {

@@ -43,6 +43,7 @@
 		2706E2FE2163D3A5002F8323 /* ResturantPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2706E2FD2163D3A5002F8323 /* ResturantPlaceView.swift */; };
 		2706E3002163D3BF002F8323 /* ResturantPlaceFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2706E2FF2163D3BF002F8323 /* ResturantPlaceFooter.swift */; };
 		274D26CB2174D00F009F6EC9 /* FooterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274D26CA2174D00F009F6EC9 /* FooterViewModel.swift */; };
+		2774B27221765DEE00443565 /* fourthSubCategury.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774B27121765DEE00443565 /* fourthSubCategury.swift */; };
 		278BF87D21622C45008A66F0 /* ProductsMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278BF87C21622C45008A66F0 /* ProductsMainController.swift */; };
 		278BF87F21622C58008A66F0 /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278BF87E21622C58008A66F0 /* ProductsView.swift */; };
 		278BF88121622C72008A66F0 /* ProductsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278BF88021622C72008A66F0 /* ProductsController.swift */; };
@@ -325,6 +326,7 @@
 		2716CCB62164F09C0028368A /* SwiftCharts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftCharts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		274D26CA2174D00F009F6EC9 /* FooterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterViewModel.swift; sourceTree = "<group>"; };
 		2764E29A216505E000B09E48 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2774B27121765DEE00443565 /* fourthSubCategury.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fourthSubCategury.swift; sourceTree = "<group>"; };
 		278BF87C21622C45008A66F0 /* ProductsMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsMainController.swift; sourceTree = "<group>"; };
 		278BF87E21622C58008A66F0 /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
 		278BF88021622C72008A66F0 /* ProductsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsController.swift; sourceTree = "<group>"; };
@@ -947,6 +949,14 @@
 			name = ResturantPlaceControler;
 			sourceTree = "<group>";
 		};
+		2774B27021765DC200443565 /* fourthSubCategury */ = {
+			isa = PBXGroup;
+			children = (
+				2774B27121765DEE00443565 /* fourthSubCategury.swift */,
+			);
+			path = fourthSubCategury;
+			sourceTree = "<group>";
+		};
 		278BF87921622C04008A66F0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -1206,6 +1216,7 @@
 		A119DA72214553F400D5200B /* SubCategryPages */ = {
 			isa = PBXGroup;
 			children = (
+				2774B27021765DC200443565 /* fourthSubCategury */,
 				A129F2262143D2C1003E88E1 /* FirstSubCategry */,
 				A129F2342144298E003E88E1 /* SeconSubCategry */,
 				A1291C8B21451C8A00BD1524 /* thirdSubCategry */,
@@ -2253,6 +2264,7 @@
 				A15CD589213E8AD800F03E8D /* SecondSliderController.swift in Sources */,
 				A10F4EDA215646D9000C74FD /* PhotographerController.swift in Sources */,
 				A1162542214FF2F50004B4DD /* DeliveryOffersHeader.swift in Sources */,
+				2774B27221765DEE00443565 /* fourthSubCategury.swift in Sources */,
 				A1162532214FD74E0004B4DD /* DellerAccountView.swift in Sources */,
 				A15039E1215255840014FE85 /* StoreSettingController.swift in Sources */,
 				04026CB92174A8CC0085AEAF /* BodyViewModel.swift in Sources */,

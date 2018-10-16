@@ -33,14 +33,17 @@ class thirdSubCateryController : ThirdMainPageController {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 5
+        return (categoryViewModel[0].subCategry?.count)!
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cell, for: indexPath) as! ThirdSubCategryView
-        return cell
         
+        cell.data = categoryViewModel[0].subCategry
+        cell.itemName.text = categoryViewModel[0].subCategry![indexPath.item].name!
+        
+        return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -81,6 +84,8 @@ class thirdSubCateryController : ThirdMainPageController {
         collectionView?.register(thirdMainFooter.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: footer)
         collectionView?.register(FirstSubCategryHeaders.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: Headers)
 
+        collectionView?.isScrollEnabled = true
+        
         let layout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
         layout?.sectionFootersPinToVisibleBounds = true
         
@@ -88,9 +93,12 @@ class thirdSubCateryController : ThirdMainPageController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
+   
+    
+    
+    
+    
     }
-
+   
     
 }

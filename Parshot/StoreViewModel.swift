@@ -28,15 +28,12 @@ struct StoreViewModel {
         self.name = store.name
         self.storeSetting = store.storesettings
         self.design = store.storesettings[0].design
-   
-        
     }
     
     private func createCarsViewModels(from cars: DesigenModel) -> [SliderViewModel] {
         return cars.sliders.map({return SliderViewModel(slider: $0)}) ?? []
     }
     ///////
-    
     private func createBodyViewModels(from body : [BodyModel]) -> [BodyViewModel] {
         return body.map({return BodyViewModel(body: $0)}) ?? []
     }
@@ -44,9 +41,9 @@ struct StoreViewModel {
     private func createHeaderViewModels(from header : [HeaderModel]) -> [HeaderViewModel] {
         return header.map({return HeaderViewModel(header: $0)}) ?? []
     }
-    
     private func createfooterViewModels(from footer  : [FooterModel]) -> [FooterViewModel] {
         return footer.map({return FooterViewModel(Footer: $0)}) ?? []
     }
+  
     
 }
