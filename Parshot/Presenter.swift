@@ -31,6 +31,7 @@ class CarsPresenter: CarsPresenterProtocol {
             completion(self.createCarsViewModels(from: cars))
         }
     }
+   
     func ShowCategory(completion: @escaping ([CategoryViewModel]) -> Void) {
         interactor.getsCategory { (cat) in
      completion(self.createCategoryViewModels(from: cat))
@@ -38,17 +39,23 @@ class CarsPresenter: CarsPresenterProtocol {
     }
 
     
+    
+    
     func showCarDetail(for viewModel: CategoryViewModel) {
         router.showCarDetail(for: viewModel)
     }
     
+    
     func showCreateCarScreen() {
         router.showCreateCarScreen()
     }
+    
     private func createCategoryViewModels(from cat: DataCategory) -> [CategoryViewModel] {
         return cat.data.map({return CategoryViewModel(cateogry: $0)}) ?? []
     }
+    
     private func createCarsViewModels(from cars: MainData) -> [StoreViewModel] {
         return cars.data.map({return StoreViewModel(store: $0)}) ?? []
     }
+
 }
