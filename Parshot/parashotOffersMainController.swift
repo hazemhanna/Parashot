@@ -15,13 +15,11 @@ class parashotOffersMainController : UICollectionViewController , UICollectionVi
     var Headers = "Headers"
     var selectedIndex : Int?
     
-    
+      
     
     func ChangeSegmValue(id:Int){
         selectedIndex = id
         collectionView?.reloadData()
-        
-        
     }
     
     override var prefersStatusBarHidden: Bool {

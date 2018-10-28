@@ -23,7 +23,7 @@ class thirdMainFooter: BaseCell {
         didSet{
             
             
-            backgroundColor = data!.background!
+           // backgroundColor = data!.background!
             
             
               favouriteImage.loadImageUsingUrlString(data!.first_icon!)
@@ -43,18 +43,29 @@ class thirdMainFooter: BaseCell {
         }
     }
     
-    
-    
     override func setupViews() {
-       
-        layer.cornerRadius = 25
+        
+        
        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOffset = CGSize(width: -2, height: 3)
-        layer.shadowOpacity = 0.2
+      layer.shadowOffset = CGSize(width: -2, height: 7)
+        layer.shadowOpacity = 0.1
         layer.shadowRadius = 20
         layer.masksToBounds = false
-         clipsToBounds = false
+        clipsToBounds = false
         
+
+        addSubview(MainView)
+        MainView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        MainView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        MainView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
+        MainView.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
+        MainView.layer.shadowColor = UIColor.black.cgColor
+        MainView.layer.shadowOffset = CGSize(width: -2, height: 7)
+        MainView.layer.shadowOpacity = 0.2
+        MainView.layer.shadowRadius = 20
+
+        MainView.layer.masksToBounds = false
+        MainView.clipsToBounds = false
         ////////////// image
         addSubview(favouriteImage)
         favouriteImage.rightAnchor.constraint(equalTo: rightAnchor,constant : -30).isActive = true
@@ -63,12 +74,12 @@ class thirdMainFooter: BaseCell {
         favouriteImage.heightAnchor.constraint(equalTo: favouriteImage.widthAnchor).isActive = true
         favouriteImage.isUserInteractionEnabled = true
         ////////
-        
+
         /////// value label
         addSubview(favouriteValuelabel)
         favouriteValuelabel.rightAnchor.constraint(equalTo: favouriteImage.rightAnchor,constant : -4).isActive = true
         favouriteValuelabel.topAnchor.constraint(equalTo: favouriteImage.topAnchor,constant : 1).isActive = true
-        
+
         ///////
         addSubview(lineView)
         lineView.rightAnchor.constraint(equalTo: favouriteImage.leftAnchor,constant : -20).isActive = true
@@ -79,26 +90,26 @@ class thirdMainFooter: BaseCell {
         addSubview(favouritelabel)
         favouritelabel.centerXAnchor.constraint(equalTo: favouriteImage.centerXAnchor).isActive = true
         favouritelabel.topAnchor.constraint(equalTo: favouriteImage.bottomAnchor).isActive = true
-        
-        
+
+
         ////////  image
         addSubview(orderImage)
         orderImage.rightAnchor.constraint(equalTo: favouriteImage.leftAnchor,constant:-40).isActive = true
         orderImage.topAnchor.constraint(equalTo: topAnchor,constant:5).isActive = true
         orderImage.widthAnchor.constraint(equalToConstant: 30).isActive = true
         orderImage.heightAnchor.constraint(equalTo: orderImage.widthAnchor).isActive = true
-       
+
         addSubview(orderValuelabel)
         orderValuelabel.rightAnchor.constraint(equalTo: orderImage.rightAnchor,constant : -4).isActive = true
         orderValuelabel.topAnchor.constraint(equalTo: orderImage.topAnchor,constant : 1).isActive = true
-        
+
         ////////////  label
         addSubview(orderlabel)
         orderlabel.centerXAnchor.constraint(equalTo: orderImage.centerXAnchor ).isActive = true
         orderlabel.topAnchor.constraint(equalTo: orderImage.bottomAnchor).isActive=true
-        
-        
-        
+
+
+
         ///////// more image
         addSubview(notificationImage)
         notificationImage.leftAnchor.constraint(equalTo: leftAnchor,constant:30).isActive = true
@@ -115,69 +126,67 @@ class thirdMainFooter: BaseCell {
         secondlineView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         secondlineView.widthAnchor.constraint(equalToConstant: 1).isActive = true
         secondlineView.heightAnchor.constraint(equalTo: heightAnchor,multiplier : 0.5).isActive = true
-        
+
         ///////// more label
         addSubview(notificationlabel)
         notificationlabel.centerXAnchor.constraint(equalTo: notificationImage.centerXAnchor ).isActive = true
         notificationlabel.topAnchor.constraint(equalTo: notificationImage.bottomAnchor).isActive=true
-        
+
         /////////////  image
         addSubview(dealImage)
         dealImage.leftAnchor.constraint(equalTo: notificationImage.rightAnchor,constant:40).isActive = true
         dealImage.topAnchor.constraint(equalTo: topAnchor,constant:5).isActive = true
         dealImage.widthAnchor.constraint(equalToConstant: 30).isActive = true
         dealImage.heightAnchor.constraint(equalTo: dealImage.widthAnchor).isActive = true
-        
-        
+
+
         addSubview(dealsValuelabel)
         dealsValuelabel.rightAnchor.constraint(equalTo: dealImage.rightAnchor,constant : -4).isActive = true
         dealsValuelabel.topAnchor.constraint(equalTo: dealImage.topAnchor,constant : 1).isActive = true
-        
+
         //////// label
         addSubview(deallabel)
         deallabel.centerXAnchor.constraint(equalTo: dealImage.centerXAnchor ).isActive = true
         deallabel.topAnchor.constraint(equalTo: dealImage.bottomAnchor).isActive=true
-        
-      
+
+
       ////////  home view
         addSubview(homeView)
         homeView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        homeView.bottomAnchor.constraint(equalTo: bottomAnchor,constant : -7).isActive = true
+        homeView.bottomAnchor.constraint(equalTo: bottomAnchor,constant : -15).isActive = true
         homeView.widthAnchor.constraint(equalToConstant: 60).isActive = true
         homeView.heightAnchor.constraint(equalTo: homeView.widthAnchor).isActive = true
-        
+
         ///////////  home  image
        homeView.addSubview(homeImage)
         homeImage.centerXAnchor.constraint(equalTo: homeView.centerXAnchor).isActive = true
         homeImage.centerYAnchor.constraint(equalTo: homeView.centerYAnchor).isActive = true
         homeImage.widthAnchor.constraint(equalToConstant: 50).isActive = true
         homeImage.heightAnchor.constraint(equalTo: homeImage.widthAnchor).isActive = true
-        
-        
-        
+
         notificationImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(addToMenuePage)))
         notificationImage.isUserInteractionEnabled = true
-        
+
         favouriteImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goTomainPage)))
         favouriteImage.isUserInteractionEnabled = true
-        
-        
+
         dealImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToGalleyImage)))
         dealImage.isUserInteractionEnabled = true
-        
-        
-        
-        
+
         homeImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(SwithcToVideopage)))
         homeImage.isUserInteractionEnabled = true
-        
+
         orderImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(SwithcToReservationopage)))
         orderImage.isUserInteractionEnabled = true
-        
+
+
     }
     
     
-    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        MainView.roundCorners(corners: [.topLeft, .topRight], radius: 50.0)
+    }
     //// make
     func addToMenuePage(tapGestureRecognizer: UITapGestureRecognizer)
         
@@ -213,8 +222,12 @@ class thirdMainFooter: BaseCell {
         
         
     }
-    
-    
+      let MainView:UIView = {
+    let ci = UIView()
+    ci.backgroundColor = UIColor.white
+    ci.translatesAutoresizingMaskIntoConstraints = false
+    return ci
+    }()
     
     ///////  image
     
@@ -238,10 +251,6 @@ class thirdMainFooter: BaseCell {
         return pl
         
     }()
-    
-    
-    
-    
     let favouriteValuelabel :UILabel = {
         let pl = UILabel()
         pl.textColor = UIColor.white
@@ -298,11 +307,6 @@ class thirdMainFooter: BaseCell {
         return ci
         
     }()
-    
-    
-    
-    
-    
     let homeView:UIView = {
         let ci = UIView()
         ci.backgroundColor = UIColor.white
@@ -346,11 +350,6 @@ class thirdMainFooter: BaseCell {
         return pl
         
     }()
-    
-    
-    
-    
-    
     let dealsValuelabel :UILabel = {
         let pl = UILabel()
         pl.textColor = UIColor.white
@@ -369,8 +368,6 @@ class thirdMainFooter: BaseCell {
         return ci
         
     }()
-    
-    
     /////// nearest image
     let notificationlabel :UILabel = {
         let pl = UILabel()
@@ -382,10 +379,6 @@ class thirdMainFooter: BaseCell {
         return pl
         
     }()
-    
-    
-    
-    
     let notificationValuelabel :UILabel = {
         let pl = UILabel()
         pl.textColor = UIColor.white
@@ -397,4 +390,13 @@ class thirdMainFooter: BaseCell {
         
     }()
 }
+extension UIView {
+    func roundCorners(corners: UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        layer.mask = mask
+    }
+}
+
 

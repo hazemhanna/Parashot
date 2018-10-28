@@ -89,8 +89,8 @@
                   symbolName = "Parshot.DepartmentView.init(frame: __C.CGRect) -&gt; Parshot.DepartmentView"
                   moduleName = "Parshot"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mac/Desktop/projects/Parshot-4%20v2/Parshot/DepartmentView.swift"
-                  timestampString = "561343437.6579601"
+                  urlString = "file:///Users/mac/Desktop/projects/Parshot/Parshot/DepartmentView.swift"
+                  timestampString = "561664855.5910439"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -104,8 +104,8 @@
                   symbolName = "Parshot.DepartmentView.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;Parshot.DepartmentView&gt;"
                   moduleName = "Parshot"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mac/Desktop/projects/Parshot-4%20v2/Parshot/DepartmentView.swift"
-                  timestampString = "561343437.662313"
+                  urlString = "file:///Users/mac/Desktop/projects/Parshot/Parshot/DepartmentView.swift"
+                  timestampString = "561664855.59436"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Parshot/ThirdDepartmentController .swift"
-            timestampString = "561343489.551285"
+            timestampString = "561427369.139643"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "63"
@@ -159,7 +159,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
             endingLineNumber = "42"
-            landmarkName = "showCarDetail(for:)"
+            landmarkName = "ShowCategory(completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -170,85 +170,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Parshot/ThirdDepartmentController .swift"
-            timestampString = "561343489.5515"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "ThirdDepartmentController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Parshot.ThirdDepartmentController.presenter.getter : Swift.ImplicitlyUnwrappedOptional&lt;Parshot.CarsPresenterProtocol&gt;"
-                  moduleName = "Parshot"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mac/Desktop/projects/Parshot-4%20v2/Parshot/ThirdDepartmentController%20.swift"
-                  timestampString = "561343437.6988291"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "190">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Parshot.ThirdDepartmentController.presenter.setter : Swift.ImplicitlyUnwrappedOptional&lt;Parshot.CarsPresenterProtocol&gt;"
-                  moduleName = "Parshot"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mac/Desktop/projects/Parshot-4%20v2/Parshot/ThirdDepartmentController%20.swift"
-                  timestampString = "561343437.7081521"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "505">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Parshot.ThirdDepartmentController.init(frame: __C.CGRect) -&gt; Parshot.ThirdDepartmentController"
-                  moduleName = "Parshot"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mac/Desktop/projects/Parshot-4%20v2/Parshot/ThirdDepartmentController%20.swift"
-                  timestampString = "561343437.766486"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "332">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Parshot.ThirdDepartmentController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;Parshot.ThirdDepartmentController&gt;"
-                  moduleName = "Parshot"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mac/Desktop/projects/Parshot-4%20v2/Parshot/ThirdDepartmentController%20.swift"
-                  timestampString = "561343437.776085"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "285">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Parshot/ThirdDepartmentController .swift"
-            timestampString = "561343489.551605"
+            timestampString = "561427369.13976"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "62"
@@ -269,8 +191,120 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
             endingLineNumber = "41"
-            landmarkName = "showCarDetail(for:)"
+            landmarkName = "ShowCategory(completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Parshot.CarsPresenter.ShowCategory(completion: (Swift.Array&lt;Parshot.CategoryViewModel&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Parshot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Desktop/projects/Parshot/Parshot/Presenter.swift"
+                  timestampString = "561664855.630337"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "202">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Parshot.DataCategory) -&gt; () in Parshot.CarsPresenter.ShowCategory(completion: (Swift.Array&lt;Parshot.CategoryViewModel&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Parshot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Desktop/projects/Parshot/Parshot/Presenter.swift"
+                  timestampString = "561664855.633579"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "89">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Parshot/ThirdDepartmentController .swift"
+            timestampString = "561427369.139864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "categorySetting"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Parshot/Stores/Viper/StoresIntractor.swift"
+            timestampString = "561656394.196649"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "getsSmallStores(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Foundation.Data) -&gt; () in Parshot.StoresInteractor.getsSmallStores(completion: (Parshot.ObjectSmallStores) -&gt; ()) -&gt; ()"
+                  moduleName = "Parshot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Desktop/projects/Parshot/Parshot/Stores/Viper/StoresIntractor.swift"
+                  timestampString = "561664855.645946"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "566">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Foundation.Data) -&gt; () in Parshot.StoresInteractor.getsSmallStores(completion: (Parshot.ObjectSmallStores) -&gt; ()) -&gt; ()"
+                  moduleName = "Parshot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Desktop/projects/Parshot/Parshot/Stores/Viper/StoresIntractor.swift"
+                  timestampString = "561664855.649151"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "18">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Parshot/thirdMainFooter.swift"
+            timestampString = "561742477.097464"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "data"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
